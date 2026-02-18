@@ -7,15 +7,38 @@ function NewsletterSection() {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setError('E-mail inválido.')
       return
     }
+
+    setLoading(true)
     setError('')
-    setSubmitted(true)
+    try {
+      const res = await fetch('/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, source: 'footer' }),
+      })
+
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) {
+        setError(typeof data?.error === 'string' ? data.error : 'Não foi possível concluir a inscrição.')
+        return
+      }
+
+      setSubmitted(true)
+    } catch {
+      setError('Falha de conexão. Tente novamente.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -68,9 +91,10 @@ function NewsletterSection() {
                   </div>
                   <button
                     type="submit"
+                    disabled={loading}
                     className="h-12 flex items-center gap-2 bg-gray-900 text-white px-6 text-sm font-semibold hover:bg-totvs-cyan hover:text-slate-950 transition-all duration-200 whitespace-nowrap"
                   >
-                    Inscrever-se
+                    {loading ? 'Enviando...' : 'Inscrever-se'}
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>

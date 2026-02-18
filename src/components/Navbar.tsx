@@ -1,0 +1,226 @@
+import { Menu, X, ChevronDown, ExternalLink } from 'lucide-react'
+import { useState } from 'react'
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <nav className="fixed top-0 w-full z-50 bg-slate-950 backdrop-blur-lg border-b border-slate-800 shadow-xl transition-all duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center h-20">
+          {/* Logo - Esquerda */}
+          <div className="flex-shrink-0">
+            <a href="/" className="flex items-center py-2">
+              <img
+                src="/1.png"
+                alt="Metaclass Logo"
+                className="h-28 w-auto"
+              />
+            </a>
+          </div>
+
+          {/* Links - Centro */}
+          <div className="hidden md:flex items-center space-x-8 mx-auto">
+            {/* Produtos Dropdown */}
+            <div className="relative group">
+              <button className="text-white/90 hover:text-totvs-cyan transition-colors font-medium flex items-center gap-1 py-2">
+                Produtos
+                <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+              </button>
+
+              <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out">
+                <div className="w-52 bg-slate-900/95 backdrop-blur-xl border border-slate-700/50 rounded-xl shadow-2xl shadow-black/50 overflow-hidden py-1">
+                  <a
+                    href="/beautygest"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between px-4 py-2.5 hover:bg-slate-800/50 transition-all duration-150 group/item"
+                  >
+                    <div>
+                      <div className="text-sm text-white/90 group-hover/item:text-totvs-cyan transition-colors">BeautyGest</div>
+                      <div className="text-[10px] text-gray-500 group-hover/item:text-totvs-cyan/70 transition-colors">by Metaclass</div>
+                    </div>
+                    <ExternalLink className="w-3.5 h-3.5 text-gray-500 group-hover/item:text-totvs-cyan transition-colors" />
+                  </a>
+                  <a
+                    href="/produtos"
+                    className="block px-4 py-2.5 text-sm text-white/90 hover:text-totvs-cyan hover:bg-slate-800/50 transition-all duration-150"
+                  >
+                    Ver portfólio
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <a href="/servicos" className="text-white/90 hover:text-totvs-cyan transition-colors font-medium">
+              Serviços
+            </a>
+
+            {/* Sobre Dropdown */}
+            <div className="relative group">
+              <button className="text-white/90 hover:text-totvs-cyan transition-colors font-medium flex items-center gap-1 py-2">
+                Sobre
+                <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+              </button>
+
+              <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out">
+                <div className="w-52 bg-slate-900/95 backdrop-blur-xl border border-slate-700/50 rounded-xl shadow-2xl shadow-black/50 overflow-hidden py-1">
+                  <a
+                    href="/quem-somos"
+                    className="block px-4 py-2.5 text-sm text-white/90 hover:text-totvs-cyan hover:bg-slate-800/50 transition-all duration-150"
+                  >
+                    Quem somos
+                  </a>
+                  <a
+                    href="/cases"
+                    className="block px-4 py-2.5 text-sm text-white/90 hover:text-totvs-cyan hover:bg-slate-800/50 transition-all duration-150"
+                  >
+                    Cases de sucesso
+                  </a>
+                  <a
+                    href="/trabalhe-conosco"
+                    className="block px-4 py-2.5 text-sm text-white/90 hover:text-totvs-cyan hover:bg-slate-800/50 transition-all duration-150"
+                  >
+                    Trabalhe conosco
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <a href="/contato" className="text-white/90 hover:text-totvs-cyan transition-colors font-medium">
+              Contato
+            </a>
+          </div>
+
+          {/* Botão CTA - Direita */}
+          <div className="hidden md:flex items-center gap-3 ml-auto">
+            <a
+              href="/contato"
+              className="px-4 py-2 rounded-full border border-slate-700 text-white/90 hover:border-totvs-cyan hover:text-totvs-cyan transition-all duration-300 font-semibold text-sm"
+            >
+              Falar com especialista
+            </a>
+
+            <div className="relative group">
+              <button className="px-4 py-2 rounded-full bg-white text-slate-950 hover:bg-white/90 transition-colors font-semibold text-sm flex items-center gap-2">
+                Sou cliente
+                <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+              </button>
+
+              <div className="absolute right-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out">
+                <div className="w-52 bg-slate-900/95 backdrop-blur-xl border border-slate-700/50 rounded-xl shadow-2xl shadow-black/50 overflow-hidden py-1">
+                  <a
+                    href="https://beautygest.metaclass.com.br/login"
+                    className="flex items-center justify-between px-4 py-2.5 hover:bg-slate-800/50 transition-all duration-150 group/item"
+                  >
+                    <div>
+                      <div className="text-sm text-white/90 group-hover/item:text-totvs-cyan transition-colors">BeautyGest</div>
+                      <div className="text-[10px] text-gray-500 group-hover/item:text-totvs-cyan/70 transition-colors">by Metaclass</div>
+                    </div>
+                    <ExternalLink className="w-3.5 h-3.5 text-gray-500 group-hover/item:text-totvs-cyan transition-colors" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden ml-auto">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white hover:text-totvs-cyan transition-colors p-2"
+              aria-label="Menu"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-slate-900 border-t border-slate-800">
+          <div className="px-4 pt-2 pb-4 space-y-1">
+            <div className="border-b border-slate-800 pb-2 mb-1">
+              <div className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Produtos</div>
+              <a
+                href="/beautygest"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-3 py-2 hover:text-totvs-cyan transition-colors"
+              >
+                <div className="text-sm text-white/90">BeautyGest</div>
+                <div className="text-[10px] text-gray-500">by Metaclass</div>
+              </a>
+              <a
+                href="/produtos"
+                className="block px-3 py-2 text-sm text-white/90 hover:text-totvs-cyan transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Ver portfólio
+              </a>
+            </div>
+
+            <a
+              href="/servicos"
+              className="block px-3 py-2 text-sm text-white/90 hover:text-totvs-cyan transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Serviços
+            </a>
+
+            <div className="border-b border-slate-800 pb-2 mb-1">
+              <div className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Sobre</div>
+              <a
+                href="/quem-somos"
+                className="block px-3 py-2 text-sm text-white/90 hover:text-totvs-cyan transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Quem somos
+              </a>
+              <a
+                href="/cases"
+                className="block px-3 py-2 text-sm text-white/90 hover:text-totvs-cyan transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Cases de sucesso
+              </a>
+              <a
+                href="/trabalhe-conosco"
+                className="block px-3 py-2 text-sm text-white/90 hover:text-totvs-cyan transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Trabalhe conosco
+              </a>
+            </div>
+
+            <a
+              href="/contato"
+              className="block px-3 py-2 text-sm text-white/90 hover:text-totvs-cyan transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Contato
+            </a>
+
+            <div className="pt-3 grid grid-cols-2 gap-2">
+              <a
+                href="/contato"
+                className="block px-3 py-2.5 rounded-full border border-slate-700 text-white/90 hover:border-totvs-cyan hover:text-totvs-cyan transition-all duration-300 font-semibold text-sm text-center"
+                onClick={() => setIsOpen(false)}
+              >
+                Falar c/ especialista
+              </a>
+              <a
+                href="https://beautygest.metaclass.com.br/login"
+                className="block px-3 py-2.5 rounded-full bg-white text-slate-950 hover:bg-white/90 transition-colors font-semibold text-sm text-center"
+                onClick={() => setIsOpen(false)}
+              >
+                Sou cliente
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+    </nav>
+  )
+}

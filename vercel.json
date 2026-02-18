@@ -1,0 +1,17 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/beautygest",
+      "destination": "https://beautygest.metaclass.com.br"
+    },
+    {
+      "source": "/beautygest/:path*",
+      "destination": "https://beautygest.metaclass.com.br/:path*"
+    }
+  ]
+}

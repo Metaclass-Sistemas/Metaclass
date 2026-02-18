@@ -1,5 +1,4 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { Resend } from 'resend'
 import { getSupabaseAdminClient } from '../_lib/supabaseAdmin'
 import { requireEnv } from '../_lib/env'
 
@@ -53,6 +52,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const from = requireEnv('NEWSLETTER_FROM_EMAIL')
     const replyTo = process.env.NEWSLETTER_REPLY_TO || undefined
+    const { Resend } = await import('resend')
     const resend = new Resend(requireEnv('RESEND_API_KEY'))
 
     const siteUrl = requireEnv('SITE_URL').replace(/\/$/, '')

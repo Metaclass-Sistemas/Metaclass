@@ -3,6 +3,11 @@ import { useState } from 'react'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null)
+
+  const toggleSubmenu = (name: string) => {
+    setOpenSubmenu(prev => prev === name ? null : name)
+  }
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-slate-950 backdrop-blur-lg border-b border-slate-800 shadow-xl transition-all duration-300">
@@ -127,7 +132,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <div className="md:hidden ml-auto">
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => { setIsOpen(!isOpen); if (isOpen) setOpenSubmenu(null) }}
               className="text-white hover:text-totvs-cyan transition-colors p-2"
               aria-label="Menu"
             >
@@ -141,24 +146,33 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-slate-900 border-t border-slate-800">
           <div className="px-4 pt-2 pb-4 space-y-1">
-            <div className="border-b border-slate-800 pb-2 mb-1">
-              <div className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Produtos</div>
-              <a
-                href="/beautygest"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block px-3 py-2 hover:text-totvs-cyan transition-colors"
+            {/* Produtos - submenu colapsável */}
+            <div className="border-b border-slate-800 pb-1 mb-1">
+              <button
+                onClick={() => toggleSubmenu('produtos')}
+                className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-white/90 hover:text-totvs-cyan transition-colors"
               >
-                <div className="text-sm text-white/90">BeautyGest</div>
-                <div className="text-[10px] text-gray-500">by Metaclass</div>
-              </a>
-              <a
-                href="/produtos"
-                className="block px-3 py-2 text-sm text-white/90 hover:text-totvs-cyan transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Ver portfólio
-              </a>
+                Produtos
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${openSubmenu === 'produtos' ? 'rotate-180' : ''}`} />
+              </button>
+              <div className={`overflow-hidden transition-all duration-200 ${openSubmenu === 'produtos' ? 'max-h-40' : 'max-h-0'}`}>
+                <a
+                  href="/beautygest"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-6 py-2 hover:text-totvs-cyan transition-colors"
+                >
+                  <div className="text-sm text-white/90">BeautyGest</div>
+                  <div className="text-[10px] text-gray-500">by Metaclass</div>
+                </a>
+                <a
+                  href="/produtos"
+                  className="block px-6 py-2 text-sm text-white/90 hover:text-totvs-cyan transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Ver portfólio
+                </a>
+              </div>
             </div>
 
             <a
@@ -169,29 +183,38 @@ export default function Navbar() {
               Serviços
             </a>
 
-            <div className="border-b border-slate-800 pb-2 mb-1">
-              <div className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Sobre</div>
-              <a
-                href="/quem-somos"
-                className="block px-3 py-2 text-sm text-white/90 hover:text-totvs-cyan transition-colors"
-                onClick={() => setIsOpen(false)}
+            {/* Sobre - submenu colapsável */}
+            <div className="border-b border-slate-800 pb-1 mb-1">
+              <button
+                onClick={() => toggleSubmenu('sobre')}
+                className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-white/90 hover:text-totvs-cyan transition-colors"
               >
-                Quem somos
-              </a>
-              <a
-                href="/cases"
-                className="block px-3 py-2 text-sm text-white/90 hover:text-totvs-cyan transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Cases de sucesso
-              </a>
-              <a
-                href="/trabalhe-conosco"
-                className="block px-3 py-2 text-sm text-white/90 hover:text-totvs-cyan transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Trabalhe conosco
-              </a>
+                Sobre
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${openSubmenu === 'sobre' ? 'rotate-180' : ''}`} />
+              </button>
+              <div className={`overflow-hidden transition-all duration-200 ${openSubmenu === 'sobre' ? 'max-h-40' : 'max-h-0'}`}>
+                <a
+                  href="/quem-somos"
+                  className="block px-6 py-2 text-sm text-white/90 hover:text-totvs-cyan transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Quem somos
+                </a>
+                <a
+                  href="/cases"
+                  className="block px-6 py-2 text-sm text-white/90 hover:text-totvs-cyan transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Cases de sucesso
+                </a>
+                <a
+                  href="/trabalhe-conosco"
+                  className="block px-6 py-2 text-sm text-white/90 hover:text-totvs-cyan transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Trabalhe conosco
+                </a>
+              </div>
             </div>
 
             <a

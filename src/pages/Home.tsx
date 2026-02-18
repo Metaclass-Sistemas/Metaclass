@@ -206,32 +206,48 @@ function HeroCarousel() {
       </div>
 
       {/* ── CONTROLES ── */}
-      {/* setas */}
+      {/* setas — no mobile ficam embaixo ao lado dos dots, no desktop ficam nas laterais */}
       <button
         onClick={prev}
         aria-label="Anterior"
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-all duration-200"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm hidden md:flex items-center justify-center text-white hover:bg-white/20 transition-all duration-200"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
       <button
         onClick={next}
         aria-label="Próximo"
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-all duration-200"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm hidden md:flex items-center justify-center text-white hover:bg-white/20 transition-all duration-200"
       >
         <ChevronRight className="w-5 h-5" />
       </button>
 
-      {/* dots */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-        {slides.map((sl) => (
-          <button
-            key={sl.id}
-            onClick={() => goTo(sl.id)}
-            aria-label={`Slide ${sl.id + 1}`}
-            className={`rounded-full transition-all duration-300 ${current === sl.id ? 'w-8 h-2 bg-totvs-cyan' : 'w-2 h-2 bg-white/30 hover:bg-white/60'}`}
-          />
-        ))}
+      {/* dots + setas mobile */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
+        <button
+          onClick={prev}
+          aria-label="Anterior"
+          className="md:hidden w-8 h-8 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-all duration-200"
+        >
+          <ChevronLeft className="w-4 h-4" />
+        </button>
+        <div className="flex gap-2">
+          {slides.map((sl) => (
+            <button
+              key={sl.id}
+              onClick={() => goTo(sl.id)}
+              aria-label={`Slide ${sl.id + 1}`}
+              className={`rounded-full transition-all duration-300 ${current === sl.id ? 'w-8 h-2 bg-totvs-cyan' : 'w-2 h-2 bg-white/30 hover:bg-white/60'}`}
+            />
+          ))}
+        </div>
+        <button
+          onClick={next}
+          aria-label="Próximo"
+          className="md:hidden w-8 h-8 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-all duration-200"
+        >
+          <ChevronRight className="w-4 h-4" />
+        </button>
       </div>
 
       {/* indicador de slide — canto inferior direito */}

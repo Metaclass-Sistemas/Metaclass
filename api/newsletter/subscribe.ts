@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { getSupabaseAdminClient } from '../_lib/supabaseAdmin'
-import { requireEnv } from '../_lib/env'
+import { getSupabaseAdminClient } from '../_lib/supabaseAdmin.js'
+import { requireEnv } from '../_lib/env.js'
 
 function normalizeEmail(email: string) {
   return email.trim().toLowerCase()

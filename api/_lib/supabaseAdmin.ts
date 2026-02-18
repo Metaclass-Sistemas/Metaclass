@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
-import { requireEnv } from './env'
+import { requireEnv } from './env.js'
 
 export function getSupabaseAdminClient() {
   const url = requireEnv('SUPABASE_URL')

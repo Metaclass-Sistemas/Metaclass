@@ -8,58 +8,60 @@ function normalizeEmail(email: string) {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method !== 'POST') {
-    res.status(405).json({ error: 'Method not allowed' })
-    return
-  }
+  try {
+    if (req.method !== 'POST') {
+      res.status(405).json({ error: 'Method not allowed' })
+      return
+    }
 
-  const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body
-  const emailRaw = body?.email
+    const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body
+    const emailRaw = body?.email
 
-  if (!emailRaw || typeof emailRaw !== 'string') {
-    res.status(400).json({ error: 'Email is required' })
-    return
-  }
+    if (!emailRaw || typeof emailRaw !== 'string') {
+      res.status(400).json({ error: 'Email is required' })
+      return
+    }
 
-  const email = normalizeEmail(emailRaw)
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  if (!emailRegex.test(email)) {
-    res.status(400).json({ error: 'Invalid email' })
-    return
-  }
+    const email = normalizeEmail(emailRaw)
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      res.status(400).json({ error: 'Invalid email' })
+      return
+    }
 
-  const supabase = getSupabaseAdminClient()
-  const now = new Date().toISOString()
+    const supabase = getSupabaseAdminClient()
+    const now = new Date().toISOString()
 
-  const { error: upsertError } = await supabase
-    .from('newsletter_subscribers')
-    .upsert(
-      {
-        email,
-        status: 'subscribed',
-        consent_at: now,
-        updated_at: now,
-        source: body?.source ?? 'footer',
-      },
-      { onConflict: 'email' },
-    )
+    const { error: upsertError } = await supabase
+      .from('newsletter_subscribers')
+      .upsert(
+        {
+          email,
+          status: 'subscribed',
+          consent_at: now,
+          updated_at: now,
+          source: body?.source ?? 'footer',
+        },
+        { onConflict: 'email' },
+      )
 
-  if (upsertError) {
-    res.status(500).json({ error: 'Database error' })
-    return
-  }
+    if (upsertError) {
+      console.error('newsletter subscribe: supabase upsert error', upsertError)
+      res.status(500).json({ error: 'Database error: newsletter_subscribers' })
+      return
+    }
 
-  const from = requireEnv('NEWSLETTER_FROM_EMAIL')
-  const replyTo = process.env.NEWSLETTER_REPLY_TO || undefined
-  const resend = new Resend(requireEnv('RESEND_API_KEY'))
+    const from = requireEnv('NEWSLETTER_FROM_EMAIL')
+    const replyTo = process.env.NEWSLETTER_REPLY_TO || undefined
+    const resend = new Resend(requireEnv('RESEND_API_KEY'))
 
-  const siteUrl = requireEnv('SITE_URL').replace(/\/$/, '')
-  const privacyUrl = `${siteUrl}/privacidade`
-  const termsUrl = `${siteUrl}/termos`
+    const siteUrl = requireEnv('SITE_URL').replace(/\/$/, '')
+    const privacyUrl = `${siteUrl}/privacidade`
+    const termsUrl = `${siteUrl}/termos`
 
-  const subject = 'Inscrição confirmada — Metaclass Newsletter'
+    const subject = 'Inscrição confirmada — Metaclass Newsletter'
 
-  const html = `<!doctype html>
+    const html = `<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
@@ -135,13 +137,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 </body>
 </html>`
 
-  await resend.emails.send({
-    from,
-    to: email,
-    subject,
-    html,
-    replyTo,
-  })
+    await resend.emails.send({
+      from,
+      to: email,
+      subject,
+      html,
+      replyTo,
+    })
 
-  res.status(200).json({ ok: true })
+    res.status(200).json({ ok: true })
+  } catch (err) {
+    console.error('newsletter subscribe: unhandled error', err)
+    res.status(500).json({ error: 'Internal error' })
+  }
 }

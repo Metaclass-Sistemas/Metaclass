@@ -4,14 +4,22 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "vite",
-  "rewrites": [
+  "redirects": [
     {
       "source": "/beautygest",
-      "destination": "https://beautygest.metaclass.com.br"
+      "destination": "https://beautygest.metaclass.com.br",
+      "permanent": true
     },
     {
       "source": "/beautygest/:path*",
-      "destination": "https://beautygest.metaclass.com.br/:path*"
+      "destination": "https://beautygest.metaclass.com.br/:path*",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }

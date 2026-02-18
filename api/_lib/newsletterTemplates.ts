@@ -21,15 +21,15 @@ export function getNewsletterSubscribedEmailHtml(input: NewsletterSubscribedTemp
       <td align="center">
         <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(15,23,42,0.12);">
           <tr>
-            <td style="background: linear-gradient(135deg, #00c9eb 0%, #0ea5e9 100%); padding: 38px 28px; text-align: center;">
-              <div style="margin: 0; color: #ffffff; font-size: 30px; font-weight: 900; letter-spacing: 0.3px;">Metaclass</div>
-              <div style="margin: 10px 0 0; color: rgba(255,255,255,0.92); font-size: 15px;">Newsletter</div>
+            <td style="background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #0c1a2e 100%); padding: 38px 28px; text-align: center;">
+              <div style="margin: 0; color: #00c9eb; font-size: 30px; font-weight: 900; letter-spacing: 0.3px;">Metaclass</div>
+              <div style="margin: 10px 0 0; color: rgba(255,255,255,0.75); font-size: 15px;">Newsletter</div>
             </td>
           </tr>
 
           <tr>
             <td style="padding: 34px 28px 10px;">
-              <div style="display: inline-block; background: rgba(0,201,235,0.12); border: 1px solid rgba(0,201,235,0.35); color: #0369a1; border-radius: 999px; padding: 6px 10px; font-size: 12px; font-weight: 800;">Inscrição</div>
+              <div style="display: inline-block; background: rgba(0,201,235,0.10); border: 1px solid rgba(0,201,235,0.30); color: #00c9eb; border-radius: 999px; padding: 6px 10px; font-size: 12px; font-weight: 800;">Inscrição</div>
               <h2 style="margin: 14px 0 10px; color: #0f172a; font-size: 24px; line-height: 1.25;">Inscrição confirmada</h2>
               <p style="margin: 0; color: #475569; font-size: 15px; line-height: 1.7;">
                 Você foi inscrito(a) com sucesso na newsletter da Metaclass.
@@ -51,7 +51,7 @@ export function getNewsletterSubscribedEmailHtml(input: NewsletterSubscribedTemp
                 <table width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td align="center" style="padding: 14px 0 0;">
-                      <a href="${input.siteUrl}" style="display: inline-block; background: linear-gradient(135deg, #00c9eb 0%, #0ea5e9 100%); color: #ffffff; text-decoration: none; padding: 14px 34px; border-radius: 10px; font-size: 15px; font-weight: 800; box-shadow: 0 8px 18px rgba(2,132,199,0.25);">
+                      <a href="${input.siteUrl}" style="display: inline-block; background: linear-gradient(135deg, #020617 0%, #0f172a 100%); color: #00c9eb; text-decoration: none; padding: 14px 34px; border-radius: 10px; font-size: 15px; font-weight: 800; box-shadow: 0 8px 18px rgba(15,23,42,0.30); border: 1px solid rgba(0,201,235,0.25);">
                         Acessar o site
                       </a>
                     </td>
@@ -68,8 +68,8 @@ export function getNewsletterSubscribedEmailHtml(input: NewsletterSubscribedTemp
           <tr>
             <td style="background-color: #f8fafc; border-top: 1px solid #e2e8f0; padding: 18px 28px; text-align: center;">
               <p style="margin: 0 0 10px; color: #64748b; font-size: 12px; line-height: 1.6;">
-                Política de Privacidade: <a href="${input.privacyUrl}" style="color: #0284c7; text-decoration: underline;">${input.privacyUrl}</a><br />
-                Termos de Uso: <a href="${input.termsUrl}" style="color: #0284c7; text-decoration: underline;">${input.termsUrl}</a>
+                Política de Privacidade: <a href="${input.privacyUrl}" style="color: #00c9eb; text-decoration: underline;">${input.privacyUrl}</a><br />
+                Termos de Uso: <a href="${input.termsUrl}" style="color: #00c9eb; text-decoration: underline;">${input.termsUrl}</a>
               </p>
               <p style="margin: 0; color: #94a3b8; font-size: 12px;">© ${new Date().getFullYear()} Metaclass</p>
             </td>
@@ -123,9 +123,9 @@ export function getNewsletterInternalNotifyEmailHtml(input: NewsletterInternalNo
       <td align="center">
         <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(15,23,42,0.12);">
           <tr>
-            <td style="background: linear-gradient(135deg, #00c9eb 0%, #0ea5e9 100%); padding: 26px 24px;">
-              <div style="color: #ffffff; font-size: 18px; font-weight: 900;">Metaclass</div>
-              <div style="margin-top: 6px; color: rgba(255,255,255,0.92); font-size: 13px;">Notificação de Newsletter</div>
+            <td style="background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #0c1a2e 100%); padding: 26px 24px;">
+              <div style="color: #00c9eb; font-size: 18px; font-weight: 900;">Metaclass</div>
+              <div style="margin-top: 6px; color: rgba(255,255,255,0.75); font-size: 13px;">Notificação de Newsletter</div>
             </td>
           </tr>
           <tr>

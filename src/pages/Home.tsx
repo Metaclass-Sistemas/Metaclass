@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, useRef } from 'react'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import {
@@ -14,7 +14,47 @@ import {
   Users,
   Code2,
   Star,
+  TrendingUp,
+  Headphones,
+  Award,
 } from 'lucide-react'
+
+/* ─── ANIMATED COUNTER ──────────────────────────────────── */
+function useCountUp(end: number, duration = 2000, start = false) {
+  const [value, setValue] = useState(0)
+  useEffect(() => {
+    if (!start) return
+    let startTime: number | null = null
+    let raf: number
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp
+      const progress = Math.min((timestamp - startTime) / duration, 1)
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3)
+      setValue(Math.round(eased * end))
+      if (progress < 1) raf = requestAnimationFrame(step)
+    }
+    raf = requestAnimationFrame(step)
+    return () => cancelAnimationFrame(raf)
+  }, [end, duration, start])
+  return value
+}
+
+function useInView(threshold = 0.3) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [inView, setInView] = useState(false)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setInView(true); obs.disconnect() } },
+      { threshold },
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [threshold])
+  return { ref, inView }
+}
 
 /* ─── SLIDES ─────────────────────────────────────────────── */
 const slides = [
@@ -258,6 +298,79 @@ function HeroCarousel() {
   )
 }
 
+/* ─── MÉTRICAS COM COUNTER ANIMADO ───────────────────────── */
+function MetricsSection() {
+  const { ref, inView } = useInView(0.3)
+  const projetos = useCountUp(50, 2000, inView)
+  const clientes = useCountUp(30, 2000, inView)
+  const uptime = useCountUp(99, 1800, inView)
+  const satisfacao = useCountUp(98, 2000, inView)
+
+  const metrics = [
+    { icon: TrendingUp, value: `+${projetos}`, label: 'Projetos entregues', suffix: '' },
+    { icon: Users, value: `+${clientes}`, label: 'Clientes ativos', suffix: '' },
+    { icon: Award, value: `${uptime}.8`, label: 'Uptime médio', suffix: '%' },
+    { icon: Headphones, value: `${satisfacao}`, label: 'Satisfação dos clientes', suffix: '%' },
+  ]
+
+  return (
+    <section ref={ref} className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-14">
+          <p className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide mb-3">Nossos números</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight">
+            Resultados que <span className="text-totvs-cyan">falam por si</span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {metrics.map((m) => (
+            <div
+              key={m.label}
+              className="relative text-center p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-lg hover:border-totvs-cyan/20 transition-all duration-300 group"
+            >
+              <div className="w-12 h-12 rounded-xl bg-totvs-cyan/10 border border-totvs-cyan/20 text-totvs-cyan flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <m.icon className="w-6 h-6" />
+              </div>
+              <div className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-2">
+                {m.value}<span className="text-totvs-cyan">{m.suffix}</span>
+              </div>
+              <div className="text-sm text-gray-500 font-medium">{m.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ─── LOGOS DE CONFIANÇA ─────────────────────────────────── */
+function TrustLogosSection() {
+  const partners = [
+    'TOTVS', 'AWS', 'Google Cloud', 'Microsoft Azure', 'Oracle', 'SAP',
+  ]
+
+  return (
+    <section className="py-14 bg-gray-50 border-y border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p className="text-center text-xs font-semibold text-gray-400 uppercase tracking-widest mb-8">
+          Tecnologias e parceiros que confiam no nosso trabalho
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+          {partners.map((name) => (
+            <div
+              key={name}
+              className="text-gray-300 hover:text-totvs-cyan transition-colors duration-300 font-display text-xl font-bold tracking-tight select-none"
+            >
+              {name}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 /* ─── HOME PAGE ──────────────────────────────────────────── */
 export default function Home() {
   return (
@@ -293,6 +406,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── MÉTRICAS DE IMPACTO ── */}
+      <MetricsSection />
+
+      {/* ── LOGOS DE CONFIANÇA ── */}
+      <TrustLogosSection />
+
       {/* ── COMO RESOLVEMOS O PROBLEMA ── */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -300,7 +419,8 @@ export default function Home() {
             <div>
               <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Nossa proposta</div>
               <h2 className="mt-3 font-display text-3xl md:text-4xl font-bold leading-tight">
-                Tecnologia que resolve um problema de negócio real — não que cria um novo
+
+                Tecnologia que resolve um <span className="text-totvs-cyan">problema de negócio real</span> — não que cria um novo
               </h2>
               <p className="mt-5 text-gray-600 text-lg leading-relaxed">
                 Muitas empresas já tiveram a experiência de contratar tecnologia e receber código sem
@@ -436,7 +556,8 @@ export default function Home() {
             <div className="flex-1">
               <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Setores</div>
               <h2 className="mt-3 font-display text-3xl md:text-4xl font-bold leading-tight">
-                Adaptamos nossa metodologia ao seu contexto — sem abrir mão do padrão
+
+                Adaptamos nossa metodologia ao seu <span className="text-totvs-cyan">contexto</span> — sem abrir mão do padrão
               </h2>
             </div>
             <a
@@ -503,6 +624,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── CTA INTERMEDIÁRIO ── */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide mb-3">Comece agora</p>
+          <h2 className="font-display text-2xl md:text-3xl font-bold leading-tight mb-4">
+            Quer entender como a Metaclass pode <span className="text-totvs-cyan">acelerar seu projeto</span>?
+          </h2>
+          <p className="text-gray-500 text-lg mb-8 max-w-2xl mx-auto">
+            Agende uma conversa gratuita de 30 minutos com nosso time técnico e receba um diagnóstico inicial.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <a
+              href="/contato"
+              className="inline-flex items-center gap-2 bg-totvs-cyan text-slate-950 px-7 py-3.5 rounded-full font-bold text-sm hover:brightness-110 hover:shadow-xl hover:shadow-totvs-cyan/30 transition-all duration-300"
+            >
+              Falar com especialista
+              <ArrowRight className="w-4 h-4" />
+            </a>
+            <a
+              href="/servicos"
+              className="inline-flex items-center gap-2 border border-gray-200 text-gray-700 px-7 py-3.5 rounded-full font-semibold text-sm hover:border-totvs-cyan hover:text-totvs-cyan transition-all duration-300"
+            >
+              Ver serviços
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── DIFERENCIAIS / POR QUE METACLASS ── */}
       <section className="py-20 bg-gradient-to-br from-slate-950 via-slate-900 to-[#0c1a2e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -510,7 +659,8 @@ export default function Home() {
             <div className="lg:col-span-5">
               <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Por que escolher a Metaclass</div>
               <h2 className="mt-4 font-display text-3xl md:text-4xl font-bold text-white leading-tight">
-                O que nos diferencia no mercado de tecnologia
+
+                O que nos <span className="text-totvs-cyan">diferencia</span> no mercado de tecnologia
               </h2>
               <p className="mt-4 text-white/65 leading-relaxed text-lg">
                 Não somos uma fábrica de software. Somos um time com mentalidade de produto, disciplina de
@@ -588,7 +738,8 @@ export default function Home() {
               <div className="md:col-span-7 p-10 md:p-14 flex flex-col justify-center">
                 <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide mb-4">Próximo passo</div>
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
-                  Pronto para transformar tecnologia em resultado de negócio?
+  
+                Pronto para transformar tecnologia em <span className="text-totvs-cyan">resultado de negócio</span>?
                 </h2>
                 <p className="text-white/65 text-lg leading-relaxed mb-8">
                   Em uma conversa de 30 minutos com nosso time técnico, você recebe um diagnóstico inicial do seu

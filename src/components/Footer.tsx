@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Mail, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { openCookieConsentPreferences } from '../lib/cookieConsent'
 
 function NewsletterSection() {
@@ -11,7 +11,7 @@ function NewsletterSection() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setError('Por favor, insira um e-mail válido.')
+      setError('E-mail inválido.')
       return
     }
     setError('')
@@ -19,83 +19,70 @@ function NewsletterSection() {
   }
 
   return (
-    <div className="border-b border-slate-800 py-14">
+    <div className="bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-slate-700/50 bg-slate-900/60 overflow-hidden">
-          {/* accent line */}
-          <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-totvs-cyan/50 to-transparent" />
+        {/* linha cyan topo */}
+        <div className="w-12 h-[3px] bg-totvs-cyan" />
 
-          <div className="grid lg:grid-cols-12 gap-8 items-center p-8 md:p-10">
-            {/* texto */}
-            <div className="lg:col-span-5">
-              <div className="flex items-center gap-2.5 mb-3">
-                <div className="w-9 h-9 rounded-xl bg-totvs-cyan/15 border border-totvs-cyan/25 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-4 h-4 text-totvs-cyan" />
-                </div>
-                <span className="text-xs font-bold text-totvs-cyan uppercase tracking-widest">Newsletter</span>
-              </div>
-              <h3 className="font-display text-2xl md:text-3xl font-bold text-white leading-tight">
-                Conteúdo técnico que vale seu tempo
-              </h3>
-              <p className="mt-3 text-white/55 text-sm leading-relaxed max-w-md">
-                Insights sobre engenharia de software, arquitetura, LGPD, produto e mercado de tecnologia —
-                sem spam, direto ao ponto, quinzenalmente.
-              </p>
-              <div className="mt-4 flex flex-wrap gap-3">
-                {['Engenharia & Arquitetura', 'Produto & SaaS', 'Mercado Tech'].map((tag) => (
-                  <span key={tag} className="text-xs font-semibold border border-slate-700 bg-slate-900 text-slate-400 rounded-full px-3 py-1">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
+        <div className="py-14 grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+          {/* texto */}
+          <div>
+            <p className="text-xs font-bold text-totvs-cyan uppercase tracking-[0.18em] mb-4">
+              Newsletter
+            </p>
+            <h3 className="font-display text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+              Conteúdo técnico que vale<br className="hidden sm:block" /> seu tempo
+            </h3>
+            <p className="mt-4 text-gray-500 leading-relaxed max-w-md">
+              Insights sobre engenharia, arquitetura, produto e mercado de tecnologia.
+              Sem ruído — quinzenalmente.
+            </p>
+          </div>
 
-            {/* formulário */}
-            <div className="lg:col-span-7">
-              {submitted ? (
-                <div className="flex items-start gap-4 rounded-xl border border-totvs-cyan/20 bg-totvs-cyan/5 p-6">
-                  <CheckCircle2 className="w-6 h-6 text-totvs-cyan flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-bold text-white">Inscrição confirmada!</p>
-                    <p className="text-white/55 text-sm mt-1">
-                      Ótimo, <span className="text-totvs-cyan font-semibold">{email}</span> foi adicionado à nossa lista.
-                      Você receberá nosso próximo conteúdo em breve.
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} noValidate>
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <div className="flex-1">
-                      <input
-                        type="email"
-                        placeholder="seu@email.com"
-                        value={email}
-                        onChange={(e) => { setEmail(e.target.value); setError('') }}
-                        className={`w-full h-12 rounded-full bg-slate-800 border px-5 text-sm text-white placeholder-white/30 outline-none transition-all duration-200 focus:border-totvs-cyan/60 focus:ring-2 focus:ring-totvs-cyan/15 ${
-                          error ? 'border-red-500/60' : 'border-slate-700'
-                        }`}
-                      />
-                      {error && <p className="mt-1.5 ml-4 text-xs text-red-400">{error}</p>}
-                    </div>
-                    <button
-                      type="submit"
-                      className="h-12 flex items-center justify-center gap-2 bg-totvs-cyan text-slate-950 px-6 rounded-full font-bold text-sm hover:brightness-110 hover:shadow-lg hover:shadow-totvs-cyan/30 transition-all duration-200 whitespace-nowrap"
-                    >
-                      Quero receber
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </div>
-                  <p className="mt-3 text-xs text-white/30 ml-1">
-                    Seus dados são protegidos conforme a{' '}
-                    <Link to="/privacidade" className="text-white/50 underline underline-offset-2 hover:text-totvs-cyan transition-colors">
-                      Política de Privacidade
-                    </Link>{' '}
-                    e a LGPD. Cancele quando quiser.
+          {/* formulário */}
+          <div>
+            {submitted ? (
+              <div className="flex items-start gap-3 py-2">
+                <CheckCircle2 className="w-5 h-5 text-totvs-cyan flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-900">Inscrição confirmada.</p>
+                  <p className="text-gray-500 text-sm mt-0.5">
+                    <span className="font-medium text-gray-700">{email}</span> foi adicionado à nossa lista.
                   </p>
-                </form>
-              )}
-            </div>
+                </div>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} noValidate>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <div className="flex-1">
+                    <input
+                      type="email"
+                      placeholder="seu@email.com"
+                      value={email}
+                      onChange={(e) => { setEmail(e.target.value); setError('') }}
+                      className={`w-full h-12 bg-white border-b-2 px-0 text-sm text-gray-900 placeholder-gray-400 outline-none transition-colors duration-200 ${
+                        error ? 'border-red-400' : 'border-gray-200 focus:border-totvs-cyan'
+                      }`}
+                    />
+                    {error && <p className="mt-1 text-xs text-red-500">{error}</p>}
+                  </div>
+                  <button
+                    type="submit"
+                    className="h-12 flex items-center gap-2 bg-gray-900 text-white px-6 text-sm font-semibold hover:bg-totvs-cyan hover:text-slate-950 transition-all duration-200 whitespace-nowrap"
+                  >
+                    Inscrever-se
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+                <p className="mt-4 text-xs text-gray-400">
+                  Protegido pela{' '}
+                  <Link to="/privacidade" className="underline underline-offset-2 hover:text-totvs-cyan transition-colors">
+                    Política de Privacidade
+                  </Link>{' '}
+                  · LGPD · Cancele quando quiser.
+                </p>
+              </form>
+            )}
           </div>
         </div>
       </div>

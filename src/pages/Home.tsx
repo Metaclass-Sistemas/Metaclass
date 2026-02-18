@@ -344,33 +344,6 @@ function MetricsSection() {
   )
 }
 
-/* ─── LOGOS DE CONFIANÇA ─────────────────────────────────── */
-function TrustLogosSection() {
-  const partners = [
-    'TOTVS', 'AWS', 'Google Cloud', 'Microsoft Azure', 'Oracle', 'SAP',
-  ]
-
-  return (
-    <section className="py-14 bg-gray-50 border-y border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-xs font-semibold text-gray-400 uppercase tracking-widest mb-8">
-          Tecnologias e parceiros que confiam no nosso trabalho
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
-          {partners.map((name) => (
-            <div
-              key={name}
-              className="text-gray-300 hover:text-totvs-cyan transition-colors duration-300 font-display text-xl font-bold tracking-tight select-none"
-            >
-              {name}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 /* ─── HOME PAGE ──────────────────────────────────────────── */
 export default function Home() {
   return (
@@ -408,9 +381,6 @@ export default function Home() {
 
       {/* ── MÉTRICAS DE IMPACTO ── */}
       <MetricsSection />
-
-      {/* ── LOGOS DE CONFIANÇA ── */}
-      <TrustLogosSection />
 
       {/* ── COMO RESOLVEMOS O PROBLEMA ── */}
       <section className="py-24 bg-white">

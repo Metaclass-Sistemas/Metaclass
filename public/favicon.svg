@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#0f1f4a"/>
+
+  <!-- Network/molecule icon — inspired by Metaclass logo mark -->
+  <!-- Lines connecting dots -->
+  <line x1="14" y1="28" x2="24" y2="20" stroke="#00c9eb" stroke-width="2" stroke-linecap="round"/>
+  <line x1="24" y1="20" x2="36" y2="14" stroke="#00c9eb" stroke-width="2" stroke-linecap="round"/>
+  <line x1="36" y1="14" x2="48" y2="18" stroke="#00c9eb" stroke-width="2" stroke-linecap="round"/>
+  <line x1="14" y1="28" x2="18" y2="42" stroke="#00c9eb" stroke-width="2" stroke-linecap="round"/>
+  <line x1="18" y1="42" x2="32" y2="50" stroke="#00c9eb" stroke-width="2" stroke-linecap="round"/>
+  <line x1="32" y1="50" x2="48" y2="44" stroke="#00c9eb" stroke-width="2" stroke-linecap="round"/>
+  <line x1="48" y1="18" x2="48" y2="44" stroke="#00c9eb" stroke-width="2" stroke-linecap="round"/>
+  <line x1="24" y1="20" x2="32" y2="50" stroke="#00c9eb" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 3" opacity="0.5"/>
+  <line x1="48" y1="18" x2="32" y2="34" stroke="#00c9eb" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <line x1="14" y1="28" x2="32" y2="34" stroke="#00c9eb" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Central node -->
+  <circle cx="32" cy="34" r="4" fill="#00c9eb"/>
+
+  <!-- Outer nodes -->
+  <circle cx="14" cy="28" r="4.5" fill="#1e5ce6"/>
+  <circle cx="24" cy="20" r="3" fill="#1e5ce6"/>
+  <circle cx="36" cy="14" r="2.5" fill="#00c9eb" opacity="0.9"/>
+  <circle cx="48" cy="18" r="3.5" fill="#1e5ce6"/>
+  <circle cx="48" cy="44" r="3" fill="#1e5ce6"/>
+  <circle cx="32" cy="50" r="4" fill="#00c9eb"/>
+  <circle cx="18" cy="42" r="2.5" fill="#00c9eb" opacity="0.8"/>
+</svg>

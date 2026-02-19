@@ -103,14 +103,14 @@ function TechVisual() {
         <div className="flex items-center justify-between mb-5">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-white/55 text-xs">Sistema em produção</span>
+            <span className="text-white/70 text-xs">Sistema em produção</span>
           </div>
-          <span className="text-[10px] font-mono text-white/25">v2.4.1</span>
+          <span className="text-[10px] font-mono text-white/45">v2.4.1</span>
         </div>
 
         {/* métrica principal */}
         <div className="mb-4">
-          <div className="text-white/35 text-[11px] mb-1">Receita processada (mês)</div>
+          <div className="text-white/55 text-[11px] mb-1">Receita processada (mês)</div>
           <div className="flex items-end gap-3">
             <span className="font-display text-3xl font-bold text-white leading-none">R$&nbsp;284.500</span>
             <span className="text-green-400 text-xs font-bold mb-0.5 flex items-center gap-1">
@@ -142,7 +142,7 @@ function TechVisual() {
           ].map((s) => (
             <div key={s.l}>
               <div className="text-brand-blue text-sm font-bold">{s.v}</div>
-              <div className="text-white/35 text-[10px]">{s.l}</div>
+              <div className="text-white/55 text-[10px]">{s.l}</div>
             </div>
           ))}
         </div>
@@ -186,15 +186,15 @@ function BeautyVisual() {
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <Clock className="w-3.5 h-3.5 text-sky-400" />
-            <span className="text-white/55 text-xs">Agenda de hoje</span>
+            <span className="text-white/70 text-xs">Agenda de hoje</span>
           </div>
-          <span className="text-[10px] text-white/25">Ter, 18 Fev</span>
+          <span className="text-[10px] text-white/45">Ter, 18 Fev</span>
         </div>
 
         <div className="space-y-0">
           {appointments.map((a) => (
             <div key={a.time} className="flex items-center gap-3 py-2.5 border-b border-white/5 last:border-0">
-              <span className="text-white/35 text-[11px] font-mono w-9 shrink-0">{a.time}</span>
+              <span className="text-white/55 text-[11px] font-mono w-9 shrink-0">{a.time}</span>
               <div className={`w-1 h-7 rounded-full ${a.dot} shrink-0`} />
               <div className="min-w-0">
                 <div className="text-white text-xs font-semibold truncate">{a.client}</div>
@@ -205,7 +205,7 @@ function BeautyVisual() {
         </div>
 
         <div className="mt-4 rounded-xl bg-sky-400/10 border border-sky-400/20 px-4 py-2.5 flex items-center justify-between">
-          <span className="text-white/45 text-xs">Caixa do dia</span>
+          <span className="text-white/65 text-xs">Caixa do dia</span>
           <span className="text-sky-400 text-sm font-bold">R$ 1.840,00</span>
         </div>
       </div>
@@ -318,7 +318,7 @@ function HeroCarousel() {
             </h1>
 
             {/* subtítulo */}
-            <p className="text-white/58 text-base lg:text-lg leading-relaxed mb-9 max-w-xl">
+            <p className="text-white/80 text-base lg:text-lg leading-relaxed mb-9 max-w-xl">
               {s.sub}
             </p>
 
@@ -333,18 +333,18 @@ function HeroCarousel() {
               </a>
               <a
                 href={s.ctaSecondary.href}
-                className="inline-flex items-center gap-2 border border-white/15 text-white/70 px-7 py-3.5 rounded-full font-semibold text-sm hover:border-white/35 hover:text-white transition-all duration-300"
+                className="inline-flex items-center gap-2 border border-white/25 text-white/85 px-7 py-3.5 rounded-full font-semibold text-sm hover:border-white/50 hover:text-white transition-all duration-300"
               >
                 {s.ctaSecondary.label}
               </a>
             </div>
 
             {/* stats */}
-            <div className="flex gap-6 sm:gap-8 border-t border-white/8 pt-6">
+            <div className="flex gap-6 sm:gap-8 border-t border-white/15 pt-6">
               {s.stats.map((st) => (
                 <div key={st.label}>
                   <div className="font-display text-2xl font-bold text-brand-blue">{st.value}</div>
-                  <div className="text-white/38 text-xs mt-0.5">{st.label}</div>
+                  <div className="text-white/60 text-xs mt-0.5">{st.label}</div>
                 </div>
               ))}
             </div>
@@ -393,7 +393,7 @@ function HeroCarousel() {
       </div>
 
       {/* contador de slide */}
-      <div className="absolute bottom-5 right-6 z-20 text-white/25 text-xs font-mono tabular-nums">
+      <div className="absolute bottom-5 right-6 z-20 text-white/45 text-xs font-mono tabular-nums">
         {String(current + 1).padStart(2, '0')}/{String(slides.length).padStart(2, '0')}
       </div>
     </div>
@@ -458,7 +458,7 @@ function MetricsSection() {
                 {m.value}
               </div>
               <div className="text-white text-sm font-bold mb-1">{m.label}</div>
-              <div className="text-white/35 text-[11px]">{m.caption}</div>
+              <div className="text-white/55 text-[11px]">{m.caption}</div>
             </div>
           ))}
         </div>
@@ -794,7 +794,7 @@ export default function Home() {
                 <div key={d.number} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
                   <div className="text-brand-blue font-display text-3xl font-bold mb-3 opacity-40">{d.number}</div>
                   <div className="font-bold text-white mb-2">{d.title}</div>
-                  <div className="text-white/55 text-sm leading-relaxed">{d.text}</div>
+                  <div className="text-white/70 text-sm leading-relaxed">{d.text}</div>
                 </div>
               ))}
             </div>

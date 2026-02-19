@@ -138,13 +138,13 @@ export default function Cases() {
           <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 rounded-full border border-totvs-cyan/30 bg-totvs-cyan/10 px-4 py-1.5 mb-6">
-                  <BadgeCheck className="w-4 h-4 text-totvs-cyan" />
-                  <span className="text-totvs-cyan font-semibold text-sm">Cases & Resultados</span>
+                <div className="inline-flex items-center gap-2 rounded-full border border-brand-blue/30 bg-brand-blue/10 px-4 py-1.5 mb-6">
+                  <BadgeCheck className="w-4 h-4 text-brand-blue" />
+                  <span className="text-brand-blue font-semibold text-sm">Cases & Resultados</span>
                 </div>
                 <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
                   Entregas que geram{' '}
-                  <span className="text-totvs-cyan">impacto real e mensurável</span>
+                  <span className="text-brand-blue">impacto real e mensurável</span>
                 </h1>
                 <p className="mt-6 text-white/70 text-lg leading-relaxed max-w-xl">
                   Cada case representa um problema real de negócio resolvido com engenharia sólida, processo
@@ -153,14 +153,14 @@ export default function Cases() {
                 <div className="mt-10 flex flex-col sm:flex-row gap-4">
                   <a
                     href="/contato"
-                    className="inline-flex items-center gap-2 bg-totvs-cyan text-slate-950 px-8 py-4 rounded-full font-bold hover:brightness-110 hover:shadow-2xl hover:shadow-totvs-cyan/30 transition-all duration-300"
+                    className="inline-flex items-center gap-2 bg-brand-blue text-slate-950 px-8 py-4 rounded-full font-bold hover:brightness-110 hover:shadow-2xl hover:shadow-brand-blue/30 transition-all duration-300"
                   >
                     Quero resultado como esse
                     <ArrowRight className="w-5 h-5" />
                   </a>
                   <a
                     href="/servicos"
-                    className="inline-flex items-center gap-2 border border-slate-700 text-white/90 px-8 py-4 rounded-full font-bold hover:border-totvs-cyan hover:text-totvs-cyan transition-all duration-300"
+                    className="inline-flex items-center gap-2 border border-slate-700 text-white/90 px-8 py-4 rounded-full font-bold hover:border-brand-blue hover:text-brand-blue transition-all duration-300"
                   >
                     Ver como trabalhamos
                   </a>
@@ -175,7 +175,7 @@ export default function Cases() {
                   { value: '-45%', label: 'de retrabalho operacional com automação' },
                 ].map((s) => (
                   <div key={s.label} className="rounded-2xl border border-slate-800 bg-slate-900/80 backdrop-blur p-5">
-                    <div className="font-display text-3xl font-bold text-totvs-cyan">{s.value}</div>
+                    <div className="font-display text-3xl font-bold text-brand-blue">{s.value}</div>
                     <div className="mt-1 text-xs text-white/50 leading-snug">{s.label}</div>
                   </div>
                 ))}
@@ -198,7 +198,7 @@ export default function Cases() {
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-gray-50/50 md:to-gray-50/80" />
                 </div>
                 <div className="md:col-span-8 p-8 md:p-12 flex flex-col justify-center">
-                  <div className="text-5xl text-totvs-cyan font-serif leading-none mb-4">"</div>
+                  <div className="text-5xl text-brand-blue font-serif leading-none mb-4">"</div>
                   <p className="text-xl md:text-2xl text-gray-800 font-medium leading-relaxed max-w-2xl">
                     Trabalhar com a Metaclass é diferente. Eles entendem o problema antes de propor qualquer
                     solução. Cada entrega tem impacto direto nos nossos indicadores de negócio.
@@ -207,7 +207,7 @@ export default function Cases() {
                     <img
                       src="https://images.unsplash.com/photo-1494790108755-2616b612b1e0?auto=format&fit=crop&w=80&q=80"
                       alt="Ana Paula Ribeiro"
-                      className="w-14 h-14 rounded-full object-cover border-2 border-totvs-cyan/30"
+                      className="w-14 h-14 rounded-full object-cover border-2 border-brand-blue/30"
                     />
                     <div>
                       <div className="font-bold text-gray-900">Ana Paula Ribeiro</div>
@@ -215,7 +215,7 @@ export default function Cases() {
                     </div>
                     <div className="sm:ml-auto flex gap-0.5">
                       {[1, 2, 3, 4, 5].map((i) => (
-                        <Star key={i} className="w-4 h-4 fill-totvs-cyan text-totvs-cyan" />
+                        <Star key={i} className="w-4 h-4 fill-brand-blue text-brand-blue" />
                       ))}
                     </div>
                   </div>
@@ -229,7 +229,7 @@ export default function Cases() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Cases detalhados</div>
+              <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Cases detalhados</div>
               <h2 className="mt-3 font-display text-3xl md:text-4xl font-bold">
                 Problemas reais, resultados concretos
               </h2>
@@ -249,17 +249,17 @@ export default function Cases() {
                   <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-8 md:p-10">
                     <div className="flex flex-wrap items-start justify-between gap-4 mb-8">
                       <div>
-                        <div className="inline-flex items-center gap-2 text-xs font-bold text-totvs-cyan border border-totvs-cyan/30 rounded-full px-3 py-1 bg-totvs-cyan/10 mb-3">
+                        <div className="inline-flex items-center gap-2 text-xs font-bold text-brand-blue border border-brand-blue/30 rounded-full px-3 py-1 bg-brand-blue/10 mb-3">
                           {c.sector}
                         </div>
                         <h3 className="font-display text-2xl md:text-3xl font-bold text-white">{c.title}</h3>
                         <p className="text-white/50 mt-1.5">{c.subtitle}</p>
                       </div>
                       <div className="flex items-center gap-2 shrink-0">
-                        <div className="w-10 h-10 rounded-xl bg-totvs-cyan/15 border border-totvs-cyan/25 text-totvs-cyan flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-xl bg-brand-blue/15 border border-brand-blue/25 text-brand-blue flex items-center justify-center">
                           <BadgeCheck className="w-5 h-5" />
                         </div>
-                        <span className="text-xs font-bold text-totvs-cyan">Case #{idx + 1}</span>
+                        <span className="text-xs font-bold text-brand-blue">Case #{idx + 1}</span>
                       </div>
                     </div>
 
@@ -270,7 +270,7 @@ export default function Cases() {
                           key={m.label}
                           className="rounded-2xl border border-slate-700/60 bg-slate-800/50 p-5 text-center"
                         >
-                          <div className="font-display text-4xl font-bold text-totvs-cyan">{m.label}</div>
+                          <div className="font-display text-4xl font-bold text-brand-blue">{m.label}</div>
                           <div className="text-xs text-white/50 mt-1.5 leading-snug">{m.desc}</div>
                         </div>
                       ))}
@@ -313,7 +313,7 @@ export default function Cases() {
                         <ul className="space-y-2.5">
                           {c.after.map((a) => (
                             <li key={a} className="flex items-start gap-2.5 text-sm text-gray-600">
-                              <CheckCircle2 className="w-4 h-4 text-totvs-cyan mt-0.5 flex-shrink-0" />
+                              <CheckCircle2 className="w-4 h-4 text-brand-blue mt-0.5 flex-shrink-0" />
                               {a}
                             </li>
                           ))}
@@ -322,14 +322,14 @@ export default function Cases() {
                     </div>
 
                     {/* Depoimento do case */}
-                    <div className="rounded-2xl border border-totvs-cyan/15 bg-gradient-to-br from-totvs-cyan/5 to-transparent p-6 mb-8">
-                      <div className="text-3xl text-totvs-cyan font-serif leading-none mb-3">"</div>
+                    <div className="rounded-2xl border border-brand-blue/15 bg-gradient-to-br from-brand-blue/5 to-transparent p-6 mb-8">
+                      <div className="text-3xl text-brand-blue font-serif leading-none mb-3">"</div>
                       <p className="text-gray-700 leading-relaxed italic mb-5">{c.testimonial.quote}</p>
                       <div className="flex items-center gap-3 flex-wrap">
                         <img
                           src={c.testimonial.photo}
                           alt={c.testimonial.name}
-                          className="w-12 h-12 rounded-full object-cover border-2 border-totvs-cyan/20"
+                          className="w-12 h-12 rounded-full object-cover border-2 border-brand-blue/20"
                           loading="lazy"
                         />
                         <div>
@@ -338,7 +338,7 @@ export default function Cases() {
                         </div>
                         <div className="sm:ml-auto flex gap-0.5">
                           {[1, 2, 3, 4, 5].map((i) => (
-                            <Star key={i} className="w-3.5 h-3.5 fill-totvs-cyan text-totvs-cyan" />
+                            <Star key={i} className="w-3.5 h-3.5 fill-brand-blue text-brand-blue" />
                           ))}
                         </div>
                       </div>
@@ -363,7 +363,7 @@ export default function Cases() {
                       </div>
                       <a
                         href="/contato"
-                        className="inline-flex items-center gap-2 bg-totvs-cyan text-slate-950 px-6 py-2.5 rounded-full font-bold text-sm hover:brightness-110 transition-all duration-200 whitespace-nowrap"
+                        className="inline-flex items-center gap-2 bg-brand-blue text-slate-950 px-6 py-2.5 rounded-full font-bold text-sm hover:brightness-110 transition-all duration-200 whitespace-nowrap"
                       >
                         Quero resultado similar
                         <ArrowRight className="w-4 h-4" />
@@ -389,7 +389,7 @@ export default function Cases() {
                 />
               </div>
               <div className="lg:col-span-7">
-                <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">
+                <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">
                   Case do seu setor
                 </div>
                 <h2 className="mt-3 font-display text-3xl md:text-4xl font-bold leading-tight">
@@ -406,7 +406,7 @@ export default function Cases() {
                     { icon: Users, label: 'Diagnóstico técnico real' },
                   ].map((f) => (
                     <div key={f.label} className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-totvs-cyan/10 border border-totvs-cyan/20 text-totvs-cyan flex items-center justify-center flex-shrink-0">
+                      <div className="w-9 h-9 rounded-xl bg-brand-blue/10 border border-brand-blue/20 text-brand-blue flex items-center justify-center flex-shrink-0">
                         <f.icon className="w-4 h-4" />
                       </div>
                       <span className="text-sm font-medium text-gray-700">{f.label}</span>
@@ -415,7 +415,7 @@ export default function Cases() {
                 </div>
                 <a
                   href="/contato"
-                  className="mt-8 inline-flex items-center gap-2 bg-totvs-cyan text-slate-950 px-8 py-4 rounded-full font-bold hover:brightness-110 hover:shadow-xl hover:shadow-totvs-cyan/20 transition-all duration-300"
+                  className="mt-8 inline-flex items-center gap-2 bg-brand-blue text-slate-950 px-8 py-4 rounded-full font-bold hover:brightness-110 hover:shadow-xl hover:shadow-brand-blue/20 transition-all duration-300"
                 >
                   Solicitar diagnóstico gratuito
                   <ArrowRight className="w-5 h-5" />
@@ -429,7 +429,7 @@ export default function Cases() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Como chegamos aqui</div>
+              <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Como chegamos aqui</div>
               <h2 className="mt-3 font-display text-3xl md:text-4xl font-bold">
                 O processo por trás dos resultados
               </h2>
@@ -464,13 +464,13 @@ export default function Cases() {
                   key={p.title}
                   className="rounded-3xl border border-gray-100 bg-gray-50 shadow-md p-7 hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-totvs-cyan/10 border border-totvs-cyan/20 text-totvs-cyan flex items-center justify-center mb-5">
+                  <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 border border-brand-blue/20 text-brand-blue flex items-center justify-center mb-5">
                     <p.icon className="w-6 h-6" />
                   </div>
                   <div className="font-bold text-xl">{p.title}</div>
                   <div className="mt-2 text-sm text-gray-600 leading-relaxed">{p.text}</div>
                   <div className="mt-5 flex items-start gap-2 text-sm text-gray-700">
-                    <CheckCircle2 className="w-4 h-4 text-totvs-cyan mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-brand-blue mt-0.5 flex-shrink-0" />
                     <span className="font-medium">{p.check}</span>
                   </div>
                 </div>
@@ -483,7 +483,7 @@ export default function Cases() {
         <section className="py-20 bg-slate-950">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">
+              <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">
                 O que nossos clientes dizem
               </div>
               <h2 className="mt-3 font-display text-3xl font-bold text-white">Resultados que falam por si</h2>
@@ -519,7 +519,7 @@ export default function Cases() {
                 <div key={t.name} className="rounded-3xl border border-slate-800 bg-slate-900 p-7">
                   <div className="flex gap-0.5 mb-5">
                     {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="w-4 h-4 fill-totvs-cyan text-totvs-cyan" />
+                      <Star key={i} className="w-4 h-4 fill-brand-blue text-brand-blue" />
                     ))}
                   </div>
                   <p className="text-white/70 leading-relaxed mb-6 text-sm italic">"{t.quote}"</p>
@@ -555,7 +555,7 @@ export default function Cases() {
               />
               <div className="relative grid md:grid-cols-12 gap-8 items-center">
                 <div className="md:col-span-8">
-                  <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Começar agora</div>
+                  <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Começar agora</div>
                   <div className="mt-3 font-display text-3xl md:text-4xl font-bold text-white leading-tight">
                     Seu negócio pode ser o próximo case de resultado expressivo
                   </div>
@@ -567,7 +567,7 @@ export default function Cases() {
                 <div className="md:col-span-4 flex md:justify-end">
                   <a
                     href="/contato"
-                    className="inline-flex items-center justify-center gap-2 bg-totvs-cyan text-slate-950 px-8 py-4 rounded-full font-bold hover:brightness-110 hover:shadow-2xl hover:shadow-totvs-cyan/30 transition-all duration-300 w-full md:w-auto"
+                    className="inline-flex items-center justify-center gap-2 bg-brand-blue text-slate-950 px-8 py-4 rounded-full font-bold hover:brightness-110 hover:shadow-2xl hover:shadow-brand-blue/30 transition-all duration-300 w-full md:w-auto"
                   >
                     Solicitar proposta
                     <ArrowRight className="w-5 h-5" />

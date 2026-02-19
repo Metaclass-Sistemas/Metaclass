@@ -19,8 +19,8 @@ export default function TermosDeUso() {
 
           <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-4 text-white">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-totvs-cyan/20 backdrop-blur border border-totvs-cyan/30">
-                <FileText className="h-7 w-7 text-totvs-cyan" />
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-blue/20 backdrop-blur border border-brand-blue/30">
+                <FileText className="h-7 w-7 text-brand-blue" />
               </div>
               <div>
                 <h1 className="font-display text-3xl sm:text-4xl font-bold">Termos de Uso</h1>
@@ -42,7 +42,7 @@ export default function TermosDeUso() {
             </p>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 1. Aceitação dos termos
               </h2>
               <p className="text-base leading-relaxed">
@@ -54,7 +54,7 @@ export default function TermosDeUso() {
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 2. Descrição dos serviços
               </h2>
               <p className="text-base leading-relaxed">
@@ -65,7 +65,7 @@ export default function TermosDeUso() {
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 3. Cadastro e responsabilidade
               </h2>
               <p className="text-base leading-relaxed">
@@ -77,7 +77,7 @@ export default function TermosDeUso() {
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 4. Uso aceitável
               </h2>
               <p className="text-base leading-relaxed">
@@ -89,7 +89,7 @@ export default function TermosDeUso() {
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 5. Propriedade intelectual
               </h2>
               <p className="text-base leading-relaxed">
@@ -101,7 +101,7 @@ export default function TermosDeUso() {
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 6. Pagamento e cancelamento
               </h2>
               <p className="text-base leading-relaxed">
@@ -113,7 +113,7 @@ export default function TermosDeUso() {
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 7. Limitação de responsabilidade
               </h2>
               <p className="text-base leading-relaxed">
@@ -125,7 +125,7 @@ export default function TermosDeUso() {
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 8. Alterações
               </h2>
               <p className="text-base leading-relaxed">
@@ -136,7 +136,7 @@ export default function TermosDeUso() {
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 9. Lei aplicável e foro
               </h2>
               <p className="text-base leading-relaxed">
@@ -147,12 +147,12 @@ export default function TermosDeUso() {
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 10. Contato
               </h2>
               <p className="text-base leading-relaxed">
                 Para dúvidas sobre estes Termos de Uso, entre em contato através do e-mail{' '}
-                <a href="mailto:contato@metaclass.com.br" className="text-totvs-cyan hover:text-totvs-cyan font-medium underline underline-offset-2">
+                <a href="mailto:contato@metaclass.com.br" className="text-brand-blue hover:text-brand-blue font-medium underline underline-offset-2">
                   contato@metaclass.com.br
                 </a>.
               </p>

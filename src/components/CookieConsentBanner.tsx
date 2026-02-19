@@ -65,18 +65,18 @@ export default function CookieConsentBanner() {
         />
 
         {/* barra de acento superior */}
-        <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-totvs-cyan/60 to-transparent" />
+        <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-brand-blue/60 to-transparent" />
 
         <div className="relative flex flex-col gap-5 p-5 sm:p-6 lg:flex-row lg:items-center lg:justify-between">
           {/* ícone + texto */}
           <div className="flex items-start gap-4">
-            <div className="w-10 h-10 rounded-xl bg-totvs-cyan/15 border border-totvs-cyan/25 flex items-center justify-center flex-shrink-0 mt-0.5">
-              <ShieldCheck className="h-5 w-5 text-totvs-cyan" />
+            <div className="w-10 h-10 rounded-xl bg-brand-blue/15 border border-brand-blue/25 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <ShieldCheck className="h-5 w-5 text-brand-blue" />
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-semibold text-white">
                 Privacidade e Cookies{' '}
-                <span className="text-totvs-cyan font-bold">·</span>{' '}
+                <span className="text-brand-blue font-bold">·</span>{' '}
                 LGPD
               </p>
               <p className="mt-1.5 text-sm text-white/55 leading-relaxed max-w-2xl">
@@ -98,14 +98,14 @@ export default function CookieConsentBanner() {
                 Consulte nossa{' '}
                 <Link
                   to="/privacidade"
-                  className="text-totvs-cyan underline underline-offset-2 hover:brightness-125 transition-all"
+                  className="text-brand-blue underline underline-offset-2 hover:brightness-125 transition-all"
                 >
                   Política de Privacidade
                 </Link>{' '}
                 e nossos{' '}
                 <Link
                   to="/termos"
-                  className="text-totvs-cyan underline underline-offset-2 hover:brightness-125 transition-all"
+                  className="text-brand-blue underline underline-offset-2 hover:brightness-125 transition-all"
                 >
                   Termos de Uso
                 </Link>
@@ -128,7 +128,7 @@ export default function CookieConsentBanner() {
             </button>
 
             <button
-              className="h-10 rounded-full bg-totvs-cyan text-slate-950 px-5 text-sm font-bold hover:brightness-110 hover:shadow-lg hover:shadow-totvs-cyan/30 transition-all duration-200"
+              className="h-10 rounded-full bg-brand-blue text-slate-950 px-5 text-sm font-bold hover:brightness-110 hover:shadow-lg hover:shadow-brand-blue/30 transition-all duration-200"
               onClick={() => {
                 setCookieConsentStatus('granted')
                 setConsent('granted')

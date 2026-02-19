@@ -39,10 +39,10 @@ export default function TrabalheConosco() {
 
           <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl">
-              <p className="text-totvs-cyan font-semibold uppercase tracking-wide text-sm">Trabalhe conosco</p>
+              <p className="text-brand-blue font-semibold uppercase tracking-wide text-sm">Trabalhe conosco</p>
               <h1 className="mt-4 font-display text-4xl sm:text-6xl font-bold text-white leading-tight">
                 Construa coisas que importam, com um time que{' '}
-                <span className="text-totvs-cyan">leva qualidade a sério</span>
+                <span className="text-brand-blue">leva qualidade a sério</span>
               </h1>
               <p className="mt-6 text-white/75 text-xl leading-relaxed max-w-2xl">
                 Na Metaclass, profissionais de tecnologia trabalham em produtos e sistemas que geram impacto real —
@@ -51,14 +51,14 @@ export default function TrabalheConosco() {
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <a
                   href="mailto:talentos@metaclass.com.br?subject=Trabalhe%20conosco%20-%20Metaclass"
-                  className="inline-flex items-center gap-2 bg-gradient-totvs text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:shadow-totvs-cyan/30 transition-all duration-300"
+                  className="inline-flex items-center gap-2 bg-gradient-totvs text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:shadow-brand-blue/30 transition-all duration-300"
                 >
                   Enviar currículo
                   <ArrowRight className="w-5 h-5" />
                 </a>
                 <a
                   href="/quem-somos"
-                  className="inline-flex items-center gap-2 border border-slate-700 text-white/90 px-8 py-4 rounded-full font-bold hover:border-totvs-cyan hover:text-totvs-cyan transition-all duration-300"
+                  className="inline-flex items-center gap-2 border border-slate-700 text-white/90 px-8 py-4 rounded-full font-bold hover:border-brand-blue hover:text-brand-blue transition-all duration-300"
                 >
                   Conhecer a Metaclass
                 </a>
@@ -72,7 +72,7 @@ export default function TrabalheConosco() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-12 gap-14 items-start">
               <div className="lg:col-span-5">
-                <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Nosso jeito</div>
+                <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Nosso jeito</div>
                 <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold leading-tight">
                   Remote-first, sem abrir mão do profissionalismo
                 </h2>
@@ -94,7 +94,7 @@ export default function TrabalheConosco() {
                     'Autonomia técnica com responsabilidade compartilhada',
                   ].map((t) => (
                     <div key={t} className="flex items-start gap-3 text-sm text-gray-700">
-                      <CheckCircle2 className="w-5 h-5 text-totvs-cyan mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-5 h-5 text-brand-blue mt-0.5 flex-shrink-0" />
                       <span>{t}</span>
                     </div>
                   ))}
@@ -125,7 +125,7 @@ export default function TrabalheConosco() {
                   },
                 ].map((c) => (
                   <div key={c.title} className="rounded-3xl border border-gray-100 bg-gray-50 p-7 hover:shadow-lg transition-all duration-300">
-                    <div className="w-12 h-12 rounded-2xl bg-totvs-cyan/10 border border-totvs-cyan/20 text-totvs-cyan flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 border border-brand-blue/20 text-brand-blue flex items-center justify-center">
                       <c.icon className="w-6 h-6" />
                     </div>
                     <div className="mt-5 font-bold text-xl">{c.title}</div>
@@ -141,7 +141,7 @@ export default function TrabalheConosco() {
         <section className="py-20 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto text-center mb-12">
-              <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Cultura</div>
+              <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Cultura</div>
               <h2 className="mt-3 font-display text-4xl font-bold text-white">O que valorizamos em quem trabalha conosco</h2>
               <p className="mt-4 text-white/70 leading-relaxed">
                 Mais do que skills técnicas, buscamos pessoas que se identificam com nossa forma de trabalhar.
@@ -182,8 +182,8 @@ export default function TrabalheConosco() {
                 },
               ].map((v) => (
                 <div key={v.title} className="rounded-3xl border border-slate-800 bg-slate-900/60 p-7">
-                  <div className="w-11 h-11 rounded-2xl bg-totvs-cyan/15 border border-totvs-cyan/20 flex items-center justify-center mb-4">
-                    <v.icon className="w-5 h-5 text-totvs-cyan" />
+                  <div className="w-11 h-11 rounded-2xl bg-brand-blue/15 border border-brand-blue/20 flex items-center justify-center mb-4">
+                    <v.icon className="w-5 h-5 text-brand-blue" />
                   </div>
                   <div className="font-bold text-white text-lg">{v.title}</div>
                   <div className="mt-2 text-white/60 text-sm leading-relaxed">{v.text}</div>
@@ -197,7 +197,7 @@ export default function TrabalheConosco() {
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
-              <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Perfis</div>
+              <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Perfis</div>
               <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">
                 Áreas em que sempre estamos de olho
               </h2>
@@ -249,7 +249,7 @@ export default function TrabalheConosco() {
                 <div key={a.area} className="rounded-3xl border border-gray-100 bg-white shadow-lg p-7 hover:shadow-xl transition-all duration-300">
                   <div className="flex items-start justify-between">
                     <div className="font-bold text-lg">{a.area}</div>
-                    <div className="text-xs font-semibold text-totvs-cyan border border-totvs-cyan/30 rounded-full px-2.5 py-1 bg-totvs-cyan/5 whitespace-nowrap ml-2">
+                    <div className="text-xs font-semibold text-brand-blue border border-brand-blue/30 rounded-full px-2.5 py-1 bg-brand-blue/5 whitespace-nowrap ml-2">
                       {a.seniority}
                     </div>
                   </div>
@@ -257,7 +257,7 @@ export default function TrabalheConosco() {
                   <div className="mt-5 space-y-1.5">
                     {a.stack.map((s) => (
                       <div key={s} className="flex items-start gap-2 text-xs text-gray-600">
-                        <div className="w-1.5 h-1.5 rounded-full bg-totvs-cyan mt-1.5 flex-shrink-0" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand-blue mt-1.5 flex-shrink-0" />
                         {s}
                       </div>
                     ))}
@@ -272,7 +272,7 @@ export default function TrabalheConosco() {
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Benefícios</div>
+              <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Benefícios</div>
               <h2 className="mt-3 font-display text-3xl md:text-4xl font-bold">O que faz parte do pacote</h2>
               <p className="mt-3 text-gray-600 max-w-xl mx-auto">
                 Além de trabalho desafiador, oferecemos condições para você trabalhar com qualidade de vida.
@@ -303,7 +303,7 @@ export default function TrabalheConosco() {
                 },
               ].map((b) => (
                 <div key={b.title} className="rounded-3xl border border-gray-100 bg-white shadow-lg p-7">
-                  <div className="w-12 h-12 rounded-2xl bg-totvs-cyan/10 border border-totvs-cyan/20 text-totvs-cyan flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 border border-brand-blue/20 text-brand-blue flex items-center justify-center">
                     <b.icon className="w-6 h-6" />
                   </div>
                   <div className="mt-5 font-bold text-lg">{b.title}</div>
@@ -320,7 +320,7 @@ export default function TrabalheConosco() {
             <div className="rounded-3xl bg-white border border-gray-100 shadow-xl p-8 md:p-14">
               <div className="grid md:grid-cols-12 gap-10 items-start">
                 <div className="md:col-span-4">
-                  <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Processo seletivo</div>
+                  <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Processo seletivo</div>
                   <div className="mt-3 font-display text-3xl md:text-4xl font-bold leading-tight">Objetivo, respeitoso e transparente</div>
                   <div className="mt-4 text-gray-600 text-lg leading-relaxed">
                     Nosso processo é desenhado para avaliar o que importa de verdade — experiência real, forma de
@@ -333,7 +333,7 @@ export default function TrabalheConosco() {
                       'Prazos e próximos passos sempre comunicados',
                     ].map((t) => (
                       <div key={t} className="flex items-start gap-2 text-sm text-gray-700">
-                        <CheckCircle2 className="w-4 h-4 text-totvs-cyan mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-brand-blue mt-0.5 flex-shrink-0" />
                         <span>{t}</span>
                       </div>
                     ))}
@@ -390,13 +390,13 @@ export default function TrabalheConosco() {
             <div className="rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border border-slate-800 p-10 md:p-16">
               <div className="grid md:grid-cols-12 gap-8 items-center">
                 <div className="md:col-span-8">
-                  <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Pronto para começar?</div>
+                  <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Pronto para começar?</div>
                   <div className="mt-3 font-display text-3xl md:text-4xl font-bold text-white leading-tight">
                     Envie seu perfil e vamos ver se existe fit
                   </div>
                   <div className="mt-4 text-white/70 text-lg leading-relaxed">
                     Mande seu currículo ou LinkedIn para{' '}
-                    <span className="text-totvs-cyan font-semibold">talentos@metaclass.com.br</span> com:
+                    <span className="text-brand-blue font-semibold">talentos@metaclass.com.br</span> com:
                     sua área de atuação, senioridade, stack principal e links de trabalhos anteriores, se tiver.
                   </div>
                   <div className="mt-4 text-white/50 text-sm">
@@ -406,7 +406,7 @@ export default function TrabalheConosco() {
                 <div className="md:col-span-4 flex md:justify-end">
                   <a
                     href="mailto:talentos@metaclass.com.br?subject=Trabalhe%20conosco%20-%20Metaclass"
-                    className="inline-flex items-center justify-center gap-2 bg-gradient-totvs text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:shadow-totvs-cyan/30 transition-all duration-300 w-full md:w-auto"
+                    className="inline-flex items-center justify-center gap-2 bg-gradient-totvs text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:shadow-brand-blue/30 transition-all duration-300 w-full md:w-auto"
                   >
                     <Mail className="w-5 h-5" />
                     Enviar currículo

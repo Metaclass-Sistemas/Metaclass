@@ -36,10 +36,10 @@ export default function QuemSomos() {
 
           <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl">
-              <p className="text-totvs-cyan font-semibold tracking-wide uppercase text-sm">Quem somos</p>
+              <p className="text-brand-blue font-semibold tracking-wide uppercase text-sm">Quem somos</p>
               <h1 className="mt-4 font-display text-4xl sm:text-6xl font-bold text-white leading-tight">
                 Tecnologia que transforma operações em{' '}
-                <span className="text-totvs-cyan">vantagem competitiva</span>
+                <span className="text-brand-blue">vantagem competitiva</span>
               </h1>
               <p className="mt-6 text-white/75 text-xl leading-relaxed max-w-2xl">
                 A Metaclass é uma empresa de tecnologia especializada em engenharia de software enterprise. Combinamos
@@ -49,14 +49,14 @@ export default function QuemSomos() {
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <a
                   href="/contato"
-                  className="inline-flex items-center gap-2 bg-gradient-totvs text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:shadow-totvs-cyan/30 transition-all duration-300"
+                  className="inline-flex items-center gap-2 bg-gradient-totvs text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:shadow-brand-blue/30 transition-all duration-300"
                 >
                   Falar com especialista
                   <ArrowRight className="w-5 h-5" />
                 </a>
                 <a
                   href="/cases"
-                  className="inline-flex items-center gap-2 border border-slate-700 text-white/90 px-8 py-4 rounded-full font-bold hover:border-totvs-cyan hover:text-totvs-cyan transition-all duration-300"
+                  className="inline-flex items-center gap-2 border border-slate-700 text-white/90 px-8 py-4 rounded-full font-bold hover:border-brand-blue hover:text-brand-blue transition-all duration-300"
                 >
                   Ver resultados
                 </a>
@@ -76,8 +76,8 @@ export default function QuemSomos() {
                 { value: 'LGPD', label: 'conformidade nativa em todos os sistemas desenvolvidos', icon: ShieldCheck },
               ].map((s) => (
                 <div key={s.label} className="rounded-3xl border border-slate-800 bg-slate-900 p-7">
-                  <div className="w-12 h-12 rounded-2xl bg-totvs-cyan/15 border border-totvs-cyan/20 flex items-center justify-center">
-                    <s.icon className="w-6 h-6 text-totvs-cyan" />
+                  <div className="w-12 h-12 rounded-2xl bg-brand-blue/15 border border-brand-blue/20 flex items-center justify-center">
+                    <s.icon className="w-6 h-6 text-brand-blue" />
                   </div>
                   <div className="mt-4 font-display text-4xl font-bold text-white">{s.value}</div>
                   <div className="mt-2 text-sm text-white/60 leading-snug">{s.label}</div>
@@ -92,7 +92,7 @@ export default function QuemSomos() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-12 gap-14 items-start">
               <div className="lg:col-span-5">
-                <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Nossa origem</div>
+                <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Nossa origem</div>
                 <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold leading-tight">
                   Nascemos para resolver problemas reais — não para vender horas
                 </h2>
@@ -113,7 +113,7 @@ export default function QuemSomos() {
                     'Evolução contínua: sustentação ativa, observabilidade e roadmap orientado a negócio',
                   ].map((t) => (
                     <div key={t} className="flex items-start gap-3 text-sm text-gray-700">
-                      <CheckCircle2 className="w-5 h-5 text-totvs-cyan mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-5 h-5 text-brand-blue mt-0.5 flex-shrink-0" />
                       <span>{t}</span>
                     </div>
                   ))}
@@ -144,7 +144,7 @@ export default function QuemSomos() {
                   },
                 ].map((c) => (
                   <div key={c.title} className="rounded-3xl border border-gray-100 bg-gray-50 p-7 hover:shadow-lg transition-all duration-300">
-                    <div className="w-12 h-12 rounded-2xl bg-totvs-cyan/10 border border-totvs-cyan/20 text-totvs-cyan flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 border border-brand-blue/20 text-brand-blue flex items-center justify-center">
                       <c.icon className="w-6 h-6" />
                     </div>
                     <div className="mt-5 font-bold text-xl">{c.title}</div>
@@ -160,7 +160,7 @@ export default function QuemSomos() {
         <section className="py-24 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
-              <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Nossa crença</div>
+              <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Nossa crença</div>
               <h2 className="mt-4 font-display text-4xl md:text-5xl font-bold text-white leading-tight">
                 Tecnologia que não gera resultado é custo
               </h2>
@@ -190,8 +190,8 @@ export default function QuemSomos() {
                 },
               ].map((p) => (
                 <div key={p.title} className="rounded-3xl border border-slate-800 bg-slate-900/60 p-8">
-                  <div className="w-12 h-12 rounded-2xl bg-totvs-cyan/15 border border-totvs-cyan/20 flex items-center justify-center">
-                    <p.icon className="w-6 h-6 text-totvs-cyan" />
+                  <div className="w-12 h-12 rounded-2xl bg-brand-blue/15 border border-brand-blue/20 flex items-center justify-center">
+                    <p.icon className="w-6 h-6 text-brand-blue" />
                   </div>
                   <div className="mt-5 font-bold text-xl text-white">{p.title}</div>
                   <div className="mt-3 text-white/60 leading-relaxed">{p.text}</div>
@@ -206,7 +206,7 @@ export default function QuemSomos() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-14 items-center">
               <div>
-                <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Cultura</div>
+                <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Cultura</div>
                 <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold leading-tight">
                   Um time que pensa em produto, não só em tarefa
                 </h2>
@@ -245,7 +245,7 @@ export default function QuemSomos() {
                   },
                 ].map((c) => (
                   <div key={c.title} className="rounded-3xl border border-gray-100 bg-gray-50 p-6">
-                    <div className="w-10 h-10 rounded-xl bg-totvs-cyan/10 border border-totvs-cyan/20 text-totvs-cyan flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-brand-blue/10 border border-brand-blue/20 text-brand-blue flex items-center justify-center">
                       <c.icon className="w-5 h-5" />
                     </div>
                     <div className="mt-4 font-bold text-base">{c.title}</div>
@@ -261,7 +261,7 @@ export default function QuemSomos() {
         <section className="py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto">
-              <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Nossa jornada</div>
+              <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Nossa jornada</div>
               <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">Da prática ao padrão enterprise</h2>
               <p className="mt-4 text-lg text-gray-600">
                 Cada fase da nossa trajetória foi construída com aprendizado real — de projeto em projeto, cliente em
@@ -291,7 +291,7 @@ export default function QuemSomos() {
                 },
               ].map((m) => (
                 <div key={m.title} className="rounded-3xl border border-gray-100 bg-white shadow-lg p-8 hover:shadow-xl transition-all duration-300">
-                  <div className="inline-block text-xs font-bold text-totvs-cyan border border-totvs-cyan/30 rounded-full px-3 py-1 bg-totvs-cyan/5">
+                  <div className="inline-block text-xs font-bold text-brand-blue border border-brand-blue/30 rounded-full px-3 py-1 bg-brand-blue/5">
                     {m.phase}
                   </div>
                   <div className="mt-4 font-bold text-xl">{m.title}</div>
@@ -299,7 +299,7 @@ export default function QuemSomos() {
                   <div className="mt-5 space-y-2">
                     {m.highlights.map((h) => (
                       <div key={h} className="flex items-start gap-2 text-xs text-gray-600">
-                        <CheckCircle2 className="w-4 h-4 text-totvs-cyan mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-brand-blue mt-0.5 flex-shrink-0" />
                         <span>{h}</span>
                       </div>
                     ))}
@@ -316,7 +316,7 @@ export default function QuemSomos() {
             <div className="rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border border-slate-800 p-10 md:p-16">
               <div className="grid md:grid-cols-12 gap-8 items-center">
                 <div className="md:col-span-8">
-                  <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Próximo passo</div>
+                  <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Próximo passo</div>
                   <div className="mt-3 font-display text-3xl md:text-4xl font-bold text-white leading-tight">
                     Vamos mapear seu cenário e construir um plano de entrega sob medida
                   </div>
@@ -328,7 +328,7 @@ export default function QuemSomos() {
                 <div className="md:col-span-4 flex md:justify-end">
                   <a
                     href="/contato"
-                    className="inline-flex items-center justify-center gap-2 bg-gradient-totvs text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:shadow-totvs-cyan/30 transition-all duration-300 w-full md:w-auto"
+                    className="inline-flex items-center justify-center gap-2 bg-gradient-totvs text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:shadow-brand-blue/30 transition-all duration-300 w-full md:w-auto"
                   >
                     Solicitar contato
                     <ArrowRight className="w-5 h-5" />

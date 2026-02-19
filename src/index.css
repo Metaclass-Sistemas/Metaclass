@@ -15,7 +15,7 @@
 
 @layer utilities {
   .text-gradient {
-    @apply text-totvs-cyan;
+    @apply text-brand-blue;
   }
   
   .bg-gradient-totvs {

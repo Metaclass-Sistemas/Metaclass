@@ -15,8 +15,6 @@ import {
   Code2,
   Star,
   TrendingUp,
-  Headphones,
-  Award,
 } from 'lucide-react'
 
 /* ─── ANIMATED COUNTER ──────────────────────────────────── */
@@ -60,63 +58,194 @@ function useInView(threshold = 0.3) {
 const slides = [
   {
     id: 0,
-    /* fundo: escuro + gradiente lateral suave */
-    bgClass: 'bg-gradient-to-r from-slate-950 via-slate-900 to-[#0c1a2e]',
-    badge: 'Engenharia Enterprise · Brasil',
-    eyebrow: 'Parceiro técnico de ponta a ponta',
-    headline: 'Sistemas críticos construídos com método, governança e foco em resultado',
-    sub: 'Squads dedicados, integrações robustas, modernização e sustentação — do discovery ao go-live.',
+    badge: 'Parceiro técnico · Enterprise · Brasil',
+    headline: 'Sistemas críticos entregues',
+    headlineAccent: 'com método e resultado',
+    sub: 'Squads dedicados, arquitetura robusta e governança ativa — do discovery ao go-live. Sem surpresas, sem retrabalho.',
     cta: { label: 'Falar com especialista', href: '/contato' },
     ctaSecondary: { label: 'Ver serviços', href: '/servicos' },
-    statsRow: [
-      { value: '+50', label: 'projetos entregues' },
-      { value: '+30', label: 'clientes ativos' },
-      { value: '99.8%', label: 'uptime médio' },
+    stats: [
+      { value: '+50', label: 'Projetos' },
+      { value: '+30', label: 'Clientes' },
+      { value: '99.8%', label: 'Uptime' },
+      { value: '<48h', label: 'SLA' },
     ],
-    photo: {
-      src: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80',
-      alt: 'Profissional de tecnologia',
-    },
-    accent: 'text-totvs-cyan',
-    tagBg: 'bg-totvs-cyan/10 border-totvs-cyan/30 text-totvs-cyan',
+    visual: 'tech' as const,
   },
   {
     id: 1,
-    /* fundo: gradiente mais claro / azul-aço */
-    bgClass: 'bg-gradient-to-r from-[#0f2944] via-[#0a1f38] to-slate-950',
-    badge: 'Produto SaaS · BeautyGest by Metaclass',
-    eyebrow: 'Gestão completa para o setor de beleza',
-    headline: 'Do agendamento ao financeiro: uma plataforma para gerenciar tudo com profissionalismo',
-    sub: 'Salões, barbearias e clínicas estéticas que usam o BeautyGest fecham mais, perdem menos e crescem com controle.',
+    badge: 'Produto SaaS · Setor de Beleza',
+    headline: 'Do agendamento ao financeiro,',
+    headlineAccent: 'uma plataforma para crescer',
+    sub: 'Agenda inteligente, CRM, comissões automáticas e relatórios em tempo real. O que o seu negócio de beleza precisa.',
     cta: { label: 'Conhecer BeautyGest', href: '/produtos' },
     ctaSecondary: { label: 'Solicitar demo', href: '/contato' },
-    statsRow: [
-      { value: '+28%', label: 'receita média' },
-      { value: '-30%', label: 'cancelamentos' },
-      { value: '3h/dia', label: 'economizadas' },
+    stats: [
+      { value: '+28%', label: 'Receita' },
+      { value: '-30%', label: 'Faltas' },
+      { value: '3h/dia', label: 'Economizadas' },
+      { value: '4.9★', label: 'Avaliação' },
     ],
-    photo: {
-      src: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=80',
-      alt: 'Profissional do setor de beleza',
-    },
-    accent: 'text-cyan-400',
-    tagBg: 'bg-cyan-400/10 border-cyan-400/30 text-cyan-400',
+    visual: 'beauty' as const,
   },
 ]
 
+/* ─── MOCK VISUAL: TECH (slide 0) ────────────────────────── */
+function TechVisual() {
+  return (
+    <div className="relative w-full max-w-[430px] ml-auto">
+      {/* glow atrás do card */}
+      <div className="absolute -inset-6 bg-brand-blue/15 rounded-3xl blur-2xl pointer-events-none" />
+
+      {/* card principal */}
+      <div className="relative rounded-2xl bg-[#0d1b2a] border border-brand-blue/20 p-6 shadow-2xl">
+        {/* header */}
+        <div className="flex items-center justify-between mb-5">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            <span className="text-white/55 text-xs">Sistema em produção</span>
+          </div>
+          <span className="text-[10px] font-mono text-white/25">v2.4.1</span>
+        </div>
+
+        {/* métrica principal */}
+        <div className="mb-4">
+          <div className="text-white/35 text-[11px] mb-1">Receita processada (mês)</div>
+          <div className="flex items-end gap-3">
+            <span className="font-display text-3xl font-bold text-white leading-none">R$&nbsp;284.500</span>
+            <span className="text-green-400 text-xs font-bold mb-0.5 flex items-center gap-1">
+              <TrendingUp className="w-3 h-3" />+23%
+            </span>
+          </div>
+        </div>
+
+        {/* sparkline */}
+        <div className="flex items-end gap-1 h-14 mb-5">
+          {[35, 55, 42, 68, 60, 78, 65, 90, 72, 88, 55, 100].map((h, i) => (
+            <div
+              key={i}
+              className="flex-1 rounded-sm"
+              style={{
+                height: `${h}%`,
+                backgroundColor: i === 11 ? '#60A5FA' : 'rgba(96,165,250,0.22)',
+              }}
+            />
+          ))}
+        </div>
+
+        {/* linha de stats */}
+        <div className="grid grid-cols-3 gap-2 border-t border-white/5 pt-4">
+          {[
+            { v: '12', l: 'deploys/sem' },
+            { v: '99.8%', l: 'uptime' },
+            { v: '0', l: 'incidentes' },
+          ].map((s) => (
+            <div key={s.l}>
+              <div className="text-brand-blue text-sm font-bold">{s.v}</div>
+              <div className="text-white/35 text-[10px]">{s.l}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* badge flutuante: LGPD */}
+      <div className="absolute -top-4 -left-10 flex items-center gap-2 bg-slate-900/90 backdrop-blur-md border border-white/10 rounded-xl px-3 py-2.5 shadow-xl">
+        <ShieldCheck className="w-4 h-4 text-brand-blue shrink-0" />
+        <div>
+          <div className="text-white text-[11px] font-semibold">LGPD by design</div>
+          <div className="text-white/40 text-[9px]">Conformidade garantida</div>
+        </div>
+      </div>
+
+      {/* badge flutuante: CI/CD */}
+      <div className="absolute -bottom-4 right-2 flex items-center gap-2 bg-slate-900/90 backdrop-blur-md border border-white/10 rounded-xl px-3 py-2.5 shadow-xl">
+        <Zap className="w-4 h-4 text-yellow-400 shrink-0" />
+        <div>
+          <div className="text-white text-[11px] font-semibold">CI/CD automático</div>
+          <div className="text-white/40 text-[9px]">Deploy em segundos</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ─── MOCK VISUAL: BEAUTYGEST (slide 1) ──────────────────── */
+const appointments = [
+  { time: '09:00', client: 'Ana Santos', service: 'Corte + Escova', dot: 'bg-pink-500' },
+  { time: '10:30', client: 'Carlos R.', service: 'Coloração completa', dot: 'bg-purple-400' },
+  { time: '14:00', client: 'Maria J.', service: 'Hidratação', dot: 'bg-sky-400' },
+  { time: '16:30', client: 'Fernanda L.', service: 'Manicure + Pedicure', dot: 'bg-rose-400' },
+]
+
+function BeautyVisual() {
+  return (
+    <div className="relative w-full max-w-[430px] ml-auto">
+      <div className="absolute -inset-6 bg-sky-400/10 rounded-3xl blur-2xl pointer-events-none" />
+
+      <div className="relative rounded-2xl bg-[#0d1b2a] border border-sky-400/20 p-6 shadow-2xl">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-2">
+            <Clock className="w-3.5 h-3.5 text-sky-400" />
+            <span className="text-white/55 text-xs">Agenda de hoje</span>
+          </div>
+          <span className="text-[10px] text-white/25">Ter, 18 Fev</span>
+        </div>
+
+        <div className="space-y-0">
+          {appointments.map((a) => (
+            <div key={a.time} className="flex items-center gap-3 py-2.5 border-b border-white/5 last:border-0">
+              <span className="text-white/35 text-[11px] font-mono w-9 shrink-0">{a.time}</span>
+              <div className={`w-1 h-7 rounded-full ${a.dot} shrink-0`} />
+              <div className="min-w-0">
+                <div className="text-white text-xs font-semibold truncate">{a.client}</div>
+                <div className="text-white/40 text-[10px] truncate">{a.service}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-4 rounded-xl bg-sky-400/10 border border-sky-400/20 px-4 py-2.5 flex items-center justify-between">
+          <span className="text-white/45 text-xs">Caixa do dia</span>
+          <span className="text-sky-400 text-sm font-bold">R$ 1.840,00</span>
+        </div>
+      </div>
+
+      <div className="absolute -top-4 -left-10 flex items-center gap-2 bg-slate-900/90 backdrop-blur-md border border-white/10 rounded-xl px-3 py-2.5 shadow-xl">
+        <TrendingUp className="w-4 h-4 text-green-400 shrink-0" />
+        <div>
+          <div className="text-white text-[11px] font-bold">+28% receita</div>
+          <div className="text-white/40 text-[9px]">vs. mês anterior</div>
+        </div>
+      </div>
+
+      <div className="absolute -bottom-4 right-2 flex items-center gap-2 bg-slate-900/90 backdrop-blur-md border border-white/10 rounded-xl px-3 py-2.5 shadow-xl">
+        <Star className="w-4 h-4 text-yellow-400 fill-yellow-400 shrink-0" />
+        <div>
+          <div className="text-white text-[11px] font-bold">4.9 / 5.0</div>
+          <div className="text-white/40 text-[9px]">Avaliação dos usuários</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 /* ─── HERO CAROUSEL ──────────────────────────────────────── */
+const SLIDE_DURATION = 6000
+
 function HeroCarousel() {
   const [current, setCurrent] = useState(0)
   const [animating, setAnimating] = useState(false)
+  const [progress, setProgress] = useState(0)
 
   const goTo = useCallback(
     (idx: number) => {
       if (animating) return
       setAnimating(true)
+      setProgress(0)
       setTimeout(() => {
         setCurrent(idx)
         setAnimating(false)
-      }, 300)
+      }, 350)
     },
     [animating],
   )
@@ -124,58 +253,72 @@ function HeroCarousel() {
   const prev = () => goTo((current - 1 + slides.length) % slides.length)
   const next = useCallback(() => goTo((current + 1) % slides.length), [current, goTo])
 
-  /* auto-advance a cada 6 segundos */
+  /* barra de progresso */
   useEffect(() => {
-    const t = setInterval(next, 6000)
+    setProgress(0)
+    const start = Date.now()
+    const id = setInterval(() => {
+      setProgress(Math.min(((Date.now() - start) / SLIDE_DURATION) * 100, 100))
+    }, 50)
+    return () => clearInterval(id)
+  }, [current])
+
+  /* auto-advance */
+  useEffect(() => {
+    const t = setInterval(next, SLIDE_DURATION)
     return () => clearInterval(t)
   }, [next])
 
   const s = slides[current]
 
   return (
-    <div className={`relative overflow-hidden ${s.bgClass} transition-colors duration-700`} style={{ minHeight: '88vh' }}>
-      {/* grade de fundo */}
-      <div className="absolute inset-0 opacity-[0.04]">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(0,201,235,0.2) 1px,transparent 1px),linear-gradient(90deg,rgba(0,201,235,0.2) 1px,transparent 1px)',
-            backgroundSize: '60px 60px',
-          }}
-        />
-      </div>
-
-      {/* blur decorativo topo-direita */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-totvs-cyan/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-blue-900/20 rounded-full blur-3xl pointer-events-none" />
-
+    <div
+      className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-[#091522] to-slate-950"
+      style={{ minHeight: '92vh' }}
+    >
+      {/* padrão de pontos */}
       <div
-        className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center transition-opacity duration-300 ${animating ? 'opacity-0' : 'opacity-100'}`}
-        style={{ minHeight: '88vh' }}
-      >
-        <div className="w-full grid lg:grid-cols-12 gap-0 lg:gap-8 items-center py-20">
+        className="absolute inset-0 opacity-[0.035]"
+        style={{
+          backgroundImage: 'radial-gradient(circle, rgba(96,165,250,0.9) 1px, transparent 1px)',
+          backgroundSize: '30px 30px',
+        }}
+      />
+      {/* orb topo-direita */}
+      <div className="absolute -top-32 -right-32 w-[580px] h-[580px] rounded-full bg-brand-blue/8 blur-3xl pointer-events-none" />
+      {/* orb baixo-esquerda */}
+      <div className="absolute -bottom-32 -left-16 w-[420px] h-[420px] rounded-full bg-blue-900/18 blur-3xl pointer-events-none" />
 
-          {/* ── COLUNA ESQUERDA ── */}
-          <div className="lg:col-span-6 xl:col-span-5 flex flex-col gap-0">
-            {/* badge topo */}
-            <div className={`inline-flex self-start items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold mb-6 ${s.tagBg}`}>
-              <span className="w-1.5 h-1.5 rounded-full bg-current" />
+      {/* conteúdo */}
+      <div
+        className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center
+          transition-all duration-300 ease-out
+          ${animating ? 'opacity-0 translate-y-3' : 'opacity-100 translate-y-0'}`}
+        style={{ minHeight: '92vh' }}
+      >
+        <div className="w-full grid lg:grid-cols-12 gap-12 items-center py-24">
+
+          {/* ── ESQUERDA: texto ── */}
+          <div className="lg:col-span-6 flex flex-col">
+            {/* badge */}
+            <div className="inline-flex self-start items-center gap-2 rounded-full border border-brand-blue/30 bg-brand-blue/10 px-4 py-1.5 text-xs font-semibold text-brand-blue mb-7 tracking-wide">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-blue animate-pulse" />
               {s.badge}
             </div>
 
-            {/* eyebrow */}
-            <p className="text-white/50 text-sm font-medium uppercase tracking-widest mb-3">
-              {s.eyebrow}
-            </p>
-
-            {/* headline — tamanho moderado */}
-            <h1 className="font-display text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-white leading-[1.15] mb-5">
-              {s.headline}
+            {/* headline — tipografia de impacto */}
+            <h1
+              className="font-display font-extrabold text-white leading-[1.07] mb-6"
+              style={{ fontSize: 'clamp(2rem, 4.2vw, 3.5rem)' }}
+            >
+              {s.headline}{' '}
+              <span className="bg-gradient-to-r from-brand-blue via-blue-300 to-sky-300 bg-clip-text text-transparent">
+                {s.headlineAccent}
+              </span>
             </h1>
 
             {/* subtítulo */}
-            <p className="text-white/65 text-base lg:text-lg leading-relaxed mb-8 max-w-lg">
+            <p className="text-white/58 text-base lg:text-lg leading-relaxed mb-9 max-w-xl">
               {s.sub}
             </p>
 
@@ -183,116 +326,75 @@ function HeroCarousel() {
             <div className="flex flex-wrap gap-3 mb-10">
               <a
                 href={s.cta.href}
-                className="inline-flex items-center gap-2 bg-totvs-cyan text-slate-950 px-6 py-3 rounded-full font-bold text-sm hover:brightness-110 hover:shadow-xl hover:shadow-totvs-cyan/30 transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-blue to-blue-400 text-slate-950 px-7 py-3.5 rounded-full font-bold text-sm hover:shadow-xl hover:shadow-brand-blue/30 hover:scale-[1.02] transition-all duration-300"
               >
                 {s.cta.label}
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href={s.ctaSecondary.href}
-                className="inline-flex items-center gap-2 border border-white/20 text-white/85 px-6 py-3 rounded-full font-semibold text-sm hover:border-white/50 hover:text-white transition-all duration-300"
+                className="inline-flex items-center gap-2 border border-white/15 text-white/70 px-7 py-3.5 rounded-full font-semibold text-sm hover:border-white/35 hover:text-white transition-all duration-300"
               >
                 {s.ctaSecondary.label}
               </a>
             </div>
 
-            {/* linha de stats */}
-            <div className="flex gap-6 border-t border-white/10 pt-6">
-              {s.statsRow.map((st) => (
+            {/* stats */}
+            <div className="flex gap-6 sm:gap-8 border-t border-white/8 pt-6">
+              {s.stats.map((st) => (
                 <div key={st.label}>
-                  <div className={`font-display text-2xl font-bold ${s.accent}`}>{st.value}</div>
-                  <div className="text-white/45 text-xs mt-0.5">{st.label}</div>
+                  <div className="font-display text-2xl font-bold text-brand-blue">{st.value}</div>
+                  <div className="text-white/38 text-xs mt-0.5">{st.label}</div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* ── COLUNA DIREITA — FOTO ── */}
-          <div className="hidden lg:flex lg:col-span-6 xl:col-span-7 items-end justify-end relative">
-            {/* card flutuante topo-esquerdo da foto */}
-            <div className="absolute top-10 -left-4 z-20 bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl px-4 py-3 flex items-center gap-3 shadow-xl">
-              <div className="w-8 h-8 rounded-xl bg-totvs-cyan/20 flex items-center justify-center">
-                <ShieldCheck className="w-4 h-4 text-totvs-cyan" />
-              </div>
-              <div>
-                <div className="text-white font-semibold text-xs">LGPD by design</div>
-                <div className="text-white/50 text-[10px]">Segurança em cada entrega</div>
-              </div>
-            </div>
-
-            {/* card flutuante baixo-direito da foto */}
-            <div className="absolute bottom-14 -left-2 z-20 bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl px-4 py-3 flex items-center gap-3 shadow-xl">
-              <div className="w-8 h-8 rounded-xl bg-totvs-cyan/20 flex items-center justify-center">
-                <BarChart3 className="w-4 h-4 text-totvs-cyan" />
-              </div>
-              <div>
-                <div className="text-white font-semibold text-xs">Resultado mensurável</div>
-                <div className="text-white/50 text-[10px]">KPIs de negócio em cada sprint</div>
-              </div>
-            </div>
-
-            {/* foto principal */}
-            <div className="relative w-full max-w-lg ml-auto">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10" />
-              <img
-                src={s.photo.src}
-                alt={s.photo.alt}
-                className="w-full h-[560px] object-cover rounded-3xl shadow-2xl"
-                loading="eager"
-              />
-            </div>
+          {/* ── DIREITA: visual mockado ── */}
+          <div className="hidden lg:flex lg:col-span-6 items-center justify-end">
+            {s.visual === 'tech' ? <TechVisual /> : <BeautyVisual />}
           </div>
         </div>
       </div>
 
-      {/* ── CONTROLES ── */}
-      {/* setas — no mobile ficam embaixo ao lado dos dots, no desktop ficam nas laterais */}
-      <button
-        onClick={prev}
-        aria-label="Anterior"
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm hidden md:flex items-center justify-center text-white hover:bg-white/20 transition-all duration-200"
-      >
+      {/* barra de progresso */}
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/5 z-20">
+        <div
+          className="h-full bg-brand-blue"
+          style={{ width: `${progress}%`, transition: 'width 50ms linear' }}
+        />
+      </div>
+
+      {/* setas — desktop */}
+      <button onClick={prev} aria-label="Anterior"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 hidden md:flex w-10 h-10 rounded-full items-center justify-center bg-white/8 border border-white/12 text-white hover:bg-white/15 transition-all duration-200">
         <ChevronLeft className="w-5 h-5" />
       </button>
-      <button
-        onClick={next}
-        aria-label="Próximo"
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm hidden md:flex items-center justify-center text-white hover:bg-white/20 transition-all duration-200"
-      >
+      <button onClick={next} aria-label="Próximo"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 hidden md:flex w-10 h-10 rounded-full items-center justify-center bg-white/8 border border-white/12 text-white hover:bg-white/15 transition-all duration-200">
         <ChevronRight className="w-5 h-5" />
       </button>
 
       {/* dots + setas mobile */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
-        <button
-          onClick={prev}
-          aria-label="Anterior"
-          className="md:hidden w-8 h-8 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-all duration-200"
-        >
+      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
+        <button onClick={prev} aria-label="Anterior"
+          className="md:hidden w-8 h-8 rounded-full flex items-center justify-center bg-white/8 border border-white/12 text-white">
           <ChevronLeft className="w-4 h-4" />
         </button>
-        <div className="flex gap-2">
-          {slides.map((sl) => (
-            <button
-              key={sl.id}
-              onClick={() => goTo(sl.id)}
-              aria-label={`Slide ${sl.id + 1}`}
-              className={`rounded-full transition-all duration-300 ${current === sl.id ? 'w-8 h-2 bg-totvs-cyan' : 'w-2 h-2 bg-white/30 hover:bg-white/60'}`}
-            />
-          ))}
-        </div>
-        <button
-          onClick={next}
-          aria-label="Próximo"
-          className="md:hidden w-8 h-8 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-all duration-200"
-        >
+        {slides.map((sl) => (
+          <button key={sl.id} onClick={() => goTo(sl.id)} aria-label={`Slide ${sl.id + 1}`}
+            className={`rounded-full transition-all duration-300 ${current === sl.id ? 'w-7 h-2 bg-brand-blue' : 'w-2 h-2 bg-white/25 hover:bg-white/50'}`}
+          />
+        ))}
+        <button onClick={next} aria-label="Próximo"
+          className="md:hidden w-8 h-8 rounded-full flex items-center justify-center bg-white/8 border border-white/12 text-white">
           <ChevronRight className="w-4 h-4" />
         </button>
       </div>
 
-      {/* indicador de slide — canto inferior direito */}
-      <div className="absolute bottom-5 right-6 z-20 text-white/30 text-xs font-semibold tabular-nums">
-        {String(current + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
+      {/* contador de slide */}
+      <div className="absolute bottom-5 right-6 z-20 text-white/25 text-xs font-mono tabular-nums">
+        {String(current + 1).padStart(2, '0')}/{String(slides.length).padStart(2, '0')}
       </div>
     </div>
   )
@@ -307,35 +409,56 @@ function MetricsSection() {
   const satisfacao = useCountUp(98, 2000, inView)
 
   const metrics = [
-    { icon: TrendingUp, value: `+${projetos}`, label: 'Projetos entregues', suffix: '' },
-    { icon: Users, value: `+${clientes}`, label: 'Clientes ativos', suffix: '' },
-    { icon: Award, value: `${uptime}.8`, label: 'Uptime médio', suffix: '%' },
-    { icon: Headphones, value: `${satisfacao}`, label: 'Satisfação dos clientes', suffix: '%' },
+    { value: `+${projetos}`, label: 'Projetos entregues', caption: 'Sistemas críticos em produção' },
+    { value: `+${clientes}`, label: 'Clientes ativos', caption: 'Em 8 segmentos de mercado' },
+    { value: `${uptime}.8%`, label: 'Uptime médio', caption: 'Monitorado 24/7 com SLA' },
+    { value: `${satisfacao}%`, label: 'Satisfação', caption: 'Avaliação pós-projeto' },
   ]
 
   return (
-    <section ref={ref} className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <p className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide mb-3">Nossos números</p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight">
-            Resultados que <span className="text-totvs-cyan">falam por si</span>
+    <section ref={ref} className="relative py-24 bg-gradient-to-br from-slate-950 via-[#091828] to-slate-900 overflow-hidden">
+      {/* padrão de pontos */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: 'radial-gradient(circle, rgba(96,165,250,0.9) 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
+        }}
+      />
+      {/* orb decorativo */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-brand-blue/6 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* header */}
+        <div className="text-center mb-16">
+          <p className="text-xs font-bold text-brand-blue uppercase tracking-widest mb-4">
+            Números que comprovam
+          </p>
+          <h2 className="font-display text-3xl md:text-5xl font-extrabold text-white leading-tight">
+            Resultados que{' '}
+            <span className="bg-gradient-to-r from-brand-blue via-blue-300 to-sky-300 bg-clip-text text-transparent">
+              falam por si
+            </span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {/* grid: borda sutil entre as células usando gap-px */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden">
           {metrics.map((m) => (
             <div
               key={m.label}
-              className="relative text-center p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-lg hover:border-totvs-cyan/20 transition-all duration-300 group"
+              className="bg-slate-900/50 backdrop-blur-sm px-6 py-10 flex flex-col items-center text-center
+                hover:bg-slate-800/60 transition-colors duration-300"
             >
-              <div className="w-12 h-12 rounded-xl bg-totvs-cyan/10 border border-totvs-cyan/20 text-totvs-cyan flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <m.icon className="w-6 h-6" />
+              <div
+                className="font-display font-extrabold leading-none mb-3
+                  bg-gradient-to-br from-white via-brand-blue/80 to-brand-blue bg-clip-text text-transparent"
+                style={{ fontSize: 'clamp(2.6rem, 5vw, 4.5rem)' }}
+              >
+                {m.value}
               </div>
-              <div className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-2">
-                {m.value}<span className="text-totvs-cyan">{m.suffix}</span>
-              </div>
-              <div className="text-sm text-gray-500 font-medium">{m.label}</div>
+              <div className="text-white text-sm font-bold mb-1">{m.label}</div>
+              <div className="text-white/35 text-[11px]">{m.caption}</div>
             </div>
           ))}
         </div>
@@ -387,10 +510,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Nossa proposta</div>
+              <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Nossa proposta</div>
               <h2 className="mt-3 font-display text-3xl md:text-4xl font-bold leading-tight">
 
-                Tecnologia que resolve um <span className="text-totvs-cyan">problema de negócio real</span> — não que cria um novo
+                Tecnologia que resolve um <span className="text-brand-blue">problema de negócio real</span> — não que cria um novo
               </h2>
               <p className="mt-5 text-gray-600 text-lg leading-relaxed">
                 Muitas empresas já tiveram a experiência de contratar tecnologia e receber código sem
@@ -403,7 +526,7 @@ export default function Home() {
               <div className="mt-8">
                 <a
                   href="/quem-somos"
-                  className="inline-flex items-center gap-2 font-bold text-totvs-cyan hover:underline"
+                  className="inline-flex items-center gap-2 font-bold text-brand-blue hover:underline"
                 >
                   Conheça nossa história
                   <ArrowRight className="w-4 h-4" />
@@ -435,7 +558,7 @@ export default function Home() {
                 },
               ].map((c) => (
                 <div key={c.title} className="rounded-2xl bg-gray-50 border border-gray-100 p-6">
-                  <div className="w-10 h-10 rounded-xl bg-totvs-cyan/10 border border-totvs-cyan/20 text-totvs-cyan flex items-center justify-center mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-brand-blue/10 border border-brand-blue/20 text-brand-blue flex items-center justify-center mb-4">
                     <c.icon className="w-5 h-5" />
                   </div>
                   <div className="font-bold text-base">{c.title}</div>
@@ -454,7 +577,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 items-stretch">
               {/* texto */}
               <div className="p-10 md:p-14 flex flex-col justify-center">
-                <div className="inline-flex items-center gap-2 text-xs font-bold text-totvs-cyan border border-totvs-cyan/30 rounded-full px-3 py-1 bg-totvs-cyan/5 self-start mb-5">
+                <div className="inline-flex items-center gap-2 text-xs font-bold text-brand-blue border border-brand-blue/30 rounded-full px-3 py-1 bg-brand-blue/5 self-start mb-5">
                   Produto SaaS · Setor de Beleza
                 </div>
                 <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight mb-1">
@@ -490,7 +613,7 @@ export default function Home() {
                   </a>
                   <a
                     href="/contato"
-                    className="inline-flex items-center gap-2 border border-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold text-sm hover:border-totvs-cyan hover:text-totvs-cyan transition-all duration-300"
+                    className="inline-flex items-center gap-2 border border-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold text-sm hover:border-brand-blue hover:text-brand-blue transition-all duration-300"
                   >
                     Solicitar demo
                   </a>
@@ -524,15 +647,15 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end gap-6 mb-14">
             <div className="flex-1">
-              <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Setores</div>
+              <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Setores</div>
               <h2 className="mt-3 font-display text-3xl md:text-4xl font-bold leading-tight">
 
-                Adaptamos nossa metodologia ao seu <span className="text-totvs-cyan">contexto</span> — sem abrir mão do padrão
+                Adaptamos nossa metodologia ao seu <span className="text-brand-blue">contexto</span> — sem abrir mão do padrão
               </h2>
             </div>
             <a
               href="/servicos"
-              className="inline-flex items-center gap-2 text-sm font-bold text-totvs-cyan hover:underline whitespace-nowrap"
+              className="inline-flex items-center gap-2 text-sm font-bold text-brand-blue hover:underline whitespace-nowrap"
             >
               Ver todos os serviços
               <ArrowRight className="w-4 h-4" />
@@ -579,12 +702,12 @@ export default function Home() {
               },
             ].map((s) => (
               <div key={s.sector} className="rounded-3xl border border-gray-100 bg-gray-50 p-7 hover:shadow-lg transition-all duration-300 group">
-                <div className="w-11 h-11 rounded-xl bg-totvs-cyan/10 border border-totvs-cyan/20 text-totvs-cyan flex items-center justify-center mb-5">
+                <div className="w-11 h-11 rounded-xl bg-brand-blue/10 border border-brand-blue/20 text-brand-blue flex items-center justify-center mb-5">
                   <s.icon className="w-5 h-5" />
                 </div>
                 <div className="font-bold text-lg mb-2">{s.sector}</div>
                 <p className="text-sm text-gray-600 leading-relaxed mb-4">{s.text}</p>
-                <div className="flex items-center gap-2 text-xs font-semibold text-totvs-cyan">
+                <div className="flex items-center gap-2 text-xs font-semibold text-brand-blue">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   {s.result}
                 </div>
@@ -597,9 +720,9 @@ export default function Home() {
       {/* ── CTA INTERMEDIÁRIO ── */}
       <section className="py-16 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide mb-3">Comece agora</p>
+          <p className="text-sm font-semibold text-brand-blue uppercase tracking-wide mb-3">Comece agora</p>
           <h2 className="font-display text-2xl md:text-3xl font-bold leading-tight mb-4">
-            Quer entender como a Metaclass pode <span className="text-totvs-cyan">acelerar seu projeto</span>?
+            Quer entender como a Metaclass pode <span className="text-brand-blue">acelerar seu projeto</span>?
           </h2>
           <p className="text-gray-500 text-lg mb-8 max-w-2xl mx-auto">
             Agende uma conversa gratuita de 30 minutos com nosso time técnico e receba um diagnóstico inicial.
@@ -607,14 +730,14 @@ export default function Home() {
           <div className="flex flex-wrap justify-center gap-3">
             <a
               href="/contato"
-              className="inline-flex items-center gap-2 bg-totvs-cyan text-slate-950 px-7 py-3.5 rounded-full font-bold text-sm hover:brightness-110 hover:shadow-xl hover:shadow-totvs-cyan/30 transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-brand-blue text-slate-950 px-7 py-3.5 rounded-full font-bold text-sm hover:brightness-110 hover:shadow-xl hover:shadow-brand-blue/30 transition-all duration-300"
             >
               Falar com especialista
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
               href="/servicos"
-              className="inline-flex items-center gap-2 border border-gray-200 text-gray-700 px-7 py-3.5 rounded-full font-semibold text-sm hover:border-totvs-cyan hover:text-totvs-cyan transition-all duration-300"
+              className="inline-flex items-center gap-2 border border-gray-200 text-gray-700 px-7 py-3.5 rounded-full font-semibold text-sm hover:border-brand-blue hover:text-brand-blue transition-all duration-300"
             >
               Ver serviços
             </a>
@@ -627,10 +750,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5">
-              <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Por que escolher a Metaclass</div>
+              <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Por que escolher a Metaclass</div>
               <h2 className="mt-4 font-display text-3xl md:text-4xl font-bold text-white leading-tight">
 
-                O que nos <span className="text-totvs-cyan">diferencia</span> no mercado de tecnologia
+                O que nos <span className="text-brand-blue">diferencia</span> no mercado de tecnologia
               </h2>
               <p className="mt-4 text-white/65 leading-relaxed text-lg">
                 Não somos uma fábrica de software. Somos um time com mentalidade de produto, disciplina de
@@ -638,7 +761,7 @@ export default function Home() {
               </p>
               <a
                 href="/cases"
-                className="inline-flex items-center gap-2 mt-8 text-totvs-cyan font-bold hover:underline"
+                className="inline-flex items-center gap-2 mt-8 text-brand-blue font-bold hover:underline"
               >
                 Ver cases de resultado
                 <ArrowRight className="w-4 h-4" />
@@ -669,7 +792,7 @@ export default function Home() {
                 },
               ].map((d) => (
                 <div key={d.number} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-                  <div className="text-totvs-cyan font-display text-3xl font-bold mb-3 opacity-40">{d.number}</div>
+                  <div className="text-brand-blue font-display text-3xl font-bold mb-3 opacity-40">{d.number}</div>
                   <div className="font-bold text-white mb-2">{d.title}</div>
                   <div className="text-white/55 text-sm leading-relaxed">{d.text}</div>
                 </div>
@@ -682,13 +805,13 @@ export default function Home() {
       {/* ── DEPOIMENTO / CITAÇÃO ── */}
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide mb-6">O que nossos clientes dizem</div>
+          <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide mb-6">O que nossos clientes dizem</div>
           <blockquote className="font-display text-2xl md:text-3xl font-semibold text-gray-900 leading-relaxed">
             "A Metaclass foi o parceiro técnico que precisávamos para escalar o produto sem quebrar o que já
             funcionava. Processo claro, qualidade real e um time que se importa com o resultado."
           </blockquote>
           <div className="mt-6 flex items-center justify-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-totvs-cyan flex items-center justify-center text-slate-950 font-bold text-sm">
+            <div className="w-10 h-10 rounded-full bg-brand-blue flex items-center justify-center text-slate-950 font-bold text-sm">
               R
             </div>
             <div className="text-left">
@@ -706,10 +829,10 @@ export default function Home() {
             <div className="grid md:grid-cols-12 gap-0 items-stretch">
               {/* texto */}
               <div className="md:col-span-7 p-10 md:p-14 flex flex-col justify-center">
-                <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide mb-4">Próximo passo</div>
+                <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide mb-4">Próximo passo</div>
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
   
-                Pronto para transformar tecnologia em <span className="text-totvs-cyan">resultado de negócio</span>?
+                Pronto para transformar tecnologia em <span className="text-brand-blue">resultado de negócio</span>?
                 </h2>
                 <p className="text-white/65 text-lg leading-relaxed mb-8">
                   Em uma conversa de 30 minutos com nosso time técnico, você recebe um diagnóstico inicial do seu
@@ -718,7 +841,7 @@ export default function Home() {
                 <div className="flex flex-wrap gap-3">
                   <a
                     href="/contato"
-                    className="inline-flex items-center gap-2 bg-totvs-cyan text-slate-950 px-7 py-3.5 rounded-full font-bold hover:brightness-110 hover:shadow-2xl hover:shadow-totvs-cyan/30 transition-all duration-300"
+                    className="inline-flex items-center gap-2 bg-brand-blue text-slate-950 px-7 py-3.5 rounded-full font-bold hover:brightness-110 hover:shadow-2xl hover:shadow-brand-blue/30 transition-all duration-300"
                   >
                     Falar com especialista
                     <ArrowRight className="w-5 h-5" />
@@ -748,7 +871,7 @@ export default function Home() {
                     { v: '<48h', l: 'tempo médio de resposta' },
                   ].map((m) => (
                     <div key={m.l} className="flex items-center gap-3">
-                      <div className="font-display text-3xl font-bold text-totvs-cyan">{m.v}</div>
+                      <div className="font-display text-3xl font-bold text-brand-blue">{m.v}</div>
                       <div className="text-white/60 text-sm">{m.l}</div>
                     </div>
                   ))}

@@ -91,8 +91,8 @@ Concordo com os Termos de Uso e Política de Privacidade da Metaclass.`
 
           <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-4 text-white">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-totvs-cyan/20 backdrop-blur border border-totvs-cyan/30">
-                <ShieldCheck className="h-7 w-7 text-totvs-cyan" />
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-blue/20 backdrop-blur border border-brand-blue/30">
+                <ShieldCheck className="h-7 w-7 text-brand-blue" />
               </div>
               <div>
                 <h1 className="font-display text-3xl font-bold sm:text-4xl">Canal LGPD</h1>
@@ -110,8 +110,8 @@ Concordo com os Termos de Uso e Política de Privacidade da Metaclass.`
             {/* Info Cards */}
             <div className="space-y-6 lg:col-span-2">
               <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-totvs-cyan/20 border border-totvs-cyan/30">
-                  <FileText className="h-6 w-6 text-totvs-cyan" />
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-blue/20 border border-brand-blue/30">
+                  <FileText className="h-6 w-6 text-brand-blue" />
                 </div>
                 <h2 className="font-display text-lg font-semibold text-gray-900 mb-3">
                   Quando usar este canal
@@ -124,8 +124,8 @@ Concordo com os Termos de Uso e Política de Privacidade da Metaclass.`
               </div>
 
               <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-totvs-cyan/20 border border-totvs-cyan/30">
-                  <Clock3 className="h-6 w-6 text-totvs-cyan" />
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-blue/20 border border-brand-blue/30">
+                  <Clock3 className="h-6 w-6 text-brand-blue" />
                 </div>
                 <h2 className="font-display text-lg font-semibold text-gray-900 mb-3">
                   Como respondemos
@@ -153,7 +153,7 @@ Concordo com os Termos de Uso e Política de Privacidade da Metaclass.`
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}
-                      className="mt-6 px-6 py-2.5 rounded-lg border border-gray-300 text-gray-700 hover:border-totvs-cyan hover:text-totvs-cyan transition-all duration-300 font-medium"
+                      className="mt-6 px-6 py-2.5 rounded-lg border border-gray-300 text-gray-700 hover:border-brand-blue hover:text-brand-blue transition-all duration-300 font-medium"
                     >
                       Nova solicitação
                     </button>
@@ -179,7 +179,7 @@ Concordo com os Termos de Uso e Política de Privacidade da Metaclass.`
                             type="text"
                             placeholder="Seu nome"
                             required
-                            className="w-full px-4 py-2.5 rounded-lg bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:border-totvs-cyan focus:ring-1 focus:ring-totvs-cyan transition-colors"
+                            className="w-full px-4 py-2.5 rounded-lg bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors"
                           />
                         </div>
                         <div className="space-y-2">
@@ -193,7 +193,7 @@ Concordo com os Termos de Uso e Política de Privacidade da Metaclass.`
                             inputMode="tel"
                             placeholder="(11) 99999-9999"
                             required
-                            className="w-full px-4 py-2.5 rounded-lg bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:border-totvs-cyan focus:ring-1 focus:ring-totvs-cyan transition-colors"
+                            className="w-full px-4 py-2.5 rounded-lg bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors"
                           />
                         </div>
                       </div>
@@ -208,7 +208,7 @@ Concordo com os Termos de Uso e Política de Privacidade da Metaclass.`
                           type="email"
                           placeholder="seu@email.com"
                           required
-                          className="w-full px-4 py-2.5 rounded-lg bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:border-totvs-cyan focus:ring-1 focus:ring-totvs-cyan transition-colors"
+                          className="w-full px-4 py-2.5 rounded-lg bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors"
                         />
                       </div>
 
@@ -220,7 +220,7 @@ Concordo com os Termos de Uso e Política de Privacidade da Metaclass.`
                           id="lgpd-type"
                           value={requestType}
                           onChange={(e) => setRequestType(e.target.value as LgpdRequestType)}
-                          className="w-full px-4 py-2.5 rounded-lg bg-white border border-gray-300 text-gray-900 focus:border-totvs-cyan focus:ring-1 focus:ring-totvs-cyan transition-colors"
+                          className="w-full px-4 py-2.5 rounded-lg bg-white border border-gray-300 text-gray-900 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors"
                           required
                         >
                           {Object.entries(lgpdTypeLabel).map(([value, label]) => (
@@ -241,7 +241,7 @@ Concordo com os Termos de Uso e Política de Privacidade da Metaclass.`
                           placeholder="Descreva claramente o que você deseja solicitar."
                           required
                           rows={6}
-                          className="w-full px-4 py-2.5 rounded-lg bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:border-totvs-cyan focus:ring-1 focus:ring-totvs-cyan transition-colors resize-none"
+                          className="w-full px-4 py-2.5 rounded-lg bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors resize-none"
                         />
                       </div>
 
@@ -255,21 +255,21 @@ Concordo com os Termos de Uso e Política de Privacidade da Metaclass.`
                             type="checkbox"
                             checked={consentAccepted}
                             onChange={(e) => setConsentAccepted(e.target.checked)}
-                            className="mt-0.5 h-4 w-4 rounded border-gray-300 text-totvs-cyan focus:ring-totvs-cyan"
+                            className="mt-0.5 h-4 w-4 rounded border-gray-300 text-brand-blue focus:ring-brand-blue"
                             required
                           />
                           <span>
                             Concordo com os{' '}
                             <Link
                               to="/termos"
-                              className="font-medium text-totvs-cyan hover:text-totvs-cyan underline underline-offset-2"
+                              className="font-medium text-brand-blue hover:text-brand-blue underline underline-offset-2"
                             >
                               Termos de Uso
                             </Link>
                             {' '}e a{' '}
                             <Link
                               to="/privacidade"
-                              className="font-medium text-totvs-cyan hover:text-totvs-cyan underline underline-offset-2"
+                              className="font-medium text-brand-blue hover:text-brand-blue underline underline-offset-2"
                             >
                               Política de Privacidade
                             </Link>
@@ -281,7 +281,7 @@ Concordo com os Termos de Uso e Política de Privacidade da Metaclass.`
                       <button
                         type="submit"
                         disabled={loading || !consentAccepted}
-                        className="w-full sm:w-auto px-8 py-3 rounded-lg bg-gradient-to-r from-totvs-cyan to-totvs-cyan hover:shadow-lg hover:shadow-totvs-cyan/30 disabled:opacity-50 disabled:cursor-not-allowed text-slate-950 font-bold transition-all duration-300 flex items-center justify-center gap-2"
+                        className="w-full sm:w-auto px-8 py-3 rounded-lg bg-gradient-to-r from-brand-blue to-brand-blue hover:shadow-lg hover:shadow-brand-blue/30 disabled:opacity-50 disabled:cursor-not-allowed text-slate-950 font-bold transition-all duration-300 flex items-center justify-center gap-2"
                       >
                         {loading ? (
                           'Enviando...'

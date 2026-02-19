@@ -1,18 +1,24 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { getSupabaseAdminClient } from '../_lib/supabaseAdmin.js'
-import { requireEnv } from '../_lib/env.js'
+import type { IncomingMessage, ServerResponse } from 'http'
+import { getSupabaseAdminClient } from '../_lib/supabaseAdmin'
+import { requireEnv } from '../_lib/env'
 import {
   getNewsletterInternalNotifyEmailHtml,
   getNewsletterInternalNotifyEmailText,
   getNewsletterSubscribedEmailHtml,
   getNewsletterSubscribedEmailText,
-} from '../_lib/newsletterTemplates.js'
+} from '../_lib/newsletterTemplates'
 
 function normalizeEmail(email: string) {
   return email.trim().toLowerCase()
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+type ApiRequest = IncomingMessage & { method?: string; body?: any }
+type ApiResponse = ServerResponse & {
+  status: (code: number) => ApiResponse
+  json: (body: any) => void
+}
+
+export default async function handler(req: ApiRequest, res: ApiResponse) {
   try {
     if (req.method !== 'POST') {
       res.status(405).json({ error: 'Method not allowed' })

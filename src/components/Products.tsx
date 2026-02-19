@@ -18,8 +18,8 @@ export default function Products() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Left: Info */}
             <div className="p-8 md:p-12">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-totvs/10 border border-totvs-cyan/30 mb-6">
-                <Scissors className="w-4 h-4 text-totvs-cyan" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-totvs/10 border border-brand-blue/30 mb-6">
+                <Scissors className="w-4 h-4 text-brand-blue" />
                 <span className="text-sm font-semibold text-gray-700">Gestão de Salões</span>
               </div>
               
@@ -37,15 +37,15 @@ export default function Products() {
 
               <div className="space-y-3 mb-8">
                 <div className="flex items-center gap-3 text-gray-700">
-                  <Calendar className="w-5 h-5 text-totvs-cyan" />
+                  <Calendar className="w-5 h-5 text-brand-blue" />
                   <span>Agenda Inteligente</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-700">
-                  <TrendingUp className="w-5 h-5 text-totvs-cyan" />
+                  <TrendingUp className="w-5 h-5 text-brand-blue" />
                   <span>Controle Financeiro Completo</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-700">
-                  <Users className="w-5 h-5 text-totvs-cyan" />
+                  <Users className="w-5 h-5 text-brand-blue" />
                   <span>Gestão de Clientes e Equipe</span>
                 </div>
               </div>
@@ -62,7 +62,7 @@ export default function Products() {
             </div>
 
             {/* Right: Visual/Screenshot */}
-            <div className="bg-gradient-to-br from-totvs-cyan to-totvs-cyan p-8 md:p-12 min-h-[400px] flex items-center justify-center">
+            <div className="bg-gradient-to-br from-brand-blue to-brand-blue p-8 md:p-12 min-h-[400px] flex items-center justify-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white text-center">
                 <img
                   src="/beautyg-horizontal.svg"

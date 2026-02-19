@@ -19,7 +19,7 @@ export default function Contact() {
               <Mail className="w-6 h-6 text-white" />
             </div>
             <h3 className="font-bold mb-2">Email</h3>
-            <a href="mailto:contato@metaclass.com.br" className="text-totvs-cyan hover:underline">
+            <a href="mailto:contato@metaclass.com.br" className="text-brand-blue hover:underline">
               contato@metaclass.com.br
             </a>
           </div>
@@ -29,7 +29,7 @@ export default function Contact() {
               <Phone className="w-6 h-6 text-white" />
             </div>
             <h3 className="font-bold mb-2">Telefone</h3>
-            <a href="tel:+5511999999999" className="text-totvs-cyan hover:underline">
+            <a href="tel:+5511999999999" className="text-brand-blue hover:underline">
               (11) 99999-9999
             </a>
           </div>

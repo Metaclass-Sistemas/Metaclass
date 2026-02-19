@@ -21,8 +21,8 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/50 border border-totvs-cyan/20 mb-8 backdrop-blur-sm">
-            <Sparkles className="w-4 h-4 text-totvs-cyan" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/50 border border-brand-blue/20 mb-8 backdrop-blur-sm">
+            <Sparkles className="w-4 h-4 text-brand-blue" />
             <span className="text-sm font-semibold text-white/90">
               Transformando negócios através da tecnologia
             </span>
@@ -44,14 +44,14 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="#produtos"
-              className="group bg-gradient-totvs text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-totvs-cyan/30 transition-all duration-300 flex items-center gap-2"
+              className="group bg-gradient-totvs text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-brand-blue/30 transition-all duration-300 flex items-center gap-2"
             >
               Conheça Nossos Produtos
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="#contato"
-              className="px-8 py-4 rounded-full font-bold text-lg border-2 border-slate-700 text-white hover:border-totvs-cyan hover:text-totvs-cyan transition-all duration-300"
+              className="px-8 py-4 rounded-full font-bold text-lg border-2 border-slate-700 text-white hover:border-brand-blue hover:text-brand-blue transition-all duration-300"
             >
               Fale Conosco
             </a>

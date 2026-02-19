@@ -88,10 +88,10 @@ export default function Servicos() {
 
           <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl">
-              <p className="text-totvs-cyan font-semibold uppercase tracking-wide text-sm">Serviços Enterprise</p>
+              <p className="text-brand-blue font-semibold uppercase tracking-wide text-sm">Serviços Enterprise</p>
               <h1 className="mt-4 font-display text-4xl sm:text-6xl font-bold text-white leading-tight">
                 Construímos e evoluímos sistemas críticos com{' '}
-                <span className="text-totvs-cyan">padrão enterprise</span>
+                <span className="text-brand-blue">padrão enterprise</span>
               </h1>
               <p className="mt-6 text-white/75 text-xl leading-relaxed max-w-2xl">
                 Do discovery ao deploy em produção: squads dedicados, integrações robustas, modernização de
@@ -100,14 +100,14 @@ export default function Servicos() {
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <a
                   href="/contato"
-                  className="inline-flex items-center gap-2 bg-gradient-totvs text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:shadow-totvs-cyan/30 transition-all duration-300"
+                  className="inline-flex items-center gap-2 bg-gradient-totvs text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:shadow-brand-blue/30 transition-all duration-300"
                 >
                   Solicitar proposta
                   <ArrowRight className="w-5 h-5" />
                 </a>
                 <a
                   href="/cases"
-                  className="inline-flex items-center gap-2 border border-slate-700 text-white/90 px-8 py-4 rounded-full font-bold hover:border-totvs-cyan hover:text-totvs-cyan transition-all duration-300"
+                  className="inline-flex items-center gap-2 border border-slate-700 text-white/90 px-8 py-4 rounded-full font-bold hover:border-brand-blue hover:text-brand-blue transition-all duration-300"
                 >
                   Ver cases de sucesso
                 </a>
@@ -127,8 +127,8 @@ export default function Servicos() {
                 { icon: BarChart3, title: 'Foco em resultado', text: 'Métricas de negócio como norte de cada decisão técnica' },
               ].map((d) => (
                 <div key={d.title} className="flex gap-4 items-start p-5 rounded-2xl border border-slate-800 bg-slate-900">
-                  <div className="w-10 h-10 rounded-xl bg-totvs-cyan/15 border border-totvs-cyan/20 flex items-center justify-center flex-shrink-0">
-                    <d.icon className="w-5 h-5 text-totvs-cyan" />
+                  <div className="w-10 h-10 rounded-xl bg-brand-blue/15 border border-brand-blue/20 flex items-center justify-center flex-shrink-0">
+                    <d.icon className="w-5 h-5 text-brand-blue" />
                   </div>
                   <div>
                     <div className="font-semibold text-white text-sm">{d.title}</div>
@@ -144,7 +144,7 @@ export default function Servicos() {
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">O que fazemos</div>
+              <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">O que fazemos</div>
               <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">
                 Serviços que <span className="text-gradient">geram resultado real</span>
               </h2>
@@ -162,7 +162,7 @@ export default function Servicos() {
                 >
                   <div className="grid lg:grid-cols-12 gap-0">
                     <div className="lg:col-span-7 p-8 md:p-10">
-                      <div className="inline-flex items-center gap-2 text-xs font-bold text-totvs-cyan border border-totvs-cyan/30 rounded-full px-3 py-1 bg-totvs-cyan/5 mb-4">
+                      <div className="inline-flex items-center gap-2 text-xs font-bold text-brand-blue border border-brand-blue/30 rounded-full px-3 py-1 bg-brand-blue/5 mb-4">
                         <s.icon className="w-3.5 h-3.5" />
                         {s.tag}
                       </div>
@@ -171,7 +171,7 @@ export default function Servicos() {
                       <div className="mt-6 space-y-2">
                         {s.bullets.map((b) => (
                           <div key={b} className="flex items-start gap-2 text-sm text-gray-700">
-                            <CheckCircle2 className="w-4 h-4 text-totvs-cyan mt-0.5 flex-shrink-0" />
+                            <CheckCircle2 className="w-4 h-4 text-brand-blue mt-0.5 flex-shrink-0" />
                             <span>{b}</span>
                           </div>
                         ))}
@@ -182,7 +182,7 @@ export default function Servicos() {
                       <div className="space-y-3">
                         {s.useCases.map((u) => (
                           <div key={u} className="flex items-center gap-3 rounded-xl bg-white border border-gray-100 px-4 py-3 text-sm font-medium text-gray-700 shadow-sm">
-                            <div className="w-2 h-2 rounded-full bg-totvs-cyan flex-shrink-0" />
+                            <div className="w-2 h-2 rounded-full bg-brand-blue flex-shrink-0" />
                             {u}
                           </div>
                         ))}
@@ -190,7 +190,7 @@ export default function Servicos() {
                       <div className="mt-6">
                         <a
                           href="/contato"
-                          className="inline-flex items-center gap-2 text-sm font-bold text-totvs-cyan hover:underline"
+                          className="inline-flex items-center gap-2 text-sm font-bold text-brand-blue hover:underline"
                         >
                           Solicitar proposta para este serviço
                           <ArrowRight className="w-4 h-4" />
@@ -208,7 +208,7 @@ export default function Servicos() {
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Tecnologia</div>
+              <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Tecnologia</div>
               <h2 className="mt-3 font-display text-3xl md:text-4xl font-bold">Stack moderno com profundidade real</h2>
               <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
                 Trabalhamos com as tecnologias mais sólidas do mercado — escolhidas pelo fit com o problema,
@@ -251,7 +251,7 @@ export default function Servicos() {
               ].map((t) => (
                 <div key={t.category} className="rounded-3xl border border-gray-100 bg-white shadow-lg p-7">
                   <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-xl bg-totvs-cyan/10 border border-totvs-cyan/20 text-totvs-cyan flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-brand-blue/10 border border-brand-blue/20 text-brand-blue flex items-center justify-center">
                       <t.icon className="w-5 h-5" />
                     </div>
                     <div className="font-bold">{t.category}</div>
@@ -259,7 +259,7 @@ export default function Servicos() {
                   <div className="space-y-2">
                     {t.items.map((item) => (
                       <div key={item} className="flex items-start gap-2 text-sm text-gray-600">
-                        <div className="w-1.5 h-1.5 rounded-full bg-totvs-cyan mt-1.5 flex-shrink-0" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand-blue mt-1.5 flex-shrink-0" />
                         {item}
                       </div>
                     ))}
@@ -274,7 +274,7 @@ export default function Servicos() {
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
-              <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Como entregamos</div>
+              <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Como entregamos</div>
               <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">
                 Um processo que garante resultado
               </h2>
@@ -319,8 +319,8 @@ export default function Servicos() {
                     <div className="w-12 h-12 rounded-2xl bg-gradient-totvs text-white font-bold flex items-center justify-center text-lg">
                       {step.step}
                     </div>
-                    <div className="w-10 h-10 rounded-xl bg-totvs-cyan/10 border border-totvs-cyan/20 flex items-center justify-center">
-                      <step.icon className="w-5 h-5 text-totvs-cyan" />
+                    <div className="w-10 h-10 rounded-xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center">
+                      <step.icon className="w-5 h-5 text-brand-blue" />
                     </div>
                   </div>
                   <div className="font-bold text-xl">{step.title}</div>
@@ -329,7 +329,7 @@ export default function Servicos() {
                     <div className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Entregáveis</div>
                     {step.deliverables.map((d) => (
                       <div key={d} className="flex items-start gap-2 text-xs text-gray-600">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-totvs-cyan mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-brand-blue mt-0.5 flex-shrink-0" />
                         {d}
                       </div>
                     ))}
@@ -347,7 +347,7 @@ export default function Servicos() {
               {/* Modelos */}
               <div className="lg:col-span-7 rounded-3xl border border-gray-100 bg-white shadow-lg p-8 md:p-10">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-totvs-cyan/10 border border-totvs-cyan/20 text-totvs-cyan flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 border border-brand-blue/20 text-brand-blue flex items-center justify-center">
                     <Handshake className="w-6 h-6" />
                   </div>
                   <div>
@@ -378,7 +378,7 @@ export default function Servicos() {
                     },
                   ].map((m) => (
                     <div key={m.title} className="rounded-2xl border border-gray-100 bg-gray-50 p-5">
-                      <div className="text-xs font-bold text-totvs-cyan mb-1">{m.badge}</div>
+                      <div className="text-xs font-bold text-brand-blue mb-1">{m.badge}</div>
                       <div className="font-bold text-base">{m.title}</div>
                       <div className="mt-2 text-sm text-gray-600 leading-relaxed">{m.text}</div>
                       <div className="mt-3 text-xs text-gray-400 font-semibold">{m.duration}</div>
@@ -390,8 +390,8 @@ export default function Servicos() {
               {/* Governança */}
               <div className="lg:col-span-5 rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border border-slate-800 p-8 md:p-10">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-totvs-cyan/15 border border-totvs-cyan/25 flex items-center justify-center">
-                    <FileText className="w-6 h-6 text-totvs-cyan" />
+                  <div className="w-12 h-12 rounded-2xl bg-brand-blue/15 border border-brand-blue/25 flex items-center justify-center">
+                    <FileText className="w-6 h-6 text-brand-blue" />
                   </div>
                   <div>
                     <div className="text-white font-display text-2xl font-bold">Governança & Qualidade</div>
@@ -409,7 +409,7 @@ export default function Servicos() {
                     'Rotina de alinhamento e reporting executivo quinzenal',
                   ].map((t) => (
                     <div key={t} className="flex items-start gap-2 text-sm text-white/75">
-                      <CheckCircle2 className="w-4 h-4 text-totvs-cyan mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-brand-blue mt-0.5 flex-shrink-0" />
                       <span>{t}</span>
                     </div>
                   ))}
@@ -423,7 +423,7 @@ export default function Servicos() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Setores</div>
+              <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Setores</div>
               <h2 className="mt-3 font-display text-3xl md:text-4xl font-bold">
                 Experiência em múltiplos segmentos
               </h2>
@@ -443,7 +443,7 @@ export default function Servicos() {
               ].map((s) => (
                 <div key={s.sector} className="rounded-2xl border border-gray-100 bg-gray-50 p-6 hover:shadow-md transition-all duration-200">
                   <div className="flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-totvs-cyan" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-brand-blue" />
                     <div className="font-bold text-base">{s.sector}</div>
                   </div>
                   <div className="mt-2 text-sm text-gray-600">{s.description}</div>

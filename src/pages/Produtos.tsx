@@ -42,10 +42,10 @@ export default function Produtos() {
 
           <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl">
-              <p className="text-totvs-cyan font-semibold uppercase tracking-wide text-sm">Produtos & Portfólio</p>
+              <p className="text-brand-blue font-semibold uppercase tracking-wide text-sm">Produtos & Portfólio</p>
               <h1 className="mt-4 font-display text-4xl sm:text-6xl font-bold text-white leading-tight">
                 Produtos SaaS com padrão enterprise —{' '}
-                <span className="text-totvs-cyan">construídos para durar e escalar</span>
+                <span className="text-brand-blue">construídos para durar e escalar</span>
               </h1>
               <p className="mt-6 text-white/75 text-xl leading-relaxed max-w-2xl">
                 Desenvolvemos plataformas SaaS verticais com arquitetura robusta, experiência moderna e evolução
@@ -56,14 +56,14 @@ export default function Produtos() {
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <a
                   href="#beautygest"
-                  className="inline-flex items-center justify-center gap-2 bg-gradient-totvs text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:shadow-totvs-cyan/30 transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 bg-gradient-totvs text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:shadow-brand-blue/30 transition-all duration-300"
                 >
                   Ver BeautyGest
                   <ArrowRight className="w-5 h-5" />
                 </a>
                 <a
                   href="/contato"
-                  className="inline-flex items-center justify-center gap-2 border border-slate-700 text-white/90 px-8 py-4 rounded-full font-bold hover:border-totvs-cyan hover:text-totvs-cyan transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 border border-slate-700 text-white/90 px-8 py-4 rounded-full font-bold hover:border-brand-blue hover:text-brand-blue transition-all duration-300"
                 >
                   Falar com especialista
                 </a>
@@ -94,7 +94,7 @@ export default function Produtos() {
                 },
               ].map((b) => (
                 <div key={b.title} className="rounded-3xl border border-gray-100 bg-white shadow-lg p-8 hover:shadow-xl transition-all duration-300">
-                  <div className="w-12 h-12 rounded-2xl bg-totvs-cyan/10 border border-totvs-cyan/20 text-totvs-cyan flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 border border-brand-blue/20 text-brand-blue flex items-center justify-center">
                     <b.icon className="w-6 h-6" />
                   </div>
                   <div className="mt-5 font-bold text-xl">{b.title}</div>
@@ -109,7 +109,7 @@ export default function Produtos() {
         <section id="beautygest" className="py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Produto em destaque</div>
+              <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Produto em destaque</div>
               <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">
                 Conheça o <span className="text-gradient">BeautyGest</span>
               </h2>
@@ -123,8 +123,8 @@ export default function Produtos() {
               <div className="grid md:grid-cols-2 gap-0 items-stretch">
                 {/* Info */}
                 <div className="p-10 md:p-14">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-totvs-cyan/10 border border-totvs-cyan/30 mb-6">
-                    <Scissors className="w-4 h-4 text-totvs-cyan" />
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-blue/10 border border-brand-blue/30 mb-6">
+                    <Scissors className="w-4 h-4 text-brand-blue" />
                     <span className="text-sm font-semibold text-gray-700">Beleza & Estética</span>
                   </div>
 
@@ -149,7 +149,7 @@ export default function Produtos() {
                       { icon: Package, text: 'Controle de estoque de produtos' },
                     ].map((f) => (
                       <div key={f.text} className="flex items-center gap-3 text-gray-700">
-                        <f.icon className="w-5 h-5 text-totvs-cyan flex-shrink-0" />
+                        <f.icon className="w-5 h-5 text-brand-blue flex-shrink-0" />
                         <span className="text-sm">{f.text}</span>
                       </div>
                     ))}
@@ -167,7 +167,7 @@ export default function Produtos() {
                     </a>
                     <a
                       href="/contato"
-                      className="inline-flex items-center gap-2 border border-gray-200 text-gray-700 px-7 py-3.5 rounded-full font-bold hover:border-totvs-cyan hover:text-totvs-cyan transition-all duration-300"
+                      className="inline-flex items-center gap-2 border border-gray-200 text-gray-700 px-7 py-3.5 rounded-full font-bold hover:border-brand-blue hover:text-brand-blue transition-all duration-300"
                     >
                       Solicitar demo
                     </a>
@@ -175,7 +175,7 @@ export default function Produtos() {
                 </div>
 
                 {/* Visual */}
-                <div className="bg-gradient-to-br from-totvs-cyan via-cyan-500 to-cyan-600 p-10 md:p-14 flex items-center justify-center min-h-[420px]">
+                <div className="bg-gradient-to-br from-brand-blue via-cyan-500 to-cyan-600 p-10 md:p-14 flex items-center justify-center min-h-[420px]">
                   <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 text-white text-center w-full max-w-xs">
                     <img
                       src="/beautyg-horizontal.svg"
@@ -228,7 +228,7 @@ export default function Produtos() {
                 },
               ].map((d) => (
                 <div key={d.title} className="rounded-2xl border border-gray-100 bg-white shadow-md p-6">
-                  <div className="w-10 h-10 rounded-xl bg-totvs-cyan/10 border border-totvs-cyan/20 text-totvs-cyan flex items-center justify-center mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-brand-blue/10 border border-brand-blue/20 text-brand-blue flex items-center justify-center mb-4">
                     <d.icon className="w-5 h-5" />
                   </div>
                   <div className="font-bold text-base">{d.title}</div>
@@ -244,7 +244,7 @@ export default function Produtos() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-14 items-center">
               <div>
-                <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Para quem é</div>
+                <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Para quem é</div>
                 <h2 className="mt-3 font-display text-4xl font-bold leading-tight">
                   Ideal para negócios de beleza que querem crescer com controle
                 </h2>
@@ -261,7 +261,7 @@ export default function Produtos() {
                     'Profissionais autônomos que querem imagem profissional para o cliente',
                   ].map((t) => (
                     <div key={t} className="flex items-start gap-3 text-sm text-gray-700">
-                      <CheckCircle2 className="w-5 h-5 text-totvs-cyan mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-5 h-5 text-brand-blue mt-0.5 flex-shrink-0" />
                       <span>{t}</span>
                     </div>
                   ))}
@@ -269,7 +269,7 @@ export default function Produtos() {
               </div>
 
               <div className="rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border border-slate-800 p-10">
-                <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide mb-6">O que muda na prática</div>
+                <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide mb-6">O que muda na prática</div>
                 <div className="space-y-5">
                   {[
                     {
@@ -310,7 +310,7 @@ export default function Produtos() {
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Impacto real</div>
+              <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Impacto real</div>
               <h2 className="mt-3 font-display text-3xl md:text-4xl font-bold">
                 O que nossos clientes conquistam com o BeautyGest
               </h2>
@@ -324,7 +324,7 @@ export default function Produtos() {
                 { icon: Star, value: '4.9/5', label: 'de avaliação média pelos usuários da plataforma' },
               ].map((m) => (
                 <div key={m.label} className="rounded-3xl border border-gray-100 bg-white shadow-lg p-7 text-center">
-                  <div className="w-12 h-12 rounded-2xl bg-totvs-cyan/10 border border-totvs-cyan/20 text-totvs-cyan flex items-center justify-center mx-auto">
+                  <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 border border-brand-blue/20 text-brand-blue flex items-center justify-center mx-auto">
                     <m.icon className="w-6 h-6" />
                   </div>
                   <div className="mt-4 font-display text-4xl font-bold text-slate-900">{m.value}</div>
@@ -341,7 +341,7 @@ export default function Produtos() {
             <div className="rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border border-slate-800 p-10 md:p-14">
               <div className="grid md:grid-cols-2 gap-10 items-center">
                 <div>
-                  <div className="inline-flex items-center gap-2 text-xs font-bold text-totvs-cyan border border-totvs-cyan/30 rounded-full px-3 py-1 bg-totvs-cyan/5 mb-5">
+                  <div className="inline-flex items-center gap-2 text-xs font-bold text-brand-blue border border-brand-blue/30 rounded-full px-3 py-1 bg-brand-blue/5 mb-5">
                     <Rocket className="w-3.5 h-3.5" />
                     Em desenvolvimento
                   </div>
@@ -359,7 +359,7 @@ export default function Produtos() {
                       'APIs abertas para parceiros e integradores',
                     ].map((t) => (
                       <div key={t} className="flex items-start gap-2 text-sm text-white/60">
-                        <CheckCircle2 className="w-4 h-4 text-totvs-cyan mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-brand-blue mt-0.5 flex-shrink-0" />
                         {t}
                       </div>
                     ))}
@@ -367,7 +367,7 @@ export default function Produtos() {
                   <div className="mt-8">
                     <a
                       href="/contato"
-                      className="inline-flex items-center gap-2 bg-gradient-totvs text-white px-7 py-3.5 rounded-full font-bold hover:shadow-2xl hover:shadow-totvs-cyan/30 transition-all duration-300"
+                      className="inline-flex items-center gap-2 bg-gradient-totvs text-white px-7 py-3.5 rounded-full font-bold hover:shadow-2xl hover:shadow-brand-blue/30 transition-all duration-300"
                     >
                       Quero ser avisado
                       <ArrowRight className="w-5 h-5" />
@@ -387,7 +387,7 @@ export default function Produtos() {
                       <div className="text-xs text-white/40 mt-1">{p.eta}</div>
                       <div className="mt-3 h-1.5 bg-slate-800 rounded-full overflow-hidden">
                         <div
-                          className="h-full bg-totvs-cyan rounded-full"
+                          className="h-full bg-brand-blue rounded-full"
                           style={{ width: `${p.progress}%` }}
                         />
                       </div>
@@ -406,7 +406,7 @@ export default function Produtos() {
             <div className="rounded-3xl bg-white border border-gray-100 shadow-xl p-10 md:p-14">
               <div className="grid md:grid-cols-12 gap-8 items-center">
                 <div className="md:col-span-8">
-                  <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Precisa de algo além do produto?</div>
+                  <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Precisa de algo além do produto?</div>
                   <div className="mt-3 font-display text-3xl md:text-4xl font-bold leading-tight">
                     Desenvolvemos a solução completa para o seu cenário específico
                   </div>

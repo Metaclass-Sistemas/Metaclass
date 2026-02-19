@@ -20,8 +20,8 @@ export default function PoliticaPrivacidade() {
 
           <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-4 text-white">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-totvs-cyan/20 backdrop-blur border border-totvs-cyan/30">
-                <Shield className="h-7 w-7 text-totvs-cyan" />
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-blue/20 backdrop-blur border border-brand-blue/30">
+                <Shield className="h-7 w-7 text-brand-blue" />
               </div>
               <div>
                 <h1 className="font-display text-3xl sm:text-4xl font-bold">Política de Privacidade</h1>
@@ -43,7 +43,7 @@ export default function PoliticaPrivacidade() {
             </p>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 1. Dados que coletamos
               </h2>
               <p className="text-base leading-relaxed mb-3">Podemos coletar:</p>
@@ -56,7 +56,7 @@ export default function PoliticaPrivacidade() {
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 2. Finalidade do tratamento
               </h2>
               <p className="text-base leading-relaxed">
@@ -68,7 +68,7 @@ export default function PoliticaPrivacidade() {
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 3. Base legal
               </h2>
               <p className="text-base leading-relaxed">
@@ -79,7 +79,7 @@ export default function PoliticaPrivacidade() {
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 4. Compartilhamento de dados
               </h2>
               <p className="text-base leading-relaxed">
@@ -91,7 +91,7 @@ export default function PoliticaPrivacidade() {
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 5. Retenção e segurança
               </h2>
               <p className="text-base leading-relaxed">
@@ -103,7 +103,7 @@ export default function PoliticaPrivacidade() {
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 6. Seus direitos (LGPD)
               </h2>
               <p className="text-base leading-relaxed mb-3">
@@ -112,14 +112,14 @@ export default function PoliticaPrivacidade() {
                 eliminação de dados desnecessários, portabilidade, revogação do consentimento e
                 informação sobre compartilhamento. Para exercer esses direitos, entre em contato
                 conosco através do{' '}
-                <Link to="/lgpd" className="text-totvs-cyan hover:text-totvs-cyan font-medium underline underline-offset-2">
+                <Link to="/lgpd" className="text-brand-blue hover:text-brand-blue font-medium underline underline-offset-2">
                   Canal LGPD
                 </Link>.
               </p>
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 7. Cookies e tecnologias similares
               </h2>
               <p className="text-base leading-relaxed">
@@ -132,7 +132,7 @@ export default function PoliticaPrivacidade() {
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 8. Alterações
               </h2>
               <p className="text-base leading-relaxed">
@@ -143,16 +143,16 @@ export default function PoliticaPrivacidade() {
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-totvs-cyan/30 pb-2">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3 border-b border-brand-blue/30 pb-2">
                 9. Contato
               </h2>
               <p className="text-base leading-relaxed">
                 Para questões sobre privacidade ou para exercer seus direitos, utilize nosso{' '}
-                <Link to="/lgpd" className="text-totvs-cyan hover:text-totvs-cyan font-medium underline underline-offset-2">
+                <Link to="/lgpd" className="text-brand-blue hover:text-brand-blue font-medium underline underline-offset-2">
                   Canal LGPD
                 </Link>{' '}
                 ou envie um e-mail para{' '}
-                <a href="mailto:contato@metaclass.com.br" className="text-totvs-cyan hover:text-totvs-cyan font-medium underline underline-offset-2">
+                <a href="mailto:contato@metaclass.com.br" className="text-brand-blue hover:text-brand-blue font-medium underline underline-offset-2">
                   contato@metaclass.com.br
                 </a>.
               </p>

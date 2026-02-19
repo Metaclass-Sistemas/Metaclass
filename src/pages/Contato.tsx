@@ -95,14 +95,14 @@ export default function Contato() {
               }}
             />
           </div>
-          <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-totvs-cyan/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
 
           <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <p className="text-totvs-cyan font-semibold uppercase tracking-wide text-sm">Fale com a Metaclass</p>
+              <p className="text-brand-blue font-semibold uppercase tracking-wide text-sm">Fale com a Metaclass</p>
               <h1 className="mt-4 font-display text-4xl sm:text-5xl font-bold text-white leading-tight">
                 Vamos mapear seu cenário e montar a{' '}
-                <span className="text-totvs-cyan">proposta ideal</span>
+                <span className="text-brand-blue">proposta ideal</span>
               </h1>
               <p className="mt-5 text-white/75 text-lg leading-relaxed max-w-2xl">
                 Em uma conversa objetiva com nosso time técnico, você recebe diagnóstico, direcionamento e
@@ -117,7 +117,7 @@ export default function Contato() {
                   { icon: MapPin, text: 'Atendimento 100% online' },
                 ].map((t) => (
                   <div key={t.text} className="flex items-center gap-2 text-sm text-white/70">
-                    <t.icon className="w-4 h-4 text-totvs-cyan" />
+                    <t.icon className="w-4 h-4 text-brand-blue" />
                     {t.text}
                   </div>
                 ))}
@@ -136,7 +136,7 @@ export default function Contato() {
 
                 {/* Canais de contato */}
                 <div className="rounded-3xl border border-gray-100 bg-white shadow-lg p-8">
-                  <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide mb-6">Canais de contato</div>
+                  <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide mb-6">Canais de contato</div>
                   <div className="space-y-6">
                     {[
                       {
@@ -159,13 +159,13 @@ export default function Contato() {
                       },
                     ].map((c) => (
                       <div key={c.title} className="flex items-start gap-4">
-                        <div className="w-10 h-10 rounded-xl bg-totvs-cyan/10 border border-totvs-cyan/20 text-totvs-cyan flex items-center justify-center flex-shrink-0">
+                        <div className="w-10 h-10 rounded-xl bg-brand-blue/10 border border-brand-blue/20 text-brand-blue flex items-center justify-center flex-shrink-0">
                           <c.icon className="w-5 h-5" />
                         </div>
                         <div>
                           <div className="text-sm font-semibold text-gray-900">{c.title}</div>
                           {c.href ? (
-                            <a href={c.href} className="text-totvs-cyan text-sm font-medium hover:underline">
+                            <a href={c.href} className="text-brand-blue text-sm font-medium hover:underline">
                               {c.value}
                             </a>
                           ) : (
@@ -179,7 +179,7 @@ export default function Contato() {
 
                 {/* O que acontece depois */}
                 <div className="rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border border-slate-800 p-8">
-                  <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide mb-6">O que acontece depois</div>
+                  <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide mb-6">O que acontece depois</div>
                   <div className="space-y-4">
                     {[
                       { step: '01', text: 'Recebemos sua mensagem e analisamos o contexto' },
@@ -188,8 +188,8 @@ export default function Contato() {
                       { step: '04', text: 'Apresentamos diagnóstico e proposta personalizada' },
                     ].map((s) => (
                       <div key={s.step} className="flex items-start gap-3">
-                        <div className="w-6 h-6 rounded-full bg-totvs-cyan/15 border border-totvs-cyan/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <span className="text-[10px] font-bold text-totvs-cyan">{s.step}</span>
+                        <div className="w-6 h-6 rounded-full bg-brand-blue/15 border border-brand-blue/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <span className="text-[10px] font-bold text-brand-blue">{s.step}</span>
                         </div>
                         <div className="text-sm text-white/70 leading-relaxed">{s.text}</div>
                       </div>
@@ -208,7 +208,7 @@ export default function Contato() {
                       'Nenhum compromisso na conversa inicial',
                     ].map((t) => (
                       <div key={t} className="flex items-center gap-2 text-sm text-gray-700">
-                        <CheckCircle2 className="w-4 h-4 text-totvs-cyan flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-brand-blue flex-shrink-0" />
                         {t}
                       </div>
                     ))}
@@ -221,8 +221,8 @@ export default function Contato() {
                 <div className="rounded-3xl border border-gray-100 bg-white shadow-xl p-8 sm:p-10">
                   {submitted ? (
                     <div className="flex flex-col items-center justify-center py-16 text-center">
-                      <div className="w-20 h-20 rounded-full bg-totvs-cyan/10 border border-totvs-cyan/20 flex items-center justify-center mb-6">
-                        <CheckCircle className="h-10 w-10 text-totvs-cyan" />
+                      <div className="w-20 h-20 rounded-full bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center mb-6">
+                        <CheckCircle className="h-10 w-10 text-brand-blue" />
                       </div>
                       <h3 className="font-display text-2xl font-bold text-slate-900 mb-3">Mensagem enviada!</h3>
                       <p className="text-gray-600 max-w-sm leading-relaxed mb-8">
@@ -230,7 +230,7 @@ export default function Contato() {
                       </p>
                       <a
                         href="/servicos"
-                        className="inline-flex items-center gap-2 text-totvs-cyan font-bold hover:underline text-sm"
+                        className="inline-flex items-center gap-2 text-brand-blue font-bold hover:underline text-sm"
                       >
                         Enquanto isso, conheça nossos serviços
                         <ArrowRight className="w-4 h-4" />
@@ -264,7 +264,7 @@ export default function Contato() {
                               onChange={(e) => setName(e.target.value)}
                               placeholder="Seu nome"
                               required
-                              className="h-12 w-full rounded-xl border border-slate-200 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-totvs-cyan/25 focus:border-totvs-cyan transition-colors"
+                              className="h-12 w-full rounded-xl border border-slate-200 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/25 focus:border-brand-blue transition-colors"
                             />
                           </div>
                           <div className="space-y-2">
@@ -278,7 +278,7 @@ export default function Contato() {
                               type="email"
                               placeholder="seu@email.com"
                               required
-                              className="h-12 w-full rounded-xl border border-slate-200 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-totvs-cyan/25 focus:border-totvs-cyan transition-colors"
+                              className="h-12 w-full rounded-xl border border-slate-200 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/25 focus:border-brand-blue transition-colors"
                             />
                           </div>
                         </div>
@@ -300,7 +300,7 @@ export default function Contato() {
                                 const input = e.currentTarget
                                 input.value = input.value.replace(/[^0-9()\-\s+]/g, '')
                               }}
-                              className="h-12 w-full rounded-xl border border-slate-200 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-totvs-cyan/25 focus:border-totvs-cyan transition-colors"
+                              className="h-12 w-full rounded-xl border border-slate-200 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/25 focus:border-brand-blue transition-colors"
                             />
                           </div>
                           <div className="space-y-2">
@@ -311,7 +311,7 @@ export default function Contato() {
                               id="subject"
                               value={subject}
                               onChange={(e) => setSubject(e.target.value)}
-                              className="h-12 w-full rounded-xl border border-slate-200 px-4 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-totvs-cyan/25 focus:border-totvs-cyan transition-colors"
+                              className="h-12 w-full rounded-xl border border-slate-200 px-4 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/25 focus:border-brand-blue transition-colors"
                             >
                               <option value="proposal">Quero uma proposta</option>
                               <option value="saas">Quero conhecer um produto (SaaS)</option>
@@ -334,7 +334,7 @@ export default function Contato() {
                             placeholder="Conte o objetivo, prazo e o que já existe hoje. Quanto mais contexto, melhor o direcionamento inicial."
                             required
                             rows={5}
-                            className="w-full rounded-xl border border-slate-200 p-4 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-totvs-cyan/25 focus:border-totvs-cyan transition-colors"
+                            className="w-full rounded-xl border border-slate-200 p-4 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-brand-blue/25 focus:border-brand-blue transition-colors"
                           />
                         </div>
 
@@ -345,16 +345,16 @@ export default function Contato() {
                               type="checkbox"
                               checked={consentAccepted}
                               onChange={(e) => setConsentAccepted(e.target.checked)}
-                              className="mt-0.5 h-4 w-4 rounded border-slate-300 accent-totvs-cyan"
+                              className="mt-0.5 h-4 w-4 rounded border-slate-300 accent-brand-blue"
                               required
                             />
                             <span>
                               Concordo com os{' '}
-                              <Link to="/termos" className="font-semibold text-slate-900 underline underline-offset-2 hover:text-totvs-cyan">
+                              <Link to="/termos" className="font-semibold text-slate-900 underline underline-offset-2 hover:text-brand-blue">
                                 Termos de Uso
                               </Link>{' '}
                               e a{' '}
-                              <Link to="/privacidade" className="font-semibold text-slate-900 underline underline-offset-2 hover:text-totvs-cyan">
+                              <Link to="/privacidade" className="font-semibold text-slate-900 underline underline-offset-2 hover:text-brand-blue">
                                 Política de Privacidade
                               </Link>
                               . Meus dados serão usados exclusivamente para responder a este contato.
@@ -369,7 +369,7 @@ export default function Contato() {
                           <button
                             type="submit"
                             disabled={loading || !consentAccepted}
-                            className="inline-flex items-center gap-2 rounded-full bg-totvs-cyan px-7 py-3 font-bold text-slate-950 text-sm hover:brightness-110 hover:shadow-xl hover:shadow-totvs-cyan/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-7 py-3 font-bold text-slate-950 text-sm hover:brightness-110 hover:shadow-xl hover:shadow-brand-blue/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                           >
                             {loading ? (
                               'Enviando...'
@@ -394,7 +394,7 @@ export default function Contato() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="text-sm font-semibold text-totvs-cyan uppercase tracking-wide">Por que nos escolher</div>
+              <div className="text-sm font-semibold text-brand-blue uppercase tracking-wide">Por que nos escolher</div>
               <h2 className="mt-3 font-display text-3xl md:text-4xl font-bold">
                 O que você pode esperar da conversa
               </h2>
@@ -424,7 +424,7 @@ export default function Contato() {
                 },
               ].map((d) => (
                 <div key={d.title} className="rounded-3xl border border-gray-100 bg-gray-50 p-7 hover:shadow-lg transition-all duration-300">
-                  <div className="w-11 h-11 rounded-xl bg-totvs-cyan/10 border border-totvs-cyan/20 text-totvs-cyan flex items-center justify-center mb-5">
+                  <div className="w-11 h-11 rounded-xl bg-brand-blue/10 border border-brand-blue/20 text-brand-blue flex items-center justify-center mb-5">
                     <d.icon className="w-5 h-5" />
                   </div>
                   <div className="font-bold text-base">{d.title}</div>

@@ -7,8 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'totvs-cyan': '#00c9eb',
-        'totvs-blue': '#00c9eb',
+        'brand-blue': '#60A5FA',
         'dark-bg': '#0a0a0a',
         'dark-text': '#023',
       },

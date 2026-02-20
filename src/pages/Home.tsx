@@ -719,6 +719,97 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── HERO CLINICNEST ── */}
+      <section className="relative overflow-hidden bg-[#0d0818]">
+        {/* foto de médico cobrindo o lado direito */}
+        <div className="absolute inset-0 lg:left-[44%]">
+          <img
+            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1200&q=80"
+            alt="Profissional de saúde com ClinicNest"
+            className="w-full h-full object-cover object-center"
+          />
+          {/* overlay gradiente da esquerda para a direita */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0d0818] via-[#0d0818]/85 to-transparent" />
+          {/* overlay sutil no topo/baixo */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0d0818]/40 via-transparent to-[#0d0818]/60" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 lg:py-36">
+          <div className="max-w-[560px]">
+            {/* badge NOVO */}
+            <div className="inline-flex items-center gap-2 rounded-full bg-violet-500/20 border border-violet-400/40 px-4 py-1.5 mb-7">
+              <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
+              <span className="text-xs font-bold text-violet-300 uppercase tracking-widest">Novo produto · Saúde & Clínicas</span>
+            </div>
+
+            {/* heading */}
+            <h2
+              className="font-display font-extrabold text-white leading-[1.06] mb-5"
+              style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)' }}
+            >
+              O software que sua{' '}
+              <span className="bg-gradient-to-r from-violet-400 via-indigo-300 to-purple-300 bg-clip-text text-transparent">
+                clínica estava esperando
+              </span>
+            </h2>
+
+            <p className="text-white/75 text-lg leading-relaxed mb-8">
+              Prontuário eletrônico, agenda médica inteligente e gestão financeira completa — para clínicas, consultórios
+              e profissionais autônomos da saúde que querem trabalhar com mais eficiência e menos burocracia.
+            </p>
+
+            {/* features */}
+            <div className="grid grid-cols-2 gap-2.5 mb-10">
+              {[
+                'Prontuário eletrônico',
+                'Agenda médica',
+                'Gestão financeira',
+                'Planos de saúde',
+                'Prescrição digital',
+                'LGPD & CFM',
+              ].map((f) => (
+                <div key={f} className="flex items-center gap-2 text-sm text-white/80">
+                  <CheckCircle2 className="w-4 h-4 text-violet-400 shrink-0" />
+                  {f}
+                </div>
+              ))}
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-3 mb-12">
+              <a
+                href="/produtos#clinicnest"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-500 text-white px-7 py-3.5 rounded-full font-bold text-sm hover:shadow-2xl hover:shadow-violet-500/40 hover:scale-[1.02] transition-all duration-300"
+              >
+                Conhecer ClinicNest
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="/contato"
+                className="inline-flex items-center gap-2 border border-white/20 text-white/80 px-7 py-3.5 rounded-full font-semibold text-sm hover:border-violet-400/50 hover:text-white transition-all duration-300"
+              >
+                Solicitar demo grátis
+              </a>
+            </div>
+
+            {/* stats */}
+            <div className="flex gap-8 border-t border-white/10 pt-8">
+              {[
+                { value: '4.9★', label: 'Avaliação' },
+                { value: 'R$79,90/mês', label: 'Plano básico' },
+                { value: '98%', label: 'Uptime' },
+                { value: '500+', label: 'Avaliações' },
+              ].map((st) => (
+                <div key={st.label}>
+                  <div className="font-display text-xl font-bold text-violet-300">{st.value}</div>
+                  <div className="text-white/55 text-xs mt-0.5">{st.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── SETORES QUE ATENDEMOS ── */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

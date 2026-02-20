@@ -248,8 +248,8 @@ function BeautyVisual() {
 
 /* ─── MOCK VISUAL: CLINICNEST (slide 2) ──────────────────── */
 const consultations = [
-  { time: '08:00', patient: 'Roberto M.', type: 'Clínica Geral', dot: 'bg-violet-500' },
-  { time: '09:30', patient: 'Ana Souza', type: 'Consulta de retorno', dot: 'bg-indigo-400' },
+  { time: '08:00', patient: 'Roberto M.', type: 'Clínica Geral', dot: 'bg-teal-500' },
+  { time: '09:30', patient: 'Ana Souza', type: 'Consulta de retorno', dot: 'bg-teal-400' },
   { time: '11:00', patient: 'Carlos D.', type: 'Eletrocardiograma', dot: 'bg-sky-400' },
   { time: '14:30', patient: 'Maria P.', type: 'Pré-natal', dot: 'bg-emerald-400' },
 ]
@@ -257,12 +257,12 @@ const consultations = [
 function ClinicVisual() {
   return (
     <div className="relative w-full max-w-[430px] ml-auto">
-      <div className="absolute -inset-6 bg-violet-400/10 rounded-3xl blur-2xl pointer-events-none" />
+      <div className="absolute -inset-6 bg-teal-400/10 rounded-3xl blur-2xl pointer-events-none" />
 
-      <div className="relative rounded-2xl bg-[#0d1b2a] border border-violet-400/20 p-6 shadow-2xl">
+      <div className="relative rounded-2xl bg-[#0d1b2a] border border-teal-400/20 p-6 shadow-2xl">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <Heart className="w-3.5 h-3.5 text-violet-400" />
+            <Heart className="w-3.5 h-3.5 text-teal-400" />
             <span className="text-white/70 text-xs">Consultas de hoje</span>
           </div>
           <span className="text-[10px] text-white/45">Qua, 19 Fev</span>
@@ -281,14 +281,14 @@ function ClinicVisual() {
           ))}
         </div>
 
-        <div className="mt-4 rounded-xl bg-violet-400/10 border border-violet-400/20 px-4 py-2.5 flex items-center justify-between">
+        <div className="mt-4 rounded-xl bg-teal-400/10 border border-teal-400/20 px-4 py-2.5 flex items-center justify-between">
           <span className="text-white/65 text-xs">Faturamento do dia</span>
-          <span className="text-violet-400 text-sm font-bold">R$ 3.200,00</span>
+          <span className="text-teal-400 text-sm font-bold">R$ 3.200,00</span>
         </div>
       </div>
 
       <div className="absolute -top-4 -left-10 flex items-center gap-2 bg-slate-900/90 backdrop-blur-md border border-white/10 rounded-xl px-3 py-2.5 shadow-xl">
-        <ShieldCheck className="w-4 h-4 text-violet-400 shrink-0" />
+        <ShieldCheck className="w-4 h-4 text-teal-400 shrink-0" />
         <div>
           <div className="text-white text-[11px] font-bold">LGPD & CFM</div>
           <div className="text-white/40 text-[9px]">Conformidade garantida</div>
@@ -719,6 +719,78 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── PRODUTO EM DESTAQUE: CLINICNEST ── */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-3xl overflow-hidden shadow-xl bg-white border border-gray-100">
+            <div className="grid md:grid-cols-2 items-stretch">
+              {/* imagem — lado esquerdo (alternado do BeautyGest) */}
+              <div className="relative overflow-hidden min-h-[360px] order-last md:order-first">
+                <img
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80"
+                  alt="Profissional de saúde usando ClinicNest"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/5" />
+                {/* badge sobre a foto */}
+                <div className="absolute top-6 left-6 bg-white/15 backdrop-blur-md border border-white/25 rounded-2xl px-4 py-3 text-white">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                    <span className="font-bold text-sm">4.9 / 5.0</span>
+                  </div>
+                  <div className="text-white/70 text-xs">500+ avaliações verificadas</div>
+                </div>
+              </div>
+
+              {/* texto */}
+              <div className="p-10 md:p-14 flex flex-col justify-center">
+                <div className="inline-flex items-center gap-2 text-xs font-bold text-teal-600 border border-teal-500/30 rounded-full px-3 py-1 bg-teal-50 self-start mb-5">
+                  Produto SaaS · Saúde & Clínicas
+                </div>
+                <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight mb-1">
+                  ClinicNest
+                </h2>
+                <p className="text-xs text-gray-400 mb-4">by Metaclass</p>
+                <p className="text-gray-500 text-base mb-4 leading-relaxed">
+                  A plataforma que está transformando a gestão de clínicas e consultórios no Brasil
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Prontuário eletrônico, agenda médica inteligente, controle financeiro e gestão de convênios.
+                  Tudo que um consultório ou clínica precisa para atender com mais eficiência e segurança.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {['Prontuário eletrônico', 'Agenda médica', 'Convênios', 'Prescrição digital', 'LGPD nativo'].map(
+                    (t) => (
+                      <span
+                        key={t}
+                        className="text-xs font-semibold border border-teal-200 bg-teal-50 rounded-full px-3 py-1 text-teal-700"
+                      >
+                        {t}
+                      </span>
+                    ),
+                  )}
+                </div>
+                <div className="flex gap-3">
+                  <a
+                    href="/produtos#clinicnest"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-600 to-teal-500 text-white px-6 py-3 rounded-full font-bold text-sm hover:shadow-lg hover:shadow-teal-500/30 transition-all duration-300"
+                  >
+                    Conhecer ClinicNest
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="/contato"
+                    className="inline-flex items-center gap-2 border border-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold text-sm hover:border-teal-500 hover:text-teal-600 transition-all duration-300"
+                  >
+                    Solicitar demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── HERO CLINICNEST ── */}
       <section className="relative overflow-hidden bg-[#0d0818]">
         {/* foto de médico cobrindo o lado direito */}
@@ -737,9 +809,9 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 lg:py-36">
           <div className="max-w-[560px]">
             {/* badge NOVO */}
-            <div className="inline-flex items-center gap-2 rounded-full bg-violet-500/20 border border-violet-400/40 px-4 py-1.5 mb-7">
-              <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
-              <span className="text-xs font-bold text-violet-300 uppercase tracking-widest">Novo produto · Saúde & Clínicas</span>
+            <div className="inline-flex items-center gap-2 rounded-full bg-teal-500/20 border border-teal-400/40 px-4 py-1.5 mb-7">
+              <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+              <span className="text-xs font-bold text-teal-300 uppercase tracking-widest">Novo produto · Saúde & Clínicas</span>
             </div>
 
             {/* heading */}
@@ -748,7 +820,7 @@ export default function Home() {
               style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)' }}
             >
               O software que sua{' '}
-              <span className="bg-gradient-to-r from-violet-400 via-indigo-300 to-purple-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-teal-400 via-teal-300 to-cyan-300 bg-clip-text text-transparent">
                 clínica estava esperando
               </span>
             </h2>
@@ -769,7 +841,7 @@ export default function Home() {
                 'LGPD & CFM',
               ].map((f) => (
                 <div key={f} className="flex items-center gap-2 text-sm text-white/80">
-                  <CheckCircle2 className="w-4 h-4 text-violet-400 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
                   {f}
                 </div>
               ))}
@@ -779,14 +851,14 @@ export default function Home() {
             <div className="flex flex-wrap gap-3 mb-12">
               <a
                 href="/produtos#clinicnest"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-500 text-white px-7 py-3.5 rounded-full font-bold text-sm hover:shadow-2xl hover:shadow-violet-500/40 hover:scale-[1.02] transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-600 to-teal-500 text-white px-7 py-3.5 rounded-full font-bold text-sm hover:shadow-2xl hover:shadow-teal-500/40 hover:scale-[1.02] transition-all duration-300"
               >
                 Conhecer ClinicNest
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="/contato"
-                className="inline-flex items-center gap-2 border border-white/20 text-white/80 px-7 py-3.5 rounded-full font-semibold text-sm hover:border-violet-400/50 hover:text-white transition-all duration-300"
+                className="inline-flex items-center gap-2 border border-white/20 text-white/80 px-7 py-3.5 rounded-full font-semibold text-sm hover:border-teal-400/50 hover:text-white transition-all duration-300"
               >
                 Solicitar demo grátis
               </a>
@@ -801,7 +873,7 @@ export default function Home() {
                 { value: '500+', label: 'Avaliações' },
               ].map((st) => (
                 <div key={st.label}>
-                  <div className="font-display text-xl font-bold text-violet-300">{st.value}</div>
+                  <div className="font-display text-xl font-bold text-teal-300">{st.value}</div>
                   <div className="text-white/55 text-xs mt-0.5">{st.label}</div>
                 </div>
               ))}

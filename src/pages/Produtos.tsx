@@ -68,7 +68,7 @@ export default function Produtos() {
                 </a>
                 <a
                   href="#clinicnest"
-                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:shadow-violet-600/30 transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-teal-600 to-teal-500 text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:shadow-teal-600/30 transition-all duration-300"
                 >
                   Ver ClinicNest
                   <ArrowRight className="w-5 h-5" />
@@ -255,10 +255,10 @@ export default function Produtos() {
         <section id="clinicnest" className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="text-sm font-semibold text-violet-600 uppercase tracking-wide">Mais novo produto</div>
+              <div className="text-sm font-semibold text-teal-600 uppercase tracking-wide">Mais novo produto</div>
               <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">
                 Conheça o{' '}
-                <span className="bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-teal-600 to-teal-500 bg-clip-text text-transparent">
                   ClinicNest
                 </span>
               </h2>
@@ -272,8 +272,8 @@ export default function Produtos() {
               <div className="grid md:grid-cols-2 gap-0 items-stretch">
                 {/* Info */}
                 <div className="p-10 md:p-14">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-600/10 border border-violet-600/30 mb-6">
-                    <Stethoscope className="w-4 h-4 text-violet-600" />
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-600/10 border border-teal-600/30 mb-6">
+                    <Stethoscope className="w-4 h-4 text-teal-600" />
                     <span className="text-sm font-semibold text-gray-700">Saúde & Clínicas</span>
                   </div>
 
@@ -298,7 +298,7 @@ export default function Produtos() {
                       { icon: Heart, text: 'Gestão de planos de saúde' },
                     ].map((f) => (
                       <div key={f.text} className="flex items-center gap-3 text-gray-700">
-                        <f.icon className="w-5 h-5 text-violet-600 flex-shrink-0" />
+                        <f.icon className="w-5 h-5 text-teal-600 flex-shrink-0" />
                         <span className="text-sm">{f.text}</span>
                       </div>
                     ))}
@@ -309,14 +309,14 @@ export default function Produtos() {
                       href="https://clinicnest.metaclass.com.br"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-7 py-3.5 rounded-full font-bold hover:shadow-lg transition-all duration-300"
+                      className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-600 to-teal-500 text-white px-7 py-3.5 rounded-full font-bold hover:shadow-lg hover:shadow-teal-500/30 transition-all duration-300"
                     >
                       Conhecer ClinicNest
                       <ExternalLink className="w-5 h-5" />
                     </a>
                     <a
                       href="/contato"
-                      className="inline-flex items-center gap-2 border border-gray-200 text-gray-700 px-7 py-3.5 rounded-full font-bold hover:border-violet-600 hover:text-violet-600 transition-all duration-300"
+                      className="inline-flex items-center gap-2 border border-gray-200 text-gray-700 px-7 py-3.5 rounded-full font-bold hover:border-teal-600 hover:text-teal-600 transition-all duration-300"
                     >
                       Solicitar demo
                     </a>
@@ -324,7 +324,7 @@ export default function Produtos() {
                 </div>
 
                 {/* Visual */}
-                <div className="bg-gradient-to-br from-violet-600 via-indigo-600 to-indigo-700 p-10 md:p-14 flex items-center justify-center min-h-[420px]">
+                <div className="bg-gradient-to-br from-teal-600 via-teal-500 to-teal-700 p-10 md:p-14 flex items-center justify-center min-h-[420px]">
                   <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 text-white text-center w-full max-w-xs">
                     <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center mx-auto mb-5">
                       <Stethoscope className="w-8 h-8 text-white" />
@@ -376,7 +376,7 @@ export default function Produtos() {
                 },
               ].map((d) => (
                 <div key={d.title} className="rounded-2xl border border-gray-100 bg-white shadow-md p-6">
-                  <div className="w-10 h-10 rounded-xl bg-violet-600/10 border border-violet-600/20 text-violet-600 flex items-center justify-center mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-teal-600/10 border border-teal-600/20 text-teal-600 flex items-center justify-center mb-4">
                     <d.icon className="w-5 h-5" />
                   </div>
                   <div className="font-bold text-base">{d.title}</div>

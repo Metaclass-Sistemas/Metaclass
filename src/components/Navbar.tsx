@@ -36,13 +36,25 @@ export default function Navbar() {
               <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out">
                 <div className="w-52 bg-slate-900/95 backdrop-blur-xl border border-slate-700/50 rounded-xl shadow-2xl shadow-black/50 overflow-hidden py-1">
                   <a
-                    href="/beautygest"
+                    href="https://beautygest.metaclass.com.br"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-between px-4 py-2.5 hover:bg-slate-800/50 transition-all duration-150 group/item"
                   >
                     <div>
                       <div className="text-sm text-white/90 group-hover/item:text-brand-blue transition-colors">BeautyGest</div>
+                      <div className="text-[10px] text-gray-500 group-hover/item:text-brand-blue/70 transition-colors">by Metaclass</div>
+                    </div>
+                    <ExternalLink className="w-3.5 h-3.5 text-gray-500 group-hover/item:text-brand-blue transition-colors" />
+                  </a>
+                  <a
+                    href="https://clinicnest.metaclass.com.br"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between px-4 py-2.5 hover:bg-slate-800/50 transition-all duration-150 group/item"
+                  >
+                    <div>
+                      <div className="text-sm text-white/90 group-hover/item:text-brand-blue transition-colors">ClinicNest</div>
                       <div className="text-[10px] text-gray-500 group-hover/item:text-brand-blue/70 transition-colors">by Metaclass</div>
                     </div>
                     <ExternalLink className="w-3.5 h-3.5 text-gray-500 group-hover/item:text-brand-blue transition-colors" />
@@ -116,10 +128,24 @@ export default function Navbar() {
                 <div className="w-52 bg-slate-900/95 backdrop-blur-xl border border-slate-700/50 rounded-xl shadow-2xl shadow-black/50 overflow-hidden py-1">
                   <a
                     href="https://beautygest.metaclass.com.br/login"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center justify-between px-4 py-2.5 hover:bg-slate-800/50 transition-all duration-150 group/item"
                   >
                     <div>
                       <div className="text-sm text-white/90 group-hover/item:text-brand-blue transition-colors">BeautyGest</div>
+                      <div className="text-[10px] text-gray-500 group-hover/item:text-brand-blue/70 transition-colors">by Metaclass</div>
+                    </div>
+                    <ExternalLink className="w-3.5 h-3.5 text-gray-500 group-hover/item:text-brand-blue transition-colors" />
+                  </a>
+                  <a
+                    href="https://clinicnest.metaclass.com.br/login"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between px-4 py-2.5 hover:bg-slate-800/50 transition-all duration-150 group/item"
+                  >
+                    <div>
+                      <div className="text-sm text-white/90 group-hover/item:text-brand-blue transition-colors">ClinicNest</div>
                       <div className="text-[10px] text-gray-500 group-hover/item:text-brand-blue/70 transition-colors">by Metaclass</div>
                     </div>
                     <ExternalLink className="w-3.5 h-3.5 text-gray-500 group-hover/item:text-brand-blue transition-colors" />
@@ -155,14 +181,23 @@ export default function Navbar() {
                 Produtos
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${openSubmenu === 'produtos' ? 'rotate-180' : ''}`} />
               </button>
-              <div className={`overflow-hidden transition-all duration-200 ${openSubmenu === 'produtos' ? 'max-h-40' : 'max-h-0'}`}>
+              <div className={`overflow-hidden transition-all duration-200 ${openSubmenu === 'produtos' ? 'max-h-60' : 'max-h-0'}`}>
                 <a
-                  href="/beautygest"
+                  href="https://beautygest.metaclass.com.br"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block px-6 py-2 hover:text-brand-blue transition-colors"
                 >
                   <div className="text-sm text-white/90">BeautyGest</div>
+                  <div className="text-[10px] text-gray-500">by Metaclass</div>
+                </a>
+                <a
+                  href="https://clinicnest.metaclass.com.br"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-6 py-2 hover:text-brand-blue transition-colors"
+                >
+                  <div className="text-sm text-white/90">ClinicNest</div>
                   <div className="text-[10px] text-gray-500">by Metaclass</div>
                 </a>
                 <a
@@ -225,20 +260,46 @@ export default function Navbar() {
               Contato
             </a>
 
-            <div className="pt-3 grid grid-cols-2 gap-2">
-              <a
-                href="/contato"
-                className="block px-3 py-2.5 rounded-full border border-slate-700 text-white/90 hover:border-brand-blue hover:text-brand-blue transition-all duration-300 font-semibold text-sm text-center"
-                onClick={() => setIsOpen(false)}
-              >
-                Falar c/ especialista
-              </a>
-              <a
-                href="https://beautygest.metaclass.com.br/login"
-                className="block px-3 py-2.5 rounded-full bg-white text-slate-950 hover:bg-white/90 transition-colors font-semibold text-sm text-center"
-                onClick={() => setIsOpen(false)}
+            {/* Sou cliente - submenu colapsável */}
+            <div className="border-b border-slate-800 pb-1 mb-1">
+              <button
+                onClick={() => toggleSubmenu('cliente')}
+                className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-white/90 hover:text-brand-blue transition-colors"
               >
                 Sou cliente
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${openSubmenu === 'cliente' ? 'rotate-180' : ''}`} />
+              </button>
+              <div className={`overflow-hidden transition-all duration-200 ${openSubmenu === 'cliente' ? 'max-h-40' : 'max-h-0'}`}>
+                <a
+                  href="https://beautygest.metaclass.com.br/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-6 py-2 hover:text-brand-blue transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <div className="text-sm text-white/90">BeautyGest</div>
+                  <div className="text-[10px] text-gray-500">by Metaclass</div>
+                </a>
+                <a
+                  href="https://clinicnest.metaclass.com.br/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-6 py-2 hover:text-brand-blue transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <div className="text-sm text-white/90">ClinicNest</div>
+                  <div className="text-[10px] text-gray-500">by Metaclass</div>
+                </a>
+              </div>
+            </div>
+
+            <div className="pt-3">
+              <a
+                href="/contato"
+                className="block w-full px-3 py-2.5 rounded-full border border-slate-700 text-white/90 hover:border-brand-blue hover:text-brand-blue transition-all duration-300 font-semibold text-sm text-center"
+                onClick={() => setIsOpen(false)}
+              >
+                Falar com especialista
               </a>
             </div>
           </div>

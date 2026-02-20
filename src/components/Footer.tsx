@@ -181,12 +181,23 @@ export default function Footer() {
               <ul className="space-y-3 text-sm text-gray-400">
                 <li>
                   <a
-                    href="/beautygest"
+                    href="https://beautygest.metaclass.com.br"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-brand-blue transition-colors"
                   >
                     <div>BeautyGest</div>
+                    <div className="text-xs text-gray-500">by Metaclass</div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://clinicnest.metaclass.com.br"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-brand-blue transition-colors"
+                  >
+                    <div>ClinicNest</div>
                     <div className="text-xs text-gray-500">by Metaclass</div>
                   </a>
                 </li>

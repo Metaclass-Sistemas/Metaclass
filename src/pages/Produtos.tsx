@@ -18,6 +18,11 @@ import {
   Lock,
   ExternalLink,
   Rocket,
+  Stethoscope,
+  FileText,
+  ClipboardList,
+  Heart,
+  Activity,
 } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -53,12 +58,19 @@ export default function Produtos() {
                 os negócios dos nossos clientes.
               </p>
 
-              <div className="mt-10 flex flex-col sm:flex-row gap-4">
+              <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-4">
                 <a
                   href="#beautygest"
                   className="inline-flex items-center justify-center gap-2 bg-gradient-totvs text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:shadow-brand-blue/30 transition-all duration-300"
                 >
                   Ver BeautyGest
+                  <ArrowRight className="w-5 h-5" />
+                </a>
+                <a
+                  href="#clinicnest"
+                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:shadow-violet-600/30 transition-all duration-300"
+                >
+                  Ver ClinicNest
                   <ArrowRight className="w-5 h-5" />
                 </a>
                 <a
@@ -239,6 +251,142 @@ export default function Produtos() {
           </div>
         </section>
 
+        {/* ClinicNest - destaque */}
+        <section id="clinicnest" className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <div className="text-sm font-semibold text-violet-600 uppercase tracking-wide">Mais novo produto</div>
+              <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">
+                Conheça o{' '}
+                <span className="bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+                  ClinicNest
+                </span>
+              </h2>
+              <p className="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">
+                A plataforma SaaS de gestão mais completa para clínicas e consultórios médicos.
+              </p>
+            </div>
+
+            {/* Card principal */}
+            <div className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 mb-10 border border-gray-100">
+              <div className="grid md:grid-cols-2 gap-0 items-stretch">
+                {/* Info */}
+                <div className="p-10 md:p-14">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-600/10 border border-violet-600/30 mb-6">
+                    <Stethoscope className="w-4 h-4 text-violet-600" />
+                    <span className="text-sm font-semibold text-gray-700">Saúde & Clínicas</span>
+                  </div>
+
+                  <div className="mb-5">
+                    <h3 className="font-display text-4xl font-bold">ClinicNest</h3>
+                    <p className="text-sm text-gray-400 mt-1">by Metaclass</p>
+                  </div>
+
+                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                    Sistema completo de gestão para clínicas e consultórios. Prontuário eletrônico, agenda médica
+                    inteligente, controle financeiro e gestão de equipe — tudo em uma plataforma segura, intuitiva
+                    e em conformidade com a LGPD.
+                  </p>
+
+                  <div className="space-y-3 mb-8">
+                    {[
+                      { icon: FileText, text: 'Prontuário eletrônico completo e seguro' },
+                      { icon: Calendar, text: 'Agenda médica inteligente com confirmação automática' },
+                      { icon: Users, text: 'Gestão de pacientes com histórico clínico' },
+                      { icon: TrendingUp, text: 'Controle financeiro e faturamento completo' },
+                      { icon: ClipboardList, text: 'Prescrição digital integrada' },
+                      { icon: Heart, text: 'Gestão de planos de saúde' },
+                    ].map((f) => (
+                      <div key={f.text} className="flex items-center gap-3 text-gray-700">
+                        <f.icon className="w-5 h-5 text-violet-600 flex-shrink-0" />
+                        <span className="text-sm">{f.text}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap gap-3">
+                    <a
+                      href="https://clinicnest.metaclass.com.br"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-7 py-3.5 rounded-full font-bold hover:shadow-lg transition-all duration-300"
+                    >
+                      Conhecer ClinicNest
+                      <ExternalLink className="w-5 h-5" />
+                    </a>
+                    <a
+                      href="/contato"
+                      className="inline-flex items-center gap-2 border border-gray-200 text-gray-700 px-7 py-3.5 rounded-full font-bold hover:border-violet-600 hover:text-violet-600 transition-all duration-300"
+                    >
+                      Solicitar demo
+                    </a>
+                  </div>
+                </div>
+
+                {/* Visual */}
+                <div className="bg-gradient-to-br from-violet-600 via-indigo-600 to-indigo-700 p-10 md:p-14 flex items-center justify-center min-h-[420px]">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 text-white text-center w-full max-w-xs">
+                    <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center mx-auto mb-5">
+                      <Stethoscope className="w-8 h-8 text-white" />
+                    </div>
+                    <p className="text-lg font-bold">ClinicNest</p>
+                    <p className="text-sm opacity-80 mt-1">by Metaclass</p>
+                    <p className="text-base font-semibold opacity-95 mt-3 leading-snug">
+                      Gestão Profissional para Clínicas e Consultórios
+                    </p>
+                    <div className="mt-6 grid grid-cols-3 gap-3">
+                      {[
+                        { value: '500+', label: 'avaliações' },
+                        { value: '98%', label: 'uptime' },
+                        { value: '4.9', label: 'nota' },
+                      ].map((s) => (
+                        <div key={s.label} className="bg-white/15 rounded-xl py-2 px-1">
+                          <div className="font-bold text-base">{s.value}</div>
+                          <div className="text-xs opacity-70 mt-0.5">{s.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Diferenciais do ClinicNest */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {[
+                {
+                  icon: Smartphone,
+                  title: 'Acesso em qualquer dispositivo',
+                  text: 'Web e mobile. Acesse prontuários, agenda e relatórios de qualquer lugar com segurança.',
+                },
+                {
+                  icon: Shield,
+                  title: 'LGPD by design',
+                  text: 'Dados clínicos protegidos com criptografia e controle de acesso rigoroso desde a arquitetura.',
+                },
+                {
+                  icon: Activity,
+                  title: 'Relatórios clínicos',
+                  text: 'Relatórios avançados de produtividade, faturamento por convênio e evolução dos pacientes.',
+                },
+                {
+                  icon: Star,
+                  title: 'Suporte humanizado',
+                  text: 'SLA definido e suporte real. Sua equipe nunca fica sozinha quando precisar de ajuda.',
+                },
+              ].map((d) => (
+                <div key={d.title} className="rounded-2xl border border-gray-100 bg-white shadow-md p-6">
+                  <div className="w-10 h-10 rounded-xl bg-violet-600/10 border border-violet-600/20 text-violet-600 flex items-center justify-center mb-4">
+                    <d.icon className="w-5 h-5" />
+                  </div>
+                  <div className="font-bold text-base">{d.title}</div>
+                  <div className="mt-1 text-sm text-gray-600 leading-relaxed">{d.text}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Para quem é o BeautyGest */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -346,11 +494,11 @@ export default function Produtos() {
                     Em desenvolvimento
                   </div>
                   <h2 className="font-display text-3xl md:text-4xl font-bold text-white leading-tight">
-                    Novos produtos SaaS chegando em breve
+                    Mais produtos SaaS chegando em breve
                   </h2>
                   <p className="mt-4 text-white/70 text-lg leading-relaxed">
-                    Estamos desenvolvendo novas plataformas verticais com a mesma metodologia e padrão de qualidade
-                    do BeautyGest. Acompanhe as novidades ou entre em contato para saber mais.
+                    Além do BeautyGest e ClinicNest, estamos desenvolvendo novas plataformas verticais com a
+                    mesma metodologia e padrão de qualidade. Acompanhe as novidades ou entre em contato.
                   </p>
                   <div className="mt-6 space-y-2">
                     {[
@@ -377,10 +525,10 @@ export default function Produtos() {
 
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    { label: 'Gestão de clínicas', eta: 'Q3 2025', progress: 60 },
-                    { label: 'Plataforma pet shop', eta: 'Q4 2025', progress: 30 },
-                    { label: 'Gestão de academias', eta: 'Q1 2026', progress: 15 },
-                    { label: 'Marketplace de serviços', eta: '2026', progress: 10 },
+                    { label: 'Plataforma pet shop', eta: 'Q3 2025', progress: 40 },
+                    { label: 'Gestão de academias', eta: 'Q4 2025', progress: 20 },
+                    { label: 'ERP para varejo', eta: 'Q1 2026', progress: 10 },
+                    { label: 'Marketplace de serviços', eta: '2026', progress: 5 },
                   ].map((p) => (
                     <div key={p.label} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
                       <div className="text-sm font-bold text-white">{p.label}</div>

@@ -15,6 +15,7 @@ import {
   Code2,
   Star,
   TrendingUp,
+  Heart,
 } from 'lucide-react'
 
 /* ─── ANIMATED COUNTER ──────────────────────────────────── */
@@ -78,7 +79,7 @@ const slides = [
     headline: 'Do agendamento ao financeiro,',
     headlineAccent: 'uma plataforma para crescer',
     sub: 'Agenda inteligente, CRM, comissões automáticas e relatórios em tempo real. O que o seu negócio de beleza precisa.',
-    cta: { label: 'Conhecer BeautyGest', href: '/produtos' },
+    cta: { label: 'Conhecer BeautyGest', href: '/produtos#beautygest' },
     ctaSecondary: { label: 'Solicitar demo', href: '/contato' },
     stats: [
       { value: '+28%', label: 'Receita' },
@@ -87,6 +88,22 @@ const slides = [
       { value: '4.9★', label: 'Avaliação' },
     ],
     visual: 'beauty' as const,
+  },
+  {
+    id: 2,
+    badge: 'Produto SaaS · Saúde & Clínicas',
+    headline: 'Prontuário, agenda e financeiro,',
+    headlineAccent: 'em uma plataforma para clínicas',
+    sub: 'Gestão completa para clínicas e consultórios. Prontuário eletrônico, agenda médica inteligente e controle financeiro em um só lugar.',
+    cta: { label: 'Conhecer ClinicNest', href: '/produtos#clinicnest' },
+    ctaSecondary: { label: 'Solicitar demo', href: '/contato' },
+    stats: [
+      { value: '4.9★', label: 'Avaliação' },
+      { value: '500+', label: 'Avaliações' },
+      { value: 'R$79,90', label: 'Por mês' },
+      { value: '98%', label: 'Uptime' },
+    ],
+    visual: 'clinic' as const,
   },
 ]
 
@@ -229,6 +246,66 @@ function BeautyVisual() {
   )
 }
 
+/* ─── MOCK VISUAL: CLINICNEST (slide 2) ──────────────────── */
+const consultations = [
+  { time: '08:00', patient: 'Roberto M.', type: 'Clínica Geral', dot: 'bg-violet-500' },
+  { time: '09:30', patient: 'Ana Souza', type: 'Consulta de retorno', dot: 'bg-indigo-400' },
+  { time: '11:00', patient: 'Carlos D.', type: 'Eletrocardiograma', dot: 'bg-sky-400' },
+  { time: '14:30', patient: 'Maria P.', type: 'Pré-natal', dot: 'bg-emerald-400' },
+]
+
+function ClinicVisual() {
+  return (
+    <div className="relative w-full max-w-[430px] ml-auto">
+      <div className="absolute -inset-6 bg-violet-400/10 rounded-3xl blur-2xl pointer-events-none" />
+
+      <div className="relative rounded-2xl bg-[#0d1b2a] border border-violet-400/20 p-6 shadow-2xl">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-2">
+            <Heart className="w-3.5 h-3.5 text-violet-400" />
+            <span className="text-white/70 text-xs">Consultas de hoje</span>
+          </div>
+          <span className="text-[10px] text-white/45">Qua, 19 Fev</span>
+        </div>
+
+        <div className="space-y-0">
+          {consultations.map((a) => (
+            <div key={a.time} className="flex items-center gap-3 py-2.5 border-b border-white/5 last:border-0">
+              <span className="text-white/55 text-[11px] font-mono w-9 shrink-0">{a.time}</span>
+              <div className={`w-1 h-7 rounded-full ${a.dot} shrink-0`} />
+              <div className="min-w-0">
+                <div className="text-white text-xs font-semibold truncate">{a.patient}</div>
+                <div className="text-white/40 text-[10px] truncate">{a.type}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-4 rounded-xl bg-violet-400/10 border border-violet-400/20 px-4 py-2.5 flex items-center justify-between">
+          <span className="text-white/65 text-xs">Faturamento do dia</span>
+          <span className="text-violet-400 text-sm font-bold">R$ 3.200,00</span>
+        </div>
+      </div>
+
+      <div className="absolute -top-4 -left-10 flex items-center gap-2 bg-slate-900/90 backdrop-blur-md border border-white/10 rounded-xl px-3 py-2.5 shadow-xl">
+        <ShieldCheck className="w-4 h-4 text-violet-400 shrink-0" />
+        <div>
+          <div className="text-white text-[11px] font-bold">LGPD & CFM</div>
+          <div className="text-white/40 text-[9px]">Conformidade garantida</div>
+        </div>
+      </div>
+
+      <div className="absolute -bottom-4 right-2 flex items-center gap-2 bg-slate-900/90 backdrop-blur-md border border-white/10 rounded-xl px-3 py-2.5 shadow-xl">
+        <Star className="w-4 h-4 text-yellow-400 fill-yellow-400 shrink-0" />
+        <div>
+          <div className="text-white text-[11px] font-bold">4.9 / 5.0</div>
+          <div className="text-white/40 text-[9px]">500+ avaliações</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 /* ─── HERO CAROUSEL ──────────────────────────────────────── */
 const SLIDE_DURATION = 6000
 
@@ -352,7 +429,7 @@ function HeroCarousel() {
 
           {/* ── DIREITA: visual mockado ── */}
           <div className="hidden lg:flex lg:col-span-6 items-center justify-end">
-            {s.visual === 'tech' ? <TechVisual /> : <BeautyVisual />}
+            {s.visual === 'tech' ? <TechVisual /> : s.visual === 'beauty' ? <BeautyVisual /> : <ClinicVisual />}
           </div>
         </div>
       </div>

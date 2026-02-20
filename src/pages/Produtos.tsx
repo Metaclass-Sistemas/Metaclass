@@ -336,9 +336,9 @@ export default function Produtos() {
                     </p>
                     <div className="mt-6 grid grid-cols-3 gap-3">
                       {[
+                        { value: 'R$79,90', label: '/mês' },
+                        { value: '4.9★', label: 'nota' },
                         { value: '500+', label: 'avaliações' },
-                        { value: '98%', label: 'uptime' },
-                        { value: '4.9', label: 'nota' },
                       ].map((s) => (
                         <div key={s.label} className="bg-white/15 rounded-xl py-2 px-1">
                           <div className="font-bold text-base">{s.value}</div>

@@ -98,10 +98,10 @@ const slides = [
     cta: { label: 'Conhecer ClinicNest', href: '/produtos#clinicnest' },
     ctaSecondary: { label: 'Solicitar demo', href: '/contato' },
     stats: [
+      { value: 'R$79,90', label: 'Por mês' },
       { value: '4.9★', label: 'Avaliação' },
       { value: '500+', label: 'Avaliações' },
-      { value: 'R$79,90', label: 'Por mês' },
-      { value: '98%', label: 'Uptime' },
+      { value: 'LGPD', label: 'Conformidade' },
     ],
     visual: 'clinic' as const,
   },
@@ -867,10 +867,10 @@ export default function Home() {
             {/* stats */}
             <div className="flex gap-8 border-t border-white/10 pt-8">
               {[
+                { value: 'R$79,90', label: '/mês' },
                 { value: '4.9★', label: 'Avaliação' },
-                { value: 'R$79,90/mês', label: 'Plano básico' },
-                { value: '98%', label: 'Uptime' },
                 { value: '500+', label: 'Avaliações' },
+                { value: 'LGPD', label: 'Conformidade' },
               ].map((st) => (
                 <div key={st.label}>
                   <div className="font-display text-xl font-bold text-teal-300">{st.value}</div>
